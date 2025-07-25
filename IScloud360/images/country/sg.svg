@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 640 480">
+  <!-- Generator: Adobe Illustrator 29.6.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 9)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #ed2939;
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st0" x="0" y="0" width="640" height="480"/>
+    </clipPath>
+  </defs>
+  <g class="st3">
+    <g>
+      <path class="st2" d="M-40,0h720v480H-40V0Z"/>
+      <path class="st1" d="M-40,0h720v240H-40V0Z"/>
+      <circle class="st2" cx="112.07" cy="120" r="88.33"/>
+      <circle class="st1" cx="152.07" cy="120" r="88.33"/>
+      <path id="s" class="st2" d="M160.4,46.33l-13.52,41.61,35.39-25.71h-43.75l35.39,25.71-13.52-41.61Z"/>
+      <g id="t">
+        <path id="s1" data-name="s" class="st2" d="M230.46,97.24h-43.75s35.39,25.71,35.39,25.71l-13.52-41.61-13.52,41.61,35.39-25.71Z"/>
+        <path id="s2" data-name="s" class="st2" d="M117.1,179.6l35.39-25.71h-43.75s35.39,25.71,35.39,25.71l-13.52-41.61-13.52,41.61Z"/>
+      </g>
+      <g id="t1" data-name="t">
+        <path id="s3" data-name="s" class="st2" d="M203.7,179.6l-13.52-41.61-13.52,41.61,35.39-25.71h-43.75s35.39,25.71,35.39,25.71Z"/>
+        <path id="s4" data-name="s" class="st2" d="M90.34,97.24l35.39,25.71-13.52-41.61-13.52,41.61,35.39-25.71h-43.75Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

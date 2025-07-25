@@ -1,0 +1,2702 @@
+/* 
+ * Based on: Modave - Multipurpose eCommerce
+ * Original Author: Themesflat (http://themesflat.com)
+ * Licensed via ThemeForest Regular License
+ * Customizations by: ISCOM
+ */
+
+ /*--------- Abstracts variable ---------- */
+@import "./abstracts/index";
+
+/*---------- Reset css styles ----------- */
+@import "reset";
+
+/*------------ Components ---------------- */
+@import "./component/index";
+
+/*------------ sections ---------------- */
+@import "./sections";
+
+/*-------------- Responsive ----------------- */
+@import "./responsive";
+
+/*-------------- RTL ----------------- */
+@import "./rtl";
+
+/*-------------- Theme Overrides ----------------- */
+// Google 字型載入
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+// 主選單
+.logo-header img {
+    width: 160px;
+    @media screen and (max-width: 576px) {
+        width: 120px;
+    }
+}
+.nav-account .dropdown-login {
+    // left: -220px;
+}
+
+// 自訂標題
+.nie-text {
+    &-intro {
+        font-size: 14px;
+        margin-top: .5rem;
+        color: var(--secondary-2);
+        @media screen and (min-width: 768px) {
+            font-size: 16px;
+        }
+        .box-title-slider & {
+            color: #fff;
+        }
+    }
+    &-title {
+        text-align: center;
+        @media screen and (min-width: 768px) {
+            text-align: left;
+        }
+        h3 {
+            font-weight: bold;
+        }
+        &--main {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: bold;
+            @media screen and (max-width: 1400px) {
+                font-size: 30px;
+            }
+        }
+        &--sub {
+            color: var(--secondary-2);
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+    }
+}
+
+// 首頁最新消息圖片
+.wg-blog.style-1 .image {
+    position: relative;
+    overflow: hidden;
+    // padding-top: 100%; // NOTE[Sheng]: 這個 padding-top: 100% 是為了讓圖片保持 1:1 的比例
+    padding-top: 66.7%;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.wg-blog .content .title a {
+    font-weight: 600;
+}
+
+.wg-blog.style-1 .body-text {
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+}
+// 首頁雲端解決方案
+.nie-solutions {
+    .flat-collection-circle {
+        margin-bottom: 24px;
+    }
+    &-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        padding: 14px 15px;
+        border-radius: 999px;
+        background-color: var(--main);
+        color: var(--white);
+        letter-spacing: 0.1em;
+        border: 0;
+        font-size: 18px;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        min-width: 120px;
+        margin-bottom: 24px;
+        &.style-1 {
+            background-color: var(--primary);
+        }
+        &.style-2 {
+            background-color: var(--success);
+        }
+        &.style-3 {
+            background-color: var(--main);
+        }
+    }
+}
+// 首頁FAQs
+.nie-faqs {
+    .page-faqs-wrap {
+        align-items: center;
+    }
+    .page-faqs-wrap .ask-question {
+        flex: 5 1 0;
+    }
+    .page-faqs-wrap .list-faqs {
+        flex: 5 1 0;
+    }
+    .page-faqs-wrap .list-faqs .faqs-title {
+        font-weight: 600;
+    }
+    .accordion-product-wrap .accordion-product-item {
+        &:not(:last-child) {
+                border-bottom: 1px solid rgba(#333, 0.15);
+        }
+    }
+    &.nie-faqs-bg {
+        .list-faqs {
+            gap: 40px;
+        }
+        .accordion-product-wrap .accordion-product-item {
+            background-color: rgba(#333, 0.04);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 12px;
+            border: 1px solid var(--line);
+        }
+        .accordion-product-wrap.style-faqs .accordion-faqs-content {
+            // text-indent: 2em;
+        }
+        h6 {
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+}
+
+// 輪播相關
+.wrap-slider {
+    &::before {
+        content: '';
+        background: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+}
+.slider-default .box-content,
+.slider-center .box-content {
+    pointer-events: none; // NOTE[Sheng]: RWD影片輪播被文字區塊擋住不能播放
+}
+.slider-effect-fade .swiper-slide .fade-item,
+.slider-video .wrap-slider .tf-btn.btn-white{
+    pointer-events: all;
+}
+
+.slider-effect-fade .swiper-slide .fade-item.fade-item-2 {
+    line-height: 1.5;
+}
+.slider-effect-fade .swiper-slide .fade-item.heading {
+    line-height: 1.3;
+}
+
+.nie-product-media-wrap .stagger-wrap {
+    // justify-content: center;
+}
+
+// 產品列表
+.breadcrumbs-default {
+    padding-bottom: 30px;
+}
+.breadcrumbs-default .breadcrumbs-content .content-bottom h3,
+.widget-facet .facet-title {
+    font-weight: 600;
+}
+
+.tf-product-info-list .tf-product-info-name .name,
+.tf-product-info-price .price-on-sale {
+    font-weight: 700;
+}
+
+.facet-categories .wd-facet-categories {
+    margin-bottom: 10px;
+    .facet-title {
+        margin-bottom: 0;
+    }
+    .facet-body li {
+        margin-bottom: 0;
+    }
+}
+
+.tf-product-info-desc {
+    .price-on-sale .member {
+        font-size: 18px;
+    }
+    .compare-at-price {
+        text-decoration: none;
+    }
+}
+
+.tf-product-info-quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tf-product-info-list {
+    max-width: 100%;
+}
+
+.tf-product-info-price .compare-at-price {
+    font-size: 13.5px;
+}
+.tf-product-info-price {
+    flex-wrap: wrap;
+    @media screen and (max-width: 576px) {
+        // justify-content: flex-end;
+    }
+}
+.tf-product-info-price .price-on-sale,
+.tf-product-info-price .compare-at-price {
+    @media screen and (max-width: 576px) {
+        // margin-right: 0;
+    }
+}
+
+.tf-product-info-choose-option .title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.card-product .card-product-info .title {
+    // -webkit-line-clamp: 1;
+}
+.card-product-info .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.card-product-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    .tag {
+        // display: inline-block;
+        // white-space: nowrap;
+        // vertical-align: baseline;
+        // text-align: center;
+        // // letter-spacing: 0.1em;
+        // // letter-spacing: 0.01em;
+        // // font-weight: 400;
+        // font-weight: 600;
+        // background-color: var(--line);
+        // border-radius: 999px;
+        // padding: 4px 12px;
+        // font-size: 13px;
+        // line-height: 1;
+        font-size: .8125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.25rem;
+        letter-spacing: .05em;
+        text-align: left;
+        display: inline-block;
+        background-color: var(--line);
+        padding: .25rem .625rem;
+        border-radius: 2.5rem;
+        .icon {
+            margin-right: 0.25rem;
+        }
+    }
+}
+
+// 產品內頁
+.tf-product-info-list .tf-product-info-name > .text {
+    font-size: 13px;
+    font-weight: 400;
+}
+// 商品內頁最外層管理
+.nie-product-info-wrap {
+    .tf-product-info-list .wg-quantity input {
+        pointer-events: unset;
+    }
+    .tf-product-info-list .tf-product-info-by-btn {
+        .box-icon:hover .icon svg {
+            fill: var(--white);
+        }
+        .fb:hover {
+            background-color: #4267B2;
+        }
+        .line:hover {
+            background-color: #00b900;
+        }
+    }
+    .tf-product-info-by-btn .text-btn-uppercase{
+        font-size: 16px;
+    }
+    // 方案選擇間距
+    .tf-product-deals-item {
+        // padding: 10px 8px;
+    }
+    
+    // 方案規格折扣標籤右間距
+    .tf-product-info-price .compare-at-price {
+        margin-right: 8px;
+    }
+    .tf-product-info-price {
+        .badges-on-sale {
+            margin-right: 8px;
+        }
+    }
+    // 方案下拉內容區塊按鈕
+    .badges-product-content {
+        margin-right: 0;
+        justify-self: end;
+        padding: 0 8px;
+        background-color: var(--secondary-2);
+        border-radius: 999px;
+        color: var(--white);
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        @media screen and (max-width: 576px) {
+            margin-top: 4px;
+        }
+    }
+    // 選擇數量與加入購物車按鈕群組
+    .tf-product-purchase-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px; // 可調整元件之間間距
+        justify-content: space-between;
+        // RWD 手機版：滿版堆疊
+        @media (max-width: 767px) {
+            > * {
+            flex: 1 1 100%;
+            }
+        }
+        .tf-product-info-by-btn {
+            justify-content: end;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.badges-product-content-area {
+    border-top: 1px solid var(--line);
+    padding: 12px 0;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-basis: 100%;
+    ul {
+        padding-left: 19px;
+        li {
+            list-style: initial;
+        }
+    }
+    ol {
+        padding-left: 19px;
+        li {
+            list-style: inherit;
+        }
+    }
+}
+
+// 產品內頁-tab
+.nie-product-desc-wrap {
+    figure {
+        text-align: center;
+    }
+    .table {
+        width: 100%;
+        td {
+            vertical-align: middle;
+        }
+    }
+    .sticky-top {
+        top: 0;
+    }
+    .widget-tabs.style-3 .widget-menu-tab .item-title {
+        padding: 24px 0;
+        &::after {
+            height: 4px;
+        }
+    }
+    .widget-menu-tab {
+        font-size: 24px;
+        font-weight: 600;
+        background: #fff;
+    }
+}
+.contact-us-content {
+
+}
+
+//產品內頁聯絡表單
+.nie-product-detail-contact .check-save label {
+    margin-left: 8px;
+}
+.nie-product-detail-contact-btn {
+    width: 100% !important;
+    flex-grow: 1;
+    .dropdown-title,
+    .btn-style-4 {
+        width: 100% !important;
+        white-space: nowrap;
+    }
+    &-wrap {
+        .btn-style-3 {
+            width: 100%;
+        }
+    }
+    
+}
+// 表單相關
+.nie-contact-form-input:disabled {
+    background-color: var(--line);
+    opacity: 1;
+    &:hover {
+        border-color: var(--line);
+    }
+}
+.form-search button svg path {
+    stroke: var(--main);
+}
+input[type="radio"].tf-check {
+    border-radius: 50%;
+}
+input[type="radio"].tf-check:checked::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 50%;
+}
+.nie-search-bar {
+    input[type="date"] {
+        @media screen and (max-width: 767px) {
+            font-size: 13px;
+        }
+    }
+    &-inline {
+        .row+.row {
+            border-top: 1px solid var(--line);
+            padding-top: 0.6rem;
+        }
+    }
+    .tf-btn {
+        padding: 8px 32px;
+        @media screen and (max-width: 767px) {
+            padding: 12px 16px;
+        }
+    }
+    label {
+        margin-bottom: 4px;
+    }
+    .tf-select select {
+        border-radius: 8px;
+        padding: 9px 16px;
+    }
+}
+.form-login label {
+    margin-bottom: 5px;
+}
+#delivery_return {
+    .header {
+        margin-bottom: 0;
+    }
+    .demo-title {
+        font-weight: 600;
+    }
+    .widget-menu-tab {
+        background: var(--white);
+        &.sticky-top {
+            top: 0;
+        }
+    }
+}
+.nie-contact-form {
+    .check-text {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .check-save {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        &-col {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        &-link {
+            color: var(--primary);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    }
+    &-wrap {
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background-color: var(--surface);
+        @media screen and (max-width: 767px) {
+            padding: 18px;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        .tf-select {
+            background: var(--white);
+            &::after {
+                z-index: 1;
+            }
+            select {
+                padding: 9px 16px;
+                border-radius: 8px;
+            }
+        }
+        &.form-has-password .toggle-password {
+            top: auto;
+            bottom: 14px;
+            transform: none;
+        }
+    }
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &-row {
+    }
+    .nie-contact-radio-row {
+        display: flex;
+        gap: 8px;
+        @media screen and (min-width: 768px) {
+            margin-top: 32px;
+        }
+    }
+    .sex {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        label {
+            margin-bottom: 0;
+        }
+    }
+    &-col {
+
+    }
+    &-title {
+        position: relative;
+        &::after {
+            content: "";
+            height: 1px;
+            background-color: var(--main);
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        .text {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 600;
+            background: var(--surface);
+            padding-right: 20px;
+            border-radius: 8px;
+            color: var(--main);
+            position: relative;
+            z-index: 1;
+            margin-right: 20px;
+        }
+    }
+    .button-submit .text-btn-uppercase{
+        font-size: 16px;
+    }
+}
+
+// 商品內頁精選推薦
+.nie-product-featured {
+    .card-product-tags {
+        display: none;
+    }
+}
+
+// 會員中心相關
+.sidebar-account .account-avatar {
+    align-items: normal;
+    h6 {
+        font-weight: 700;
+    }
+    .body-text-1 {
+        font-size: 16px;
+    }
+}
+
+// 麵包屑
+.page-title .heading {
+    font-weight: 600;
+}
+ul.breadcrumbs li {
+    color: var(--main);
+}
+.page-title {
+    padding: 30px 0;
+    p,h3 {
+        background: linear-gradient(90deg, #5f3f2d 0%, #1e5343 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    p {
+        line-height: 1.5;
+        @media screen and (max-width: 576px) {
+            font-size: 14px;
+        }
+    }
+}
+
+// 最新消息
+.sidebar-relatest-post {
+    .sidebar-heading {
+        font-weight: 600;
+    }
+}
+.nie-blog-detail {
+    .title {
+        font-weight: 600;
+    }
+    &.blog-detail-wrap > .inner {
+        gap: 15px;
+    }
+}
+.nie-blog-list {
+    .title a {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+    p {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+    .text-button {
+        font-size: 18px;
+    }
+    &-sidebar {
+        .sidebar-heading {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        &.sidebar {
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// 會員註冊
+.nie-register {
+    &-progress-step {
+        position: relative;
+        text-align: center;
+        color: var(--line);
+        line-height: 1.5;
+        letter-spacing: 0.025em;
+        font-weight: 600;
+        &.active {
+            // font-size: 20px;
+            color: var(--success);
+            .num {
+                background: var(--success);
+            }
+            &::after {
+                content: none;
+            }
+        }
+        .num {
+            display: inline-block;
+            background: var(--line);
+            padding: 4px 24px;
+            border-radius: 50px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .text {
+            font-size: 16px;
+            // white-space: nowrap;
+            @media screen and (max-width: 576px) {
+                font-size: 13px;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background-color: var(--line);
+            transform: translateX(-50%);
+            left: 50%;
+            bottom: -10px;
+            z-index: 1;
+        }
+        &.success {
+            .num {
+                background: var(--success);
+            }
+            .text {
+                color: var(--success);
+            }
+            &::after {
+                content: '✓';
+                background-color: var(--primary);
+                font-size: 9px;
+                color: #fff !important;
+                z-index: 1;
+            }
+            &:nth-of-type(3) {
+                .num {
+                    background: var(--primary);
+                }
+                .text {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+    .button-submit {
+        align-self: center;
+    }
+    .nie-contact-form .check-save {
+        @media screen and (max-width: 576px) {
+            justify-content: center;
+        }
+    }
+    .nie-contact-form .check-save-link {
+        @media screen and (max-width: 576px) {
+            width: 100%;
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+}
+
+// 聯絡我們
+.nie-contact {
+    .heading-section-2 {
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    .nie-text-title {
+        text-align: center;
+    }
+    .button-submit {
+        align-self: center;
+    }
+    .nie-contact-form .check-save {
+        @media screen and (max-width: 576px) {
+            justify-content: center;
+        }
+    }
+    .nie-contact-form .check-save-link {
+        @media screen and (max-width: 576px) {
+            width: 100%;
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+}
+
+// 購物車
+.nie-shopping-cart {
+    .total-order {
+        gap: 8px;
+    }
+    .total-title {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tf-cart-item .wg-quantity input {
+        pointer-events: unset;
+    }
+    .login-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .tf-table-page-cart th {
+        // @media screen and (min-width: 992px) {
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+            padding-left: 0;
+            padding-right: 0;
+        // }
+    }
+    .tf-table-page-cart .tf-cart-item {
+        @media screen and (max-width: 767px) {
+            padding-left: 0;
+        }
+    }
+    .tf-table-page-cart td:last-child {
+        text-align: center;
+    }
+    .wg-quantity {
+        align-items: center;
+    }
+    .tf-cart-item .wg-quantity .btn-quantity {
+        font-size: 24px;
+    }
+    .cart-title {
+        font-weight: 600;
+    }
+    .cart-title-plan {
+        font-size: 14px;
+        border-radius: 50px;
+        // background-color: var(--primary);
+        color: var(--primary);
+        // text-align: center;
+        // padding: 4px 8px;
+    }
+    .box-order .title {
+        font-weight: 600;
+    }
+    .tf-cart-sold {
+        margin-bottom: 15px;
+    }
+    .tf-cart-sold .notification-sold {
+        margin-bottom: 15px;
+        gap: 4px;
+        .count-text {
+            font-weight: 600;
+        }
+    }
+    .total-order {
+        .total-title {
+            font-size: 16px;
+        }
+        .total {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+    }
+    .btn-reset {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        &:hover {
+            background-color: var(--main);
+            border-color: var(--main);
+        }
+    }
+    .tf-btn:not(.btn-reset):hover::after {
+            transform: skewY(7.3deg) scaleY(2);
+    }
+    // step-2 填寫資料
+    .tf-check-rounded {
+        flex-shrink: 0;
+    }
+    .sidebar-checkout-content .title {
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    .total-num {
+        font-size: 14px;
+        color: var(--secondary-2);
+    }
+    .name-product {
+        font-weight: 600;
+    }
+    .sidebar-checkout-content {
+        .sec-total-price .top {
+            border-top: none;
+        }
+        .list-product {
+            margin-bottom: 0;
+        }
+    }
+    .total-price-checkout {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--primary);
+    }
+    .nie-checkout-tips {
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
+
+.nie-shop {
+    &-order {
+        .wd-form-order .order-head {
+            .title {
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+        .item {
+            .title {
+                color: var(--secondary-2);
+            }
+            .content {
+                font-weight: 600;
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+// 會員中心
+.nie-account-wrap {
+    @media screen and (max-width: 767px) {
+        padding-top: 0;
+    }
+}
+// 會員中心選單
+.btn-sidebar-account button {
+    display: flex;
+    flex-wrap: nowrap;
+    width: auto;
+    height: auto;
+    padding: 6px;
+}
+.nie-sidebar-account {
+    @media screen and (max-width: 1024px) {
+        padding: 20px 16px;
+    }
+    .list {
+        margin-top: 16px;
+        background: var(--white);
+        padding: 16px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+    }
+    .account-avatar {
+        margin-bottom: 32px;
+    }
+    .nie-text-intro {
+        word-break: break-word;
+        font-size: 13px;
+    }
+    .nie-account-nav {
+        .my-account-nav-item {
+            border-radius: 8px;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            &:hover {
+                border: 1px solid var(--line);
+            }
+            &.active {
+                border: 1px solid var(--line);
+            }
+            .wrap {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+        }
+        .nie-account-nav-menu {
+            // background-color: var(--white);
+            padding: 16px 20px;
+            padding-top: 8px;
+            font-size: 16px;
+            &-body {
+                .item {
+                    border-left: 1px solid var(--line);
+                }
+                .link {
+                    padding: 4px 16px;
+                    &.active {
+                        color: var(--primary);
+                        font-weight: 600;
+                    }
+                }
+
+            }
+        }
+        .my-account-nav-item+.nie-account-nav-menu {
+            // border-top: 1px solid var(--line);
+        }
+    }
+}
+
+// 會員中心-訂閱查詢報表
+.nie-account-order-details {
+    margin-top: 24px;
+}
+.nie-widget-order-tab .widget-menu-tab{
+    font-weight: 600;
+    font-size: 18px;
+}
+.nie-timeline {
+    .date {
+        font-size: 14px;
+        color: var(--secondary-2);
+    }
+    .title {
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+}
+
+// 會員中心內容-右側
+.nie-account-content {
+    .all-price {
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .nie-account-btn-back {
+        padding: 8px 16px;
+        @media screen and (max-width: 767px) {
+            margin-top: 8px;
+            padding: 8px 32px;
+        }
+    }
+    .info {
+        
+    }
+    .action-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        .link {
+            text-align: center;
+        }
+        .tf-btn {
+            min-width: 167px;
+            padding: 4px;
+        }
+        @media screen and (max-width: 767px) {
+            flex-direction: row;
+            justify-content: center;
+            .tf-btn {
+                padding: 4px;
+                min-width: unset;
+                &:hover::after {
+                    transform: skewY(2deg) scaleY(2);
+                }
+            }
+            &>* {
+                flex: 1 1 100%;
+                font-size: 12px;
+            }
+        }
+    }
+    .item-product .content-box {
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+    &-list {
+        .icon {
+            color: var(--main);
+        }
+        // padding-left: 15px;
+        // li {
+        //     list-style: initial;
+        // }
+    }
+    &-row {
+        margin-bottom: 24px;
+        .card-product .card-product-info .title {
+            font-size: 16px;
+        }
+        .sidebar-checkout-content {
+            padding-top: 20px;
+        }
+        .sidebar-checkout-content .list-product .item-product:last-child {
+            // border-color: transparent;
+        }
+    }
+    .heading-section-2 {
+        // margin-top: 40px;
+        margin-bottom: 32px;
+        @media screen and (max-width: 767px) {
+            margin-top: 24px;
+            margin-bottom: 24px;
+            
+        }
+        .nie-text-title--sub {
+            display: none;
+        }
+    }
+    .alert {
+        // margin-bottom: 40px;
+    }
+    .tf-cart-sold {
+        font-weight: 600;
+        margin-bottom: 24px;
+        .notification-sold {
+            display: flex;
+            width: 100%;
+            flex-basis: 100%;
+            justify-content: space-between;
+            .count-text {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+            .link {
+                color: var(--secondary-2);
+                display: flex;
+                align-items: center;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.nie-account-settings {
+    .tf-icon-box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        gap: 4px;
+        &.active {
+            background-color: var(--surface);
+        }
+        &:hover {
+            background-color: var(--surface);
+        }
+        .icon-box {
+            img {
+                height: 32px;
+            }
+        }
+        .title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}
+
+// 頁尾
+.footer-logo img {
+    height: 64px;
+}
+.tf-btn-default {
+    font-size: 16px;
+}
+footer {
+    .footer-bottom-wrap {
+        justify-content: center;
+    }
+    .text-caption-1 {
+        font-size: 15px;
+    }
+}
+.footer-col-block {
+    flex: 1 1 0;
+}
+
+//250711-TODO[RD]: 首頁引導式區塊
+.banner-cls-discover {
+    .tf-btn {
+        font-size: 18px;
+    }
+    .subtitle {
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 0.025em;
+    }
+    .title {
+        color: #fff;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+        letter-spacing: 0.025em;
+    }
+    .desc {
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 0.025em;
+        font-size: 18px;
+    }
+    .img-style {
+        position: relative;
+        height: 320px;
+        @media screen and (max-width: 1024px) {
+            height: 260px;
+        }
+        &::after {
+            content: "";
+            // background: linear-gradient(145deg, #000000 0%, #3ec6c6 100%);
+            background: linear-gradient(145deg, #ffb347 0%, #ff7c2a 100%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            // opacity: 0.4;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+    }
+}
+// 彈窗
+.qa_select {
+    .demo-title {
+        font-weight: 600 !important;
+    }
+    .demo-title-sub {
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        background: linear-gradient(90deg, #ffb347 0%, #43e97b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @media screen and (max-width: 767px) {
+            font-size: 18px;
+        }
+    }
+    .overflow-y-auto {
+        // position: relative;
+        &.no-scroll-tips {
+            &:hover::after {
+                content: none;
+            }
+        }
+        &:hover::after {
+            content: "← \A上\A下\A滾\A動\A→";
+            writing-mode: vertical-lr;
+            letter-spacing: 0.1em;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            &::before {
+                content: "↑";
+                font-size: 18px;
+                display: block;
+                writing-mode: horizontal-tb;
+            }
+            &::after {
+                content: "↓";
+                font-size: 18px;
+                display: block;
+                writing-mode: horizontal-tb;
+            }
+            white-space: pre-line;
+            text-align: center;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 14px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 12px 8px;
+            border-radius: 8px;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 10;
+            white-space: nowrap;
+        }
+    }
+    &.tf-product-modal .modal-dialog {
+        // max-width: min(1140px, 90vw);
+    }
+    .qa_select_icon{
+        text-align: center;
+        img {
+            height: 230px;
+            @media screen and (max-width: 1024px) {
+                height: 230px;
+            }
+        }
+    }
+    .title {
+        margin-bottom: 15px;
+    }
+    .check-save {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+    }
+    .check-save-col {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 8px;
+        label {
+            margin-bottom: 0;
+        }
+    }
+    .footer {
+        margin-top: 16px;
+        .text-btn-uppercase {
+            font-size: 16px;
+        }
+        .btn-style-3 {
+            padding: 8px 16px;
+        }
+        .tf-product-info-list .tf-product-info-by-btn .box-icon {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+// 產品推薦頁
+.nie-product-pdf {
+    .header {
+        margin-bottom: 15px;
+    }
+    .nie-text-title {
+        text-align: left;
+    }
+    .heading-section-2 {
+        justify-content: flex-start;
+    }
+    &.tf-product-modal .modal-dialog .modal-content .header {
+        margin-bottom: 8px;
+    }
+    &.tf-product-modal .modal-dialog .modal-content .header .demo-title {
+        font-weight: 600;
+    }
+    &.tf-product-modal .modal-dialog .modal-content p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    &.tf-product-modal .modal-dialog .modal-content .nie-text-intro {
+        margin-top: 0;
+    }
+    &-sidebar {
+        .nie-contact-form-wrap {
+            padding: 16px 16px 8px;
+        }
+        .title {
+            font-weight: 600;
+        }
+        .check-save-col {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        label {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// 隱藏產品圖片的外框線
+.product-img {
+    border-color: transparent;
+}
+
+// RWD
+@media screen and (max-width: 576px) {
+    // 影片輪播RWD後的上間距
+    .slider-default .box-content {
+        top: 15px;
+    }
+    // 首頁產品RWD後的標題
+    .card-product .card-product-info .title {
+        font-size: 14px;
+    }
+    .slider-video {
+        .wrap-slider {
+            height: 300px;
+            .body-text-1 {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.tf-slideshow .wrap-pagination {
+    position: relative;
+    margin-top: 50px;
+    @media screen and (max-width: 1024px) {
+        margin-top: 30px;
+    }
+}
+
+// .tf-slideshow:not(.slider-nav-sw) .nav-sw {
+//     visibility: visible;
+// }
+// .tf-slideshow .nav-sw {
+//    @media screen and (max-width: 1199px) {
+//         display: flex;
+//     }
+// }
+
+ /*---------- NOTE[Sheng]: <IScloud360 改版> ---------- */
+.isc {
+    --primary: #f2982b;
+    --isc-gradient: linear-gradient(87deg, #ffe0b2 0%, #38a1f9 80%, #9ff382 100%);
+    --Isc360-lighter-blue: #61abda;
+    --Isc360-light-blue: #18a5ff;
+    --bs-btn-hover-bg: rgba(48,174,255,0.8);
+    --Isc360-light-red: #ff2d55;
+    --Isc360-dark-blue: #008ae1;
+    --Isc360-primary-orange: #ff7301;
+    --Isc360-primary-orange-hover: rgba(255, 115, 1, 0.7);
+    --Isc360-darck-orange: #f2982b;
+    --Isc360-green: #05cb51;
+    --Isc360-text-sec-gray: #95989a;
+    --Isc360-text-primary-black: #384452;
+    --Isc360-text-small-gray: #384452;
+    --Isc360-icon-bg-red: #fee9e7;
+    --Isc360-icon-bg-orange: rgba(242, 152, 43, 0.1);
+    --Isc360-icon-bg-orange-hover: rgba(242, 152, 43, 0.3);
+    --Isc360-bg-blue: #f1f5f9;
+    --Isc360-bg-gray: #f7f7f7;
+    --Isc360-line-light-gray: #e5e5ea;
+    --bs-btn-hover-color: #fff;
+    h1.logo-header {
+        line-height: 30px;
+    }
+    /*---------- 通用類 ---------- */
+    .heading-section {
+        margin-bottom: 32px;
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 8px;
+        }
+    }
+    .heading-section-2 {
+        margin-bottom: 32px;
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 48px;
+            @media screen and (max-width: 767px) {
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+    }
+    // 產品左側選單
+    .isc-facet-categories .wd-facet-categories {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+        .facet-title {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            .title {
+                font-size: 20px;
+            }
+        }
+        .facet-body {
+            li {
+                padding: 4px 0;
+                .link.active {
+                    color: var(--primary);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    /*---------- /通用類 ---------- */
+
+    /*---------- 內頁banner ---------- */
+    .tf-slideshow .wrap-pagination {
+        margin-top: 0;
+    }
+    .wrap-slider::before {
+        background: #fff;
+    }
+    .tf-slideshow .nav-sw {
+        top: 62%;
+    }
+    @media screen and (min-width: 1200px) {
+        .tf-slideshow .nav-sw.nav-sw-left {
+            left: 20px;
+        }
+        .tf-slideshow .nav-sw.nav-sw-right {
+            right: 20px;
+        }
+    }
+    .title-display {
+        font-size: 3rem;
+        font-weight: 600;
+        @media screen and (max-width: 1024px) {
+            font-size: 2rem;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 1.5rem;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .slider-effect .img-slider {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    /*---------- /內頁banner ---------- */
+
+    /*---------- 麵包屑 ---------- */
+    ul.breadcrumbs li {
+        color: #64666d;
+        font-size: 1rem;
+        a {
+            // color: var(--white);
+        }
+    }
+    .page-title {
+        padding: 16px 0;
+        margin-bottom: 32px;
+        background: var(--isc-gradient);
+    }
+    /*---------- /麵包屑 ---------- */
+
+    /*---------- 熱門專區 ---------- */
+    .card-product .card-product-wrapper .on-sale-wrap .on-sale-item {
+        font-size: 14px;
+        line-height: 1;
+        padding: 6px 12px;
+        @media screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+    .card-product {
+        border: 1px solid #dadce0;
+        padding: 10px 15px 20px;
+        border-radius: 8px;
+        min-height: 230px;
+        @media screen and (min-width: 991px) {
+            min-height: 304px;
+        }
+        &:hover {
+            box-shadow: 0 0 0 0 rgba(0,0,0,.06),0 4px 10px 0 rgba(0,0,0,.06),0 18px 18px 0 rgba(0,0,0,.05),0 40px 24px 0 rgba(0,0,0,.03),0 71px 28px 0 rgba(0,0,0,.01),0 111px 31px 0 transparent;
+            @media screen and (max-width: 767px) {
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.08);
+            }
+        }
+    }
+    .isc-home-hot-saas {
+        .card-product-wrapper .on-sale-wrap .on-sale-item {
+            background: var(--primary);
+        }
+        .card-product .card-product-info .title {
+            // line-height: 2;
+            font-size: 18px;
+            text-align: center;
+        }
+        .card-product .card-product-info .price {
+            flex-wrap: wrap;
+        }
+        &.industry {
+            .card-product-wrapper .on-sale-wrap .on-sale-item {
+                // background: var(--primary);
+            }
+        }
+    }
+    /*---------- /熱門專區 ---------- */
+
+    /*---------- <快速搜尋> ---------- */
+    .banner-cls-discover .title {
+        @media screen and (max-width: 767px) {
+            font-size: 1.5rem;
+        }
+    }
+    .banner-cls-discover .img-style::after {
+        background: linear-gradient(145deg, #43e97b 0%, #38a1f9 100%);
+    }
+    .isc-home-search {
+        max-width: 600px;
+        margin: 0 auto;
+        input {
+            border-radius: 50px;
+            @media screen and (max-width: 767px) {
+                font-size: 14px;
+                
+            }
+        }
+    }
+    /*---------- /快速搜尋 ---------- */
+
+    .heading-section h3 {
+        font-weight: 600;
+        @media screen and (max-width: 767px) {
+            font-size: 1.5rem;
+        }
+    }
+    .isc-cloud-service-card-sec {
+        /* background: #f7f7f7; */
+        padding: 32px 0 24px;
+        position: relative;
+    }
+    .isc-cloud-service-card-nav {
+        margin-bottom: 8px;
+    }
+    .isc-title-wrap {
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+        color: #131313;
+        padding: 56px 24px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+        height: calc(100% - 8px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        transition: all .3s ease-in-out;
+    }
+    // .isc-title-wrap.active,
+    .isc-title-wrap:hover {
+        transform: scale(0.95) translateY(4px);
+    }
+    .isc-title-icon {
+        fill: #fff;
+        height: 40px;
+        width: 40px;
+        flex-basis: 40px;
+    }
+    .isc-title-content {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .isc-title-content-desc {
+        color: #fff;
+        margin-bottom: 0;
+        font-weight: 500;
+        letter-spacing: 0;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-size: 17px;
+    }
+    .isc-title-content-text {
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: 1.6pt;
+    }
+
+    .isc-cloud-service-card {
+        border-radius: 8px;
+    }
+    .isc-cloud-service-card-desc {
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
+        font-weight: normal;
+        padding: 24px;
+        color: #fff;
+        border-radius: 8px;
+    }
+    .isc-cloud-service-card-desc > p {
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .isc-cloud-service-card-desc-title {
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+    }
+    .isc-cloud-service-card-btn {
+        // box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #dadce0;
+        background-color: #fff;
+        display: block;
+        padding: 32px 24px;
+        border-radius: 8px;
+        margin: 16px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #222;
+        transition: all .3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        height: calc(100% - 32px);
+        position: relative;
+        .icon-arrowUpRight {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            color: var(--Isc360-light-blue);
+            font-size: 24px;
+            opacity: 0;
+            transition: all .3s ease-in-out;
+        }
+        &:hover {
+            background-color: #f7fbff;
+            box-shadow: 0 0 0 0 rgba(0,0,0,.06),0 4px 10px 0 rgba(0,0,0,.06),0 18px 18px 0 rgba(0,0,0,.05),0 40px 24px 0 rgba(0,0,0,.03),0 71px 28px 0 rgba(0,0,0,.01),0 111px 31px 0 transparent;
+            .icon-arrowUpRight {
+                opacity: 1;
+            }
+        }
+        &.isc-cloud-service-card-btn-all {
+            border-color: transparent;
+            .icon {
+                stroke: #fff;
+            }
+            background-color: var(--Isc360-light-blue);
+            .text,
+            .desc {
+                color: #fff;
+            }
+            &:hover {
+                background-color: var(--Isc360-dark-blue);
+            }
+        }
+    }
+    .isc-cloud-service-card-btn .wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .isc-cloud-service-card-btn .icon {
+        max-height: 40px;
+    }
+    .isc-cloud-service-card-btn .text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        color: #131313;
+        transition: all .3s ease-in-out;
+        font-size: 1.25rem;
+        margin-top: 16px;
+        // @media screen and (max-width: 1024px) {
+        //     font-size: 1.25rem;
+        //     margin-top: 8px;
+        // }
+    }
+    .isc-cloud-service-card-btn .desc {
+        font-size: 16px;
+        color: #64666d;
+        font-weight: normal;
+        letter-spacing: 0.025em;
+        line-height: 1.3;
+        margin-bottom: 0;
+        /* display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden; */
+        transition: all .3s ease-in-out;
+    }
+    .isc-cloud-service-card-btn:hover {
+        color: #131313;
+    }
+    .isc-cloud-service-card.style-1 {
+        padding: 0 0 0 8px;
+    }
+    .isc-cloud-service-card.style-1 .isc-cloud-service-card-btn:hover {
+        border-color: #61abda;
+    }
+    .isc-cloud-service-card.style-1 .isc-cloud-service-card-btn:hover .text{
+        color: #61abda;
+    }
+    .isc-cloud-service-card.style-1 .isc-cloud-service-card-btn:hover .desc{
+        color: #61abda;
+    }
+    .isc-cloud-service-card.style-2 {
+        padding: 0;
+    }
+    .isc-cloud-service-card.style-2 .isc-cloud-service-card-btn:hover {
+        border-color: #f2982b;
+    }
+    .isc-cloud-service-card.style-2 .isc-cloud-service-card-btn:hover .text{
+        color: #f2982b;
+    }
+    .isc-cloud-service-card.style-2 .isc-cloud-service-card-btn:hover .desc{
+        color: #f2982b;
+    }
+    .isc-cloud-service-card.style-3 {
+        padding: 0 8px 0 0;
+    }
+    .isc-cloud-service-card.style-3 .isc-cloud-service-card-btn:hover {
+        border-color: #5caa42;
+    }
+    .isc-cloud-service-card.style-3 .isc-cloud-service-card-btn:hover .text{
+        color: #5caa42;
+    }
+    .isc-cloud-service-card.style-3 .isc-cloud-service-card-btn:hover .desc{
+        color: #5caa42;
+    }
+
+
+    @media screen and (max-width: 1200px) {
+        .isc-cloud-service-rank-card-title {
+            font-size: 0.8em;
+        }
+        .isc-cloud-service-rank-card-desc {
+            font-size: 0.7em;
+        }
+        .isc-cloud-service-map .isc-cloud-service-rank-card-left-body {
+            /* flex-direction: column; */
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .isc-title-wrap {
+            padding: 8px;
+            justify-content: center;
+            gap: 8px;
+        }
+        .isc-title-icon {
+            height: 20px;
+            width: 20px;
+            flex-basis: 20px;
+        }
+        .isc-title-content-desc {
+            font-size: 10px;
+        }
+        .isc-title-content-text {
+            font-size: 13px;
+        }
+        .isc-cloud-service-card.style-1 {
+            padding: 0;
+        }
+        .isc-cloud-service-card.style-2 {
+            padding: 0;
+        }
+        .isc-cloud-service-card.style-3 {
+            padding: 0;
+        }
+        .isc-title-wrap {
+            margin: 6px 0;
+            height: calc(100% - 12px);
+        }
+        .isc-title-sec-row {
+            gap: 8px;
+        }
+        .isc-title-sec-main {
+            font-size: 24px;
+        }
+        .isc-cloud-service-rank-card-title {
+            font-size: 0.8em;
+        }
+        .isc-cloud-service-rank-card-desc {
+            font-size: 0.7em;
+        }
+        .isc-cloud-service-rank-list .isc-cloud-service-rank-card {
+            padding: 8px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .isc-title-wrap {
+            flex-direction: column;
+            gap: 0;
+        }
+        .isc-cloud-service-card-desc,
+        .isc-cloud-service-card-btn {
+            padding: 16px;
+        }
+    }
+
+    /*---------- 跑馬燈 ---------- */
+    .tf-marquee {
+        margin-top: -4px;
+        .text-btn-uppercase {
+            font-size: 16px;
+        }
+    }
+    /*---------- /跑馬燈 ---------- */
+
+    .isc-home-industry-select-mobile {
+        @media screen and (max-width: 767px) {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            scrollbar-width: none; // Firefox
+            -ms-overflow-style: none; // IE and Edge
+            &::-webkit-scrollbar {
+                display: none; // Chrome, Safari, Opera
+            }
+            .isc-cloud-service-card-btn {
+                border: 1px solid #dadce0;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.08);
+            }
+            &.row-cols-1>* {
+                width: 70%;
+            }
+        }
+        
+    }
+
+    /*---------- 產業選擇-首頁 ---------- */
+    .isc-home-industry-select {
+        .heading-section-2 {
+            margin-bottom: 16px;
+        }
+        .about-us-features {
+            @media screen and (min-width: 768px) {
+                max-width: 100%;
+            }
+            img {
+                border-radius: 16px;
+            }
+        }
+        .isc-cloud-service-card-btn {
+            flex-direction: row;
+            align-items: center;
+            padding: 20px 16px;
+            margin: 4px 0;
+            gap: 12px;
+            height: calc(100% - 8px);
+            .icon-arrowUpRight {
+                color: #f2982b;
+            }
+            .icon {
+                max-height: 24px;
+            }
+            .text {
+                margin-top: 0;
+                font-size: 1.25rem;
+                @media screen and (max-width: 767px) {
+                    font-size: 1rem;
+                }
+            }
+            .desc {
+                display: none;
+            }
+            &:hover {
+                background-color: #fffcf7;
+            }
+            &-all {
+                background-color: #f2982b;
+                &:hover {
+                    background-color: #ff930f;
+                }
+            }
+        }
+    }
+    /*---------- /產業選擇－首頁 ---------- */
+
+    /*---------- AI選擇－首頁 ---------- */
+    .isc-home-ai-select {
+        .isc-cloud-service-card-btn {
+            .icon-arrowUpRight {
+                color: var(--Isc360-green);
+            }
+            &:hover {
+                background-color: rgb(228, 252, 236);
+            }
+            &-all {
+                background-color: var(--Isc360-green);
+                &:hover {
+                    background-color: #04a843;
+                }
+            }
+        }
+    }
+    /*---------- /AI選擇－首頁 ---------- */
+
+    /*---------- 購物車 ---------- */
+    .fl-sidebar-cart {
+        top: 30px;
+    }
+    .isc-shopping-cart-ticket-form {
+        .tf-btn {
+            width: auto;
+            margin-top: 0;
+        }
+    }
+
+    /*---------- /購物車 ---------- */
+
+    /* ====== START: 雲市集改版 ====== */
+
+    /* <搜尋表單> */
+    .isc-cloud-service-search {
+        // padding: 32px 0 0;
+    }
+    .isc-cloud-service-sec {
+        padding-bottom: 48px;
+    }
+    .isc-cloud-service-search-form-banner {
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+        padding: 40px 60px 70px;
+        border-radius: 16px;
+    }
+
+    .isc-cloud-service-search-form-wrap {
+        padding: 24px;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 16px;
+        background: #fff;
+        margin: -50px 40px 30px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-weight: 600;
+    }
+
+    .isc-cloud-service-search-form-row span.material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    .isc-cloud-service-search-form-row .form-label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .isc-cloud-service-search-bar {
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
+        position: relative;
+    }
+
+    .isc-cloud-service-search-icon {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+    }
+
+    .isc-cloud-service-search-select {
+        border-width: 1.5px;
+    }
+
+    .isc-cloud-service-search-select:hover {
+        border-color: var(--main);
+        border-width: 1.5px;
+    }
+
+    .isc-cloud-service-search-input {
+        /* border-color: transparent; */
+        padding-left: 44px;
+        border-width: 1.5px;
+    }
+
+    .isc-cloud-service-search-input:hover {
+        border-color: var(--main);
+        border-width: 1.5px;
+    }
+
+    .isc-cloud-service-search-input:focus {
+        border-color: var(--main);
+        border-width: 1.5px;
+    }
+
+    .isc-cloud-service-search-button {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        background-color: var(--main);
+        color: var(--white);
+        padding: 8px 16px;
+        transition: all .3s ease-in-out;
+    }
+
+    .isc-cloud-service-search-tips {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        a {
+            color: var(--blue);
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+
+    /* </搜尋表單> */
+
+    /* <標題> */
+    .isc-title-sec-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin: 8px 0;
+    }
+
+    .isc-title-sec-icon {
+        width: 80px;
+        flex-basis: 80px;
+    }
+
+    .isc-title-sec-sub {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: lighter;
+        color: #a0a0a0;
+        margin-bottom: 4px;
+    }
+
+    .isc-title-sec-main {
+        font-size: 32px;
+        font-weight: 600;
+        color: #181818;
+        margin-bottom: 8px;
+    }
+
+    .isc-title-sec-dec {
+        font-size: 18px;
+        font-weight: normal;
+        color: #a0a0a0;
+        margin-bottom: 8px;
+    }
+
+    .isc-title-sec-row.dark-mode .isc-title-sec-sub {
+        color: #fff;
+    }
+
+    .isc-title-sec-row.dark-mode .isc-title-sec-main {
+        color: #fff;
+    }
+
+    .isc-title-sec-row.dark-mode .isc-title-sec-dec {
+        color: #fff;
+    }
+
+    .isc-title-sec-dec-text {
+        font-size: 20px;
+        font-weight: 600;
+        @media screen and (max-width: 1024px) {
+            font-size: 14px;
+        }
+    }
+
+    /* </標題> */
+
+    .isc-cloud-service-card-bg {
+        padding: 16px;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 16px;
+        margin-bottom: 15px;
+        /* margin-bottom: 30px; */
+        height: calc(100% - 15px);
+    }
+
+    /* <排行榜區塊> */
+    .isc-cloud-service-rank-card {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: #131313;
+        padding: 16px 0;
+        border-radius: 16px;
+        transition: all .3s ease-in-out;
+    }
+
+    .isc-cloud-service-rank-card:hover {
+        color: #131313;
+        transform: translateY(-4px);
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .isc-cloud-service-rank-card.top-1 {
+        margin-top: 0;
+    }
+
+    .isc-cloud-service-rank-card.top-1 .isc-cloud-service-rank-card-tag-icon {
+        color: #f3b746;
+    }
+
+    .isc-cloud-service-rank-card.top-2 .isc-cloud-service-rank-card-tag-icon {
+        color: #f3b746;
+    }
+
+    .isc-cloud-service-rank-card.top-3 .isc-cloud-service-rank-card-tag-icon {
+        color: #f3b746;
+    }
+
+    .isc-cloud-service-rank-card-tag {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+
+    .isc-cloud-service-rank-card-tag-icon {
+        line-height: 1;
+    }
+
+    .isc-cloud-service-rank-card-tag-num {
+        font-size: 1.5rem;
+        line-height: 1;
+        font-weight: 600;
+    }
+
+    .isc-cloud-service-rank-card-left {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .isc-cloud-service-rank-card-left-body {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .isc-cloud-service-rank-card-img-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .isc-cloud-service-rank-card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+    }
+
+    .isc-cloud-service-rank-card-body {
+        /* padding: 0 16px; */
+    }
+
+    .isc-cloud-service-rank-card-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 4px;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow-wrap: break-word;
+        /* 讓英文、數字、長字串都能自動換行 */
+    }
+
+    .isc-cloud-service-rank-card-desc {
+        font-size: 0.9em;
+        color: #a0a0a0;
+        font-weight: normal;
+    }
+
+    .isc-cloud-service-rank-card-content {
+        color: #333;
+        font-size: 1em;
+        line-height: 1.7;
+    }
+
+    .isc-cloud-service-rank-card:hover .isc-cloud-service-rank-card-btn span {
+        background-color: var(--main);
+        color: #fff;
+    }
+
+    .isc-cloud-service-rank-card-btn {
+        flex-shrink: 0;
+    }
+
+    .isc-cloud-service-rank-card-btn span {
+        display: inline-block;
+        border: 1px solid var(--main);
+        color: var(--main);
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 14px;
+        transition: all .3s ease-in-out;
+    }
+
+    .isc-cloud-service-rank-list {
+        margin-top: 30px;
+    }
+
+    .isc-cloud-service-rank-list .isc-cloud-service-rank-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0;
+        padding: 16px 32px;
+        text-align: left;
+        gap: 12px;
+    }
+
+    .isc-cloud-service-rank-list .isc-cloud-service-rank-card-img-wrap {
+        width: 90px;
+        flex-shrink: 0;
+    }
+
+    .isc-cloud-service-map .isc-cloud-service-rank-card-img-wrap {
+        /* width: 120px; */
+    }
+
+    .isc-cloud-service-rank-list-col {
+        padding-bottom: 8px;
+    }
+
+    .isc-cloud-service-rank-list-col+.isc-cloud-service-rank-list-col {
+        border-top: 1px solid #e0e0e0;
+        padding-top: 16px;
+    }
+
+    .isc-cloud-service-tabs-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+        scrollbar-color: #ccc #fff;
+        flex-wrap: nowrap;
+    }
+
+    .isc-cloud-service-tabs-nav::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
+    }
+
+    .isc-cloud-service-tabs-nav .nav-link {
+        min-width: 100px;
+    }
+
+    .isc-cloud-service-tabs-nav.nav-pills {
+        gap: 8px;
+    }
+
+    .isc-cloud-service-tabs-nav.nav-pills .nav-link {
+        color: var(--main);
+        font-weight: 600;
+        border: 1px solid var(--main);
+    }
+
+    .isc-cloud-service-tabs-nav.nav-pills .nav-link.active {
+        background-color: var(--main);
+        color: #fff;
+        border-radius: 8px;
+
+    }
+
+    /* <館別區塊> */
+    .isc-cloud-service-card-sec {
+        /* background: #f7f7f7; */
+        padding: 32px 0 48px;
+        position: relative;
+    }
+
+    .isc-cloud-service-card-nav {
+        margin-bottom: 8px;
+    }
+
+    .isc-title-wrap {
+        background-size: cover;
+        background-position: center right;
+        background-repeat: no-repeat;
+        color: #131313;
+        padding: 56px 24px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.35);
+        height: calc(100% - 8px);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        transition: all .3s ease-in-out;
+    }
+
+    /* .isc-title-wrap.active, */
+    .isc-title-wrap:hover {
+        transform: scale(0.95) translateY(4px);
+    }
+
+    .isc-title-icon {
+        fill: #fff;
+        height: 40px;
+        width: 40px;
+        flex-basis: 40px;
+    }
+
+    .isc-title-content {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        line-height: 1;
+    }
+
+    .isc-title-content-desc {
+        color: #fff;
+        margin-bottom: 0;
+        font-weight: 500;
+        letter-spacing: 0;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-size: 17px;
+    }
+
+    .isc-title-content-text {
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: 1.6pt;
+    }
+
+    .isc-cloud-service-card {
+        border-radius: 8px;
+    }
+
+    .isc-cloud-service-card-desc {
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
+        font-weight: normal;
+        padding: 24px;
+        color: #fff;
+        border-radius: 8px;
+    }
+
+    .isc-cloud-service-card-desc>p {
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .isc-cloud-service-card-desc-title {
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .isc-cloud-service-card-btn {
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+        border: 2px solid transparent;
+        background-color: #fff;
+        display: block;
+        padding: 16px 24px;
+        border-radius: 8px;
+        margin: 8px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #222;
+        transition: all .3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        height: calc(100% - 16px);
+    }
+
+    .isc-cloud-service-card-btn .wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .isc-cloud-service-card-btn .icon {
+        max-height: 32px;
+    }
+
+    .isc-cloud-service-card-btn .text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        color: #131313;
+        transition: all .3s ease-in-out;
+        margin-top: 0;
+    }
+
+    .isc-cloud-service-card-btn .desc {
+        font-size: 16px;
+        color: #a0a0a0;
+        font-weight: normal;
+        letter-spacing: 0.025em;
+        line-height: 1.3;
+        margin-bottom: 0;
+        /* display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden; */
+        transition: all .3s ease-in-out;
+    }
+
+    .isc-cloud-service-card-btn:hover {
+        color: #131313;
+    }
+
+    .isc-cloud-service-card.style-1 {
+        padding: 0 0 0 8px;
+    }
+
+    .isc-cloud-service-card.style-1 .isc-cloud-service-card-btn:hover {
+        border-color: #61abda;
+    }
+
+    .isc-cloud-service-card.style-1 .isc-cloud-service-card-btn:hover .text {
+        color: #61abda;
+    }
+
+    .isc-cloud-service-card.style-1 .isc-cloud-service-card-btn:hover .desc {
+        color: #61abda;
+    }
+
+    .isc-cloud-service-card.style-2 {
+        padding: 0;
+    }
+
+    .isc-cloud-service-card.style-2 .isc-cloud-service-card-btn:hover {
+        border-color: #f2982b;
+    }
+
+    .isc-cloud-service-card.style-2 .isc-cloud-service-card-btn:hover .text {
+        color: #f2982b;
+    }
+
+    .isc-cloud-service-card.style-2 .isc-cloud-service-card-btn:hover .desc {
+        color: #f2982b;
+    }
+
+    .isc-cloud-service-card.style-3 {
+        padding: 0 8px 0 0;
+    }
+
+    .isc-cloud-service-card.style-3 .isc-cloud-service-card-btn:hover {
+        border-color: #5caa42;
+    }
+
+    .isc-cloud-service-card.style-3 .isc-cloud-service-card-btn:hover .text {
+        color: #5caa42;
+    }
+
+    .isc-cloud-service-card.style-3 .isc-cloud-service-card-btn:hover .desc {
+        color: #5caa42;
+    }
+
+
+    @media screen and (max-width: 1200px) {
+        .isc-cloud-service-rank-card-title {
+            font-size: 0.8em;
+        }
+
+        .isc-cloud-service-rank-card-desc {
+            font-size: 0.7em;
+        }
+
+        .isc-cloud-service-map .isc-cloud-service-rank-card-left-body {
+            /* flex-direction: column; */
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .isc-title-wrap {
+            padding: 8px;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .isc-title-icon {
+            height: 20px;
+            width: 20px;
+            flex-basis: 20px;
+        }
+
+        .isc-title-content-desc {
+            font-size: 10px;
+        }
+
+        .isc-title-content-text {
+            font-size: 13px;
+        }
+
+        .isc-cloud-service-card.style-1 {
+            padding: 0;
+        }
+
+        .isc-cloud-service-card.style-2 {
+            padding: 0;
+        }
+
+        .isc-cloud-service-card.style-3 {
+            padding: 0;
+        }
+
+        .isc-title-wrap {
+            margin: 6px 0;
+            height: calc(100% - 12px);
+        }
+
+        /* <搜尋區塊> */
+        .isc-cloud-service-search-form-banner {
+            padding: 8px;
+        }
+
+        .isc-cloud-service-search-form-wrap {
+            padding: 16px;
+            margin: 0;
+        }
+
+        .isc-cloud-service-search-input::placeholder {
+            font-size: 11px;
+        }
+
+        /* <標題>  */
+        .isc-title-sec-row {
+            gap: 8px;
+        }
+
+        .isc-title-sec-main {
+            font-size: 24px;
+        }
+
+        .isc-cloud-service-rank-card-title {
+            font-size: 0.8em;
+        }
+
+        .isc-cloud-service-rank-card-desc {
+            font-size: 0.7em;
+        }
+
+        .isc-cloud-service-rank-list .isc-cloud-service-rank-card {
+            padding: 8px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .isc-title-wrap {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .isc-cloud-service-card-desc,
+        .isc-cloud-service-card-btn {
+            padding: 16px;
+        }
+    }
+
+    /*---------- 產品頁 ---------- */
+    .nie-product-info-wrap .badges-product-content {
+        background-color: var(--main);
+    }
+    .page-search-inner .tf-col-quicklink {
+        margin-bottom: 14px;
+    }
+    .isc-tf-col-quicklink {
+        .link.active {
+            color: var(--primary);
+        }
+    }
+    .card-product .card-product-info .price {
+        color: var(--secondary-2);
+    }
+    /*---------- /產品頁 ---------- */
+}
