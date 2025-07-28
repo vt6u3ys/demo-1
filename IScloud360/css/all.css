@@ -8785,7 +8785,8 @@ input.style-line-bottom::placeholder {
   font-weight: 500;
 }
 .card-product:not(.list-st-3, .list-st-2, .style-list) .card-product-wrapper {
-  aspect-ratio: 1/1;
+  aspect-ratio: 5/3;
+  padding-top: 16px;
 }
 
 .loadItem.hidden {
@@ -19398,6 +19399,30 @@ footer .text-caption-1 {
   }
 }
 
+/*---------- NOTE[Sheng]: 元件 ---------- */
+.isc-on-sale-wrap {
+  background: var(--primary);
+  font-size: 14px;
+  line-height: 1;
+  padding: 6px 12px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-word;
+  min-width: 50px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  position: relative;
+  color: var(--white);
+  border-radius: 144px;
+}
+
+.isc-tf-btn {
+  padding: 8px 16px;
+}
+
 /*---------- NOTE[Sheng]: <IScloud360 改版> ---------- */
 .isc {
   --primary: #f2982b;
@@ -19564,11 +19589,6 @@ footer .text-caption-1 {
   border-radius: 8px;
   min-height: 230px;
 }
-@media screen and (min-width: 991px) {
-  .isc .card-product {
-    min-height: 304px;
-  }
-}
 .isc .card-product:hover {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.06), 0 4px 10px 0 rgba(0, 0, 0, 0.06), 0 18px 18px 0 rgba(0, 0, 0, 0.05), 0 40px 24px 0 rgba(0, 0, 0, 0.03), 0 71px 28px 0 rgba(0, 0, 0, 0.01), 0 111px 31px 0 transparent;
 }
@@ -19583,6 +19603,7 @@ footer .text-caption-1 {
 .isc .isc-home-hot-saas .card-product .card-product-info .title {
   font-size: 18px;
   text-align: center;
+  height: 3.5em;
 }
 .isc .isc-home-hot-saas .card-product .card-product-info .price {
   flex-wrap: wrap;
@@ -20082,6 +20103,12 @@ footer .text-caption-1 {
 .isc .isc-title-sec-row.dark-mode .isc-title-sec-sub {
   color: #fff;
 }
+.isc .isc-title-sec-row.dark-mode .isc-title-sec-sub.h1 {
+  line-height: 1;
+}
+.isc .isc-title-sec-row.dark-mode h1.isc-title-sec-sub {
+  line-height: 1;
+}
 .isc .isc-title-sec-row.dark-mode .isc-title-sec-main {
   color: #fff;
 }
@@ -20482,9 +20509,6 @@ footer .text-caption-1 {
   .isc .isc-cloud-service-search-form-wrap {
     padding: 16px;
     margin: 0;
-  }
-  .isc .isc-cloud-service-search-input::placeholder {
-    font-size: 11px;
   }
   .isc .isc-title-sec-row {
     gap: 8px;

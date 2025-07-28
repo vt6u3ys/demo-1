@@ -8815,7 +8815,8 @@ input.style-line-bottom::placeholder {
   font-weight: 500;
 }
 .card-product:not(.list-st-3, .list-st-2, .style-list) .card-product-wrapper {
-  aspect-ratio: 1/1;
+  aspect-ratio: 5/3;
+  padding-top: 16px;
 }
 
 .loadItem.hidden {

@@ -662,7 +662,9 @@
     &:not(.list-st-3, .list-st-2, .style-list) {
         .card-product-wrapper {
             // aspect-ratio: 1 / 1.33;
-            aspect-ratio: 1 / 1; // NOTE[Sheng]: 原本是1/1.33
+            // aspect-ratio: 1 / 1; // NOTE[Sheng]: 原本是1/1.33
+            aspect-ratio: 5 / 3;
+            padding-top: 16px;
         }
     }
 }
