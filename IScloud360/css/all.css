@@ -19518,9 +19518,26 @@ footer .text-caption-1 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
+  transition: all 0.3s ease-in-out;
+  padding: 16px;
+}
+.isc .isc-facet-categories .wd-facet-categories .facet-title.active {
+  background: var(--main);
+  color: var(--white);
+  padding: 16px;
+  border-radius: 8px;
+}
+.isc .isc-facet-categories .wd-facet-categories .facet-title:hover {
+  background: var(--main);
+  color: var(--white);
+  padding: 16px;
+  border-radius: 8px;
 }
 .isc .isc-facet-categories .wd-facet-categories .facet-title .title {
   font-size: 20px;
+}
+.isc .isc-facet-categories .wd-facet-categories .facet-body {
+  padding-left: 16px;
 }
 .isc .isc-facet-categories .wd-facet-categories .facet-body li {
   padding: 4px 0;
@@ -20108,8 +20125,11 @@ footer .text-caption-1 {
 .isc .isc-title-sec-row.dark-mode .isc-title-sec-sub.h1 {
   line-height: 1;
 }
+.isc .isc-title-sec-row.dark-mode h1.isc-title-sec-main {
+  line-height: 1.5;
+}
 .isc .isc-title-sec-row.dark-mode h1.isc-title-sec-sub {
-  line-height: 1;
+  line-height: 1.5;
 }
 .isc .isc-title-sec-row.dark-mode .isc-title-sec-main {
   color: #fff;

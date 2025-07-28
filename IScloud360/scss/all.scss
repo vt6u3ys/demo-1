@@ -1520,11 +1520,26 @@ footer {
             justify-content: space-between;
             align-items: center;
             margin-bottom: 8px;
+            transition: all .3s ease-in-out;
+            padding: 16px;
+            &.active {
+                background: var(--main);
+                color: var(--white);
+                padding: 16px;
+                border-radius: 8px;
+            }
+            &:hover {
+                background: var(--main);
+                color: var(--white);
+                padding: 16px;
+                border-radius: 8px;
+            }
             .title {
                 font-size: 20px;
             }
         }
         .facet-body {
+            padding-left: 16px;
             li {
                 padding: 4px 0;
                 .link.active {
@@ -2192,8 +2207,11 @@ footer {
         }
     }
 
+    .isc-title-sec-row.dark-mode h1.isc-title-sec-main {
+        line-height: 1.5;
+    }
     .isc-title-sec-row.dark-mode h1.isc-title-sec-sub {
-        line-height: 1;
+        line-height: 1.5;
     }
 
     .isc-title-sec-row.dark-mode .isc-title-sec-main {
