@@ -19474,6 +19474,8 @@ footer .text-caption-1 {
   /* .isc-title-wrap.active, */
   /*---------- 產品頁 ---------- */
   /*---------- /產品頁 ---------- */
+  /*---------- 產品頁-內頁 ---------- */
+  /*---------- /產品頁-內頁 ---------- */
 }
 .isc h1.logo-header {
   line-height: 30px;
@@ -20547,4 +20549,7 @@ footer .text-caption-1 {
 }
 .isc .card-product .card-product-info .price {
   color: var(--secondary-2);
+}
+.isc .tf-product-info-list .tf-product-info-heading {
+  padding-bottom: 0;
 }
