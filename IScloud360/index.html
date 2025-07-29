@@ -9,49 +9,160 @@
 
 <head>
   <meta charset="utf-8">
-  <title>IScloud360｜企業雲市集｜雲端軟體一站式服務平台</title>
+  <title>IScloud360｜一站式雲端工具推薦平台，快速找到你的 SaaS 軟體</title>
   <meta name="author" content="themesflat.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IScloud360 是企業數位轉型的最佳夥伴，一站式 SaaS 雲端軟體平台，整合數位健診、AI轉型大師與戰情中心，讓你輕鬆啟動商業模式再造。立即探索！">
+  <meta name="description" content="輸入你想找的軟體功能，IScloud360 推薦適合你的雲端工具。從簽核、協作到 CRM、報表，快速找到適合中小企業的 SaaS 軟體。免費瀏覽上百款雲端工具，馬上開始！">
   <meta name="robots" content="index, follow">
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://iscloud360.com/" />
+  <!-- Canonical (告訴 Google 哪個 URL 是正確代表頁，避免權重分散) -->
+  <link rel="canonical" href="https://www.iscloud360.com/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="IScloud360｜企業雲市集一站式 SaaS 平台" />
-  <meta property="og:description" content="探索數位健診、AI轉型大師與戰情中心，讓企業轉型更有效率！" />
-  <meta property="og:image" content="https://iscloud360.com/images/og-image.jpg" />
-  <meta property="og:url" content="https://iscloud360.com/" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IScloud360｜一站式雲端工具推薦平台，快速找到你的 SaaS 軟體" />
+  <meta property="og:description" content="輸入你想找的軟體功能，IScloud360 推薦適合你的雲端工具。從簽核、協作到 CRM、報表，快速找到適合中小企業的 SaaS 軟體。免費瀏覽上百款雲端工具，馬上開始！" />
+  <meta property="og:image" content="https://iscloud360.com/images/og-image.jpg" /> <!-- 1200x630px -->
+  <meta property="og:site_name" content="IScloud360 雲端工具市集" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://www.iscloud360.com/" />
+  <meta property="og:type" content="website" /> <!-- 一般網站寫 website，文章寫 article -->
+  <meta property="og:locale:alternate" content="en_US" /> <!-- 多語系 -->
 
   <!-- Schema 結構化資料 (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "IScloud360",
-    "url": "https://iscloud360.com",
-    "logo": "https://iscloud360.com/images/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/IScloud360",
-      "https://www.linkedin.com/company/iscloud360"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "IScloud360",
-    "url": "https://iscloud360.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://iscloud360.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+
+    <!-- WebSite（全站共用 提供網站基本資料、搜尋功能） -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://www.iscloud360.com/#website",
+            "url": "https://www.iscloud360.com/",
+            "name": "IScloud360 雲端工具市集",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.iscloud360.com/Mall/Cloud_service_search?Keyword={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    
+    <!-- Organization（全站共用 提供品牌資訊、增加信任、連結社群） -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://www.iscloud360.com/#organization",
+            "name": "IScloud360 雲端工具市集",
+            "url": "https://www.iscloud360.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.iscloud360.com/newCIOP/img/logo.svg"
+            },
+            "sameAs": ["https://www.facebook.com/iscloud360"]
+        }
+    </script>
+
+    <!-- WebPage（每頁個別設 name、description） -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://www.iscloud360.com/#webpage",
+            "url": "https://www.iscloud360.com/",
+            "name": "IScloud360 雲端軟體市集",
+            "description": "輸入你想找的軟體功能，IScloud360 推薦適合你的雲端工具。從簽核、協作到 CRM、報表，快速找到適合中小企業的 SaaS 軟體。免費瀏覽上百款雲端工具，馬上開始！"
+        }
+    </script>
+
+    <!-- BreadcrumbList（適用於所有內容頁，有利於 Google 顯示麵包屑） -->
+    <!-- https://www.iscloud360.com/Mall/Cloud_service_sub?Category1Id=1&Category2Id=11 當範例 -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org", // 參數固定
+            "@type": "BreadcrumbList", // 參數固定
+            "itemListElement": [{
+                "@type": "ListItem", // 參數固定
+                "position": 1, // 頁面位置（從 1 開始，依階層順序排列）
+                "name": "首頁", // 頁面名稱
+                "item": "https://www.iscloud360.com/" // 頁面連結
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "雲端市集",
+                "item": "https://www.iscloud360.com/Mall/Cloud_service_main"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "全館總覽",
+                "item": "https://www.iscloud360.com/Mall/Cloud_service_main"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "數據應用",
+                "item": "https://www.iscloud360.com/Mall/Cloud_service_sub?Category1Id=1&Category2Id=11"
+            }]
+        }
+    </script>
+
+    <!-- Product（每頁個別設 適用於商品詳細頁或商品卡） -->
+    <!-- https://www.iscloud360.com/Mall/Product/Microsoft-365-%E5%95%86%E5%8B%99%E7%89%88 當範例 -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org", // 參數固定
+            "@graph": [{
+                "@type": "Product", // 參數固定
+                "@id": "https://www.iscloud360.com/Mall/Product/Microsoft-365-%E5%95%86%E5%8B%99%E7%89%88#product", // 產品連結+#product建議用法
+                "name": "Microsoft 365 商務版", // 產品名稱
+                "image": "https://www.iscloud360.com/Mall/Image/1016", // 產品Logo連結
+                "description": "Microsoft 365 商務版是提供雲端生產力的全方位服務，其設計旨在透過頂尖的 Office 應用程式、智慧型雲端服務和進階安全性，協助企業內每個人以及全世界商務人士完成重要的工作和生活大小事", // 產品描述
+                "brand": {
+                    "@type": "Brand", // 參數固定
+                    "name": "Microsoft" // 品牌名稱
+                },
+                "offers": [
+                    {
+                        "@type": "Offer", // 參數固定
+                        "priceCurrency": "TWD", // 幣別
+                        "price": "2270", // 價格
+                        "availability": "https://schema.org/InStock", // 商品狀態參考 https://schema.org/ItemAvailability
+                        "url": "https://www.iscloud360.com/Mall/Product/Microsoft-365-%E5%95%86%E5%8B%99%E7%89%88" // 產品連結
+                    },
+                    {
+                        "@type": "Offer",
+                        "priceCurrency": "TWD",
+                        "price": "4650",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.iscloud360.com/Mall/Product/Microsoft-365-%E5%95%86%E5%8B%99%E7%89%88"
+                    }
+                ]
+            },
+            {
+                "@type": "Product",
+                "@id": "https://www.iscloud360.com/products/gws#product",
+                "name": "Google Workspace 商務標準版",
+                "image": "https://www.iscloud360.com/images/products/gws.jpg",
+                "description": "包含 Gmail、Drive、Meet、Calendar 等核心應用。",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Google"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "TWD",
+                    "price": "3880",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.iscloud360.com/products/gws"
+                }
+            }
+            // ...可繼續加入更多商品
+            ]
+        }
+    </script>
 
   <!-- 字型與樣式 -->
   <link rel="stylesheet" href="fonts/fonts.css">
@@ -232,13 +343,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="images/IScloud360/banner/banner-v1.jpg" class="d-block w-100" alt="...">
+                <img src="images/IScloud360/banner/banner-v1.jpg" class="d-block w-100" alt="IScloud360 一站式雲端軟體平台 - 封面橫幅">
                 </div>
                 <div class="carousel-item">
-                <img src="images/IScloud360/banner/banner-v1.jpg" class="d-block w-100" alt="...">
+                <img src="images/IScloud360/banner/banner-v1.jpg" class="d-block w-100" alt="IScloud360 一站式雲端軟體平台 - 封面橫幅">
                 </div>
                 <div class="carousel-item">
-                <img src="images/IScloud360/banner/banner-v1.jpg" class="d-block w-100" alt="...">
+                <img src="images/IScloud360/banner/banner-v1.jpg" class="d-block w-100" alt="IScloud360 一站式雲端軟體平台 - 封面橫幅">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -294,682 +405,728 @@
             </div>
         </section> -->
         <!-- /Marquee -->
-
-        <section class="flat-spacing isc-home-hot-saas">
-            <div class="container">
-                <div class="heading-section-2 wow fadeInUp">
-                    <div class="nie-text-title">
-                        <div class="text-btn-uppercase nie-text-title--sub">Top-Selling SaaS Tools</div>
-                        <h1>熱銷人氣排行</h1>
-                    </div>
-                    <a href="solution.html" class="btn-line">瀏覽所有雲端工具 <i class="icon-arrRight"></i></a>
-                </div>
-                <!-- TODO[後端]: 這邊是精選SaaS雲端工具的輪播區塊 -->
-                <div dir="ltr" class="swiper tf-sw-saas" data-preview="5" data-tablet="3" data-mobile="2" data-space-lg="30" data-space-md="30" data-space="15" data-pagination="5" data-pagination-md="5" data-pagination-lg="5">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <!-- card product 1 -->
-                            <div class="card-product card-product-size wow fadeInUp">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 1</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">Autodesk</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>  -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">AutoCAD LT</a>
-                                    <!-- <span class="price"><span class="old-price">NT$ 20,090</span> <span>NT$ 19,086 起</span></span> -->
-                                    <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- card product 2 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 2</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">Microsoft</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>   -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">Microsoft 365 商務版</a>
-                                    <!-- <span class="price"><span class="old-price">NT$ 2,340</span> NT$ 2,270 起</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- card product 3 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 3</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">震旦行股份有限公司</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div> -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">震旦雲人資系統(含line打卡)</a>
-                                    <!-- <span class="price">價格請洽詢專員</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>       
-                        <div class="swiper-slide">
-                            <!-- card product 4 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 4</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">采璣資訊股份有限公司</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>   -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">OA360</a>
-                                    <!-- <span class="price"><span class="old-price">NT$ 35,280</span> NT$ 17,640 起</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>       
-                        <div class="swiper-slide">
-                            <!-- card product 4 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 5</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">群豐資訊科技股份有限公司</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>  -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">FREEPOS商家雲端管理平台</a>
-                                    <!-- <span class="price">價格請洽詢專員</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>       
-                        <div class="swiper-slide">
-                            <!-- card product 1 -->
-                            <div class="card-product card-product-size wow fadeInUp">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 6</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">Autodesk</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>  -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">AutoCAD LT</a>
-                                    <!-- <span class="price"><span class="old-price">NT$ 20,090</span> <span>NT$ 19,086 起</span></span> -->
-                                    <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- card product 2 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 7</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">Microsoft</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>   -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">Microsoft 365 商務版</a>
-                                    <!-- <span class="price"><span class="old-price">NT$ 2,340</span> NT$ 2,270 起</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <!-- card product 3 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 8</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">震旦行股份有限公司</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div> -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">震旦雲人資系統(含line打卡)</a>
-                                    <!-- <span class="price">價格請洽詢專員</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>       
-                        <div class="swiper-slide">
-                            <!-- card product 4 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 9</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">采璣資訊股份有限公司</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>   -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">OA360</a>
-                                    <!-- <span class="price"><span class="old-price">NT$ 35,280</span> NT$ 17,640 起</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>       
-                        <div class="swiper-slide">
-                            <!-- card product 4 -->
-                            <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 10</span></div>
-                                <div class="card-product-wrapper">
-                                    <a href="product-detail.html" class="product-img">
-                                        <img class="lazyload img-product" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="image-product">
-                                        <img class="lazyload img-hover" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="image-product">
-                                    </a>
-                                    <!-- <div class="variant-wrap size-list">
-                                        <ul class="variant-box">
-                                            <li class="size-item">群豐資訊科技股份有限公司</li>
-                                        </ul>
-                                    </div>
-                                    <div class="list-btn-main">
-                                        <a href="#" class="btn-main-product">加入購物車</a>
-                                    </div>  -->
-                                </div>
-                                <div class="card-product-info">
-                                    <a href="product-detail.html" class="title link">FREEPOS商家雲端管理平台</a>
-                                    <!-- <span class="price">價格請洽詢專員</span> -->
-                                     <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
-                                </div>
-                            </div>
-                        </div>       
-                    </div>
-                    <div class="sw-pagination-recent sw-dots type-circle justify-content-center"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 找工具 -->
-        <section class="flat-spacing py-0 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="banner-cls-discover hover-img">
-                    <a href="#" class="img-style">
-                        <img class="ls-is-cached lazyloaded" data-src="images/banner/discover-decor.jpg" src="images/IScloud360/banner/discover-decor.jpg" alt="cls-tiktok">
-                    </a>
-                    <div class="cls-content">
-                        <div class="box-title-top">
-                            <p class="subtitle text-btn-uppercase wow fadeInUp">Start Your SaaS Journey Here</p>
-                            <h3 class="title wow fadeInUp fw-6" data-wow-delay="0.1s">快速找到你的雲端工具</h3>
-                            <p class="desc wow fadeInUp" data-wow-delay="0.2s">輸入需求，立即推薦最佳方案</p>
-                        </div>
-                        <div class="wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="text-center">
-                                <form class="form-search isc-home-search">
-                                    <fieldset class="text">
-                                        <input type="text" placeholder="輸入關鍵字搜尋" class="" name="text" tabindex="0" value="" aria-required="true" required="">
-                                    </fieldset>
-                                    <button class="" type="submit">
-                                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            <path d="M21.35 21.0004L17 16.6504" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </button>
-                                </form>
-                            </div>
-                            <!-- NOTE[Sheng]: btn-white 按鈕顏色 class -->
-                            <!-- <a href="#qa_select_1" class="tf-btn btn-md rounded-full py-3" data-bs-toggle="modal" title="免費獲得專屬雲端方案"><span class="text">免費獲得雲端專屬方案</span><i class="icon icon-arrRight"></i></a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 熱銷排行 -->
-        <section class="flat-spacing">
-            <div class="container">
-                <div class="heading-section text-center">
-                    <p class="text-btn-uppercase nie-text-title--sub wow fadeInUp">SaaS Transformation Tools</p>
-                    <h3 class="heading wow fadeInUp">數位工具館</h3>
-                    <p class="subheading text-secondary wow fadeInUp">掌握熱銷工具，啟動數位轉型策略</p>
-                </div>
-
-                <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 wow fadeInUp isc-home-industry-select-mobile">
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-1.png" alt="" class="icon">
-                            </div>
-                            <div class="text">數據應用</div>
-                            <p class="desc">資訊整合與決策分析</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-2.png" alt="" class="icon">
-                            </div>
-                            <div class="text">數位辦公</div>
-                            <p class="desc">數位辦公與彈性協作</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-3.png" alt="" class="icon">
-                            </div>
-                            <div class="text">研發設計</div>
-                            <p class="desc">研發設計與專案管理</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-4.png" alt="" class="icon">
-                            </div>
-                            <div class="text">人力資源</div>
-                            <p class="desc">人資系統與人才發展</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-5.png" alt="" class="icon">
-                            </div>
-                            <div class="text">生財工具</div>
-                            <p class="desc">營運管理與雲端服務</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-6.png" alt="" class="icon">
-                            </div>
-                            <div class="text">行銷推廣</div>
-                            <p class="desc">精準行銷與市場拓展</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-7.png" alt="" class="icon">
-                            </div>
-                            <div class="text">銷售管理</div>
-                            <p class="desc">銷售管理與客戶經營</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-8.png" alt="" class="icon">
-                            </div>
-                            <div class="text">客戶服務</div>
-                            <p class="desc">客服系統與客戶關懷</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-9.png" alt="" class="icon">
-                            </div>
-                            <div class="text">資訊安全</div>
-                            <p class="desc">企業資安與防護管理</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="solution.html" class="isc-cloud-service-card-btn">
-                            <i class="icon icon-arrowUpRight"></i>
-                            <div class="wrap">
-                                <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon">
-                            </div>
-                            <div class="text">備份備援</div>
-                            <p class="desc">雲端備援與資料保全</p>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="saas-solutions.html" class="isc-cloud-service-card-btn isc-cloud-service-card-btn-all">
-                            <div class="wrap">
-                                <!-- <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon"> -->
-                                <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M21.35 21.0004L17 16.6504" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </div>
-                            <div class="text">總覽</div>
-                            <p class="desc">查看所有雲端工具</p>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- /熱銷排行 -->
+        <main>
+            <h1 class="visually-hidden">IScloud360 雲端軟體市集｜打造企業數位轉型的最佳方案</h1>
         
-        <!-- 找產業 -->
-        <section class="flat-spacing isc-home-industry-select">
-            <div class="container">
-                <div class="row align-items-center align-items-xl-end g-4">
-                    <div class="col-lg-7">
-                        <div class="isc-home-industry-select-content">
-                            <!-- <h3 class="title wow fadeInUp">Modave – Offering rare and beautiful items worldwide</h3> -->
-                             <div class="heading-section-2 wow fadeInUp">
-                                <div class="nie-text-title">
-                                    <div class="text-btn-uppercase nie-text-title--sub">Industry Transformation</div>
-                                    <h3>產業轉型館</h3>
-                                    <p class="nie-text-intro">精選產業工具</p>
-                                </div>
-                                <!-- <a href="shop-left-sidebar.html" class="btn-line">瀏覽所有SaaS雲端工具</a> -->
+            <section class="flat-spacing isc-home-hot-saas">
+                <div class="container">
+                    <div class="heading-section-2 wow fadeInUp">
+                        <div class="nie-text-title">
+                            <div class="text-btn-uppercase nie-text-title--sub">
+                                <span lang="en">Top-Selling SaaS Tools</span>
                             </div>
-                            <div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 wow fadeInUp g-3 isc-home-industry-select-mobile">
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-1.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">工具機</div>
-                                        <p class="desc">智慧製造升級</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-2.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">自行車</div>
-                                        <p class="desc">數位化製銷整合</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-3.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">紡織</div>
-                                        <p class="desc">紡織雲端應用</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-4.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">化工</div>
-                                        <p class="desc">化工流程優化</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-5.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">零售通路</div>
-                                        <p class="desc">零售數位轉型</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-6.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">金屬加工</div>
-                                        <p class="desc">金屬數位管理</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-7.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">扣件</div>
-                                        <p class="desc">扣件供應整合</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-8.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">PCB</div>
-                                        <p class="desc">PCB智慧設計</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-9.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">汽機車零配件</div>
-                                        <p class="desc">車件雲端管理</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-10.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">工程顧問</div>
-                                        <p class="desc">工程專案協作</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="solution-industry.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v2-11.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">旅遊</div>
-                                        <p class="desc">行程客戶管理</p>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="industry-solutions.html" class="isc-cloud-service-card-btn isc-cloud-service-card-btn-all">
-                                        <div class="wrap">
-                                            <!-- <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon"> -->
-                                            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M21.35 21.0004L17 16.6504" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="text">所有產業</div>
-                                        <p class="desc">查看所有雲端工具</p>
-                                    </a>
-                                </div>
-                            </div>
+                            <h2 class="heading wow fadeInUp h2">熱銷人氣排行</h2>
                         </div>
+                        <a href="solution.html" class="btn-line">瀏覽所有雲端工具 <i class="icon-arrRight"></i></a>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="about-us-features wow fadeInLeft">
-                            <img class="lazyload" data-src="images/IScloud360/banner/isc-home-industry-select-bg.jpg" src="images/IScloud360/banner/isc-home-industry-select-bg.jpg" alt="image-team">
+                    <!-- TODO[後端]: 這邊是精選SaaS雲端工具的輪播區塊 -->
+                    <div dir="ltr" class="swiper tf-sw-saas" data-preview="5" data-tablet="3" data-mobile="2" data-space-lg="30" data-space-md="30" data-space="15" data-pagination="2" data-pagination-md="3" data-pagination-lg="5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <!-- card product 1 -->
+                                <div class="card-product card-product-size wow fadeInUp">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 1</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="AutoCAD LT 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="AutoCAD LT 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">Autodesk</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>  -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 AutoCAD LT 詳細資訊">
+                                            <h3 class="isc-product-title h3">AutoCAD LT</h3>
+                                        </a>
+                                        <!-- <span class="price"><span class="old-price">NT$ 20,090</span> <span>NT$ 19,086 起</span></span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- card product 2 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 2</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="Microsoft 365 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="Microsoft 365 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">Microsoft</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>   -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 Microsoft 365 商務版 詳細資訊">
+                                            <h3 class="isc-product-title h3">Microsoft 365 商務版</h3>
+                                        </a>
+                                        <!-- <span class="price"><span class="old-price">NT$ 2,340</span> NT$ 2,270 起</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- card product 3 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 3</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="震旦雲人資系統產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="震旦雲人資系統產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">震旦行股份有限公司</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 震旦雲人資系統(含line打卡) 詳細資訊">
+                                            <h3 class="isc-product-title h3">震旦雲人資系統(含line打卡)</h3>
+                                        </a>
+                                        <!-- <span class="price">價格請洽詢專員</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>       
+                            <div class="swiper-slide">
+                                <!-- card product 4 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 4</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="OA360 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="OA360 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">采璣資訊股份有限公司</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>   -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 OA360 詳細資訊">
+                                            <h3 class="isc-product-title h3">OA360</h3>
+                                        </a>
+                                        <!-- <span class="price"><span class="old-price">NT$ 35,280</span> NT$ 17,640 起</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>       
+                            <div class="swiper-slide">
+                                <!-- card product 4 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 5</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="FREEPOS商家雲端管理平台 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="FREEPOS商家雲端管理平台 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">群豐資訊科技股份有限公司</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>  -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 FREEPOS商家雲端管理平台 詳細資訊">
+                                            <h3 class="isc-product-title h3">FREEPOS商家雲端管理平台</h3>
+                                        </a>
+                                        <!-- <span class="price">價格請洽詢專員</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>       
+                            <div class="swiper-slide">
+                                <!-- card product 1 -->
+                                <div class="card-product card-product-size wow fadeInUp">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 6</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="AutoCAD LT 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" src="images/IScloud360/products/autodesk-autocad-lt-product-icon.png" alt="AutoCAD LT 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">Autodesk</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>  -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 AutoCAD LT 詳細資訊">
+                                            <h3 class="isc-product-title h3">AutoCAD LT</h3>
+                                        </a>
+                                        <!-- <span class="price"><span class="old-price">NT$ 20,090</span> <span>NT$ 19,086 起</span></span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- card product 2 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 7</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="Microsoft 365 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－M365.jpg" src="images/IScloud360/products/產業雲－M365.jpg" alt="Microsoft 365 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">Microsoft</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>   -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 Microsoft 365 商務版 詳細資訊">
+                                            <h3 class="isc-product-title h3">Microsoft 365 商務版</h3>
+                                        </a>
+                                        <!-- <span class="price"><span class="old-price">NT$ 2,340</span> NT$ 2,270 起</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!-- card product 3 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 8</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="震旦雲人資系統產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/產業雲－震旦雲.jpg" src="images/IScloud360/products/產業雲－震旦雲.jpg" alt="震旦雲人資系統產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">震旦行股份有限公司</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div> -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 震旦雲人資系統(含line打卡) 詳細資訊">
+                                            <h3 class="isc-product-title h3">震旦雲人資系統(含line打卡)</h3>
+                                        </a>
+                                        <!-- <span class="price">價格請洽詢專員</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>       
+                            <div class="swiper-slide">
+                                <!-- card product 4 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 9</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="OA360 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/OA360.jpg" src="images/IScloud360/products/OA360.jpg" alt="OA360 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">采璣資訊股份有限公司</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>   -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 OA360 詳細資訊">
+                                            <h3 class="isc-product-title h3">OA360</h3>
+                                        </a>
+                                        <!-- <span class="price"><span class="old-price">NT$ 35,280</span> NT$ 17,640 起</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>       
+                            <div class="swiper-slide">
+                                <!-- card product 4 -->
+                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">TOP 10</span></div>
+                                    <div class="card-product-wrapper">
+                                        <a href="product-detail.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="FREEPOS商家雲端管理平台 產品圖">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/FREELogo-750750.png" src="images/IScloud360/products/FREELogo-750750.png" alt="FREEPOS商家雲端管理平台 產品圖">
+                                        </a>
+                                        <!-- <div class="variant-wrap size-list">
+                                            <ul class="variant-box">
+                                                <li class="size-item">群豐資訊科技股份有限公司</li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-btn-main">
+                                            <a href="#" class="btn-main-product">加入購物車</a>
+                                        </div>  -->
+                                    </div>
+                                    <div class="card-product-info">
+                                        <a href="product-detail.html" class="title link" aria-label="查看 FREEPOS商家雲端管理平台 詳細資訊">
+                                            <h3 class="isc-product-title h3">FREEPOS商家雲端管理平台</h3>
+                                        </a>
+                                        <!-- <span class="price">價格請洽詢專員</span> -->
+                                        <a href="shopping-cart.html" class="tf-btn btn-reset isc-tf-btn">立刻購買</a>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+                        <div class="sw-pagination-recent sw-dots type-circle justify-content-center"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 找工具 -->
+            <section class="flat-spacing py-0 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container">
+                    <div class="banner-cls-discover hover-img">
+                        <a href="#" class="img-style">
+                            <img class="ls-is-cached lazyloaded" data-src="images/banner/discover-decor.jpg" src="images/IScloud360/banner/discover-decor.jpg" alt="雲端工具市集，一站搜尋適合你的 SaaS 軟體背景圖">
+                        </a>
+                        <div class="cls-content">
+                            <div class="box-title-top">
+                                <p class="subtitle text-btn-uppercase wow fadeInUp">Find the Right Cloud Tools for You​</p>
+                                <h2 class="title wow fadeInUp fw-6 h2" data-wow-delay="0.1s">雲端工具市集，一站搜尋適合你的 SaaS 軟體​</h2>
+                                <!-- <p class="desc wow fadeInUp" data-wow-delay="0.2s">輸入需求，立即推薦最佳方案</p> -->
+                            </div>
+                            <div class="wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="text-center">
+                                    <form class="form-search isc-home-search">
+                                        <fieldset class="text">
+                                            <input type="text" placeholder="搜尋您想要的產品" class="" name="text" tabindex="0" value="" aria-required="true" required="">
+                                        </fieldset>
+                                        <button class="" type="submit">
+                                            <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M21.35 21.0004L17 16.6504" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>
+                                <!-- NOTE[Sheng]: btn-white 按鈕顏色 class -->
+                                <!-- <a href="#qa_select_1" class="tf-btn btn-md rounded-full py-3" data-bs-toggle="modal" title="免費獲得專屬雲端方案"><span class="text">免費獲得雲端專屬方案</span><i class="icon icon-arrRight"></i></a> -->
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- /找產業 -->
-        
-        <!-- 找AI -->
-        <section class="flat-spacing isc-home-industry-select isc-home-ai-select">
-            <div class="container">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-7 order-1 order-lg-2">
-                        <div class="isc-home-industry-select-content">
-                            <!-- <h3 class="title wow fadeInUp">Modave – Offering rare and beautiful items worldwide</h3> -->
-                             <div class="heading-section-2 wow fadeInUp">
-                                <div class="nie-text-title">
-                                    <div class="text-btn-uppercase nie-text-title--sub">AI Tools for Business</div>
-                                    <h3>AI 應用館</h3>
-                                    <p class="nie-text-intro">精選 AI 工具</p>
+            </section>
+
+            <!-- 熱銷排行 -->
+            <section class="flat-spacing">
+                <div class="container">
+                    <div class="heading-section text-center">
+                        <!-- <p class="text-btn-uppercase nie-text-title--sub wow fadeInUp">SaaS Transformation Tools</p>
+                        <h3 class="heading wow fadeInUp">數位工具館</h3>
+                        <p class="subheading text-secondary wow fadeInUp">掌握熱銷工具，啟動數位轉型策略</p> -->
+
+                        <div class="text-btn-uppercase nie-text-title--sub wow fadeInUp">
+                            <span lang="en">SaaS Transformation Tools</span>
+                        </div>
+                        <h2 class="heading wow fadeInUp h2">數位工具館</h2>
+                        <p class="nie-text-intro wow fadeInUp">掌握熱銷工具，啟動數位轉型策略</p>
+                    </div>
+
+                    <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 wow fadeInUp isc-home-industry-select-mobile">
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-1.png" alt="數據應用" class="icon">
                                 </div>
-                                <!-- <a href="shop-left-sidebar.html" class="btn-line">瀏覽所有SaaS雲端工具</a> -->
-                            </div>
-                            <div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 wow fadeInUp g-3 isc-home-industry-select-mobile">
-                                <div class="col">
-                                    <a href="solution-ai.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v3-1.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">生產</div>
-                                        <p class="desc">智慧製造升級</p>
-                                    </a>
+                                <h3 class="text h3">數據應用</h3>
+                                <p class="desc">資訊整合與決策分析</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-2.png" alt="數位辦公" class="icon">
                                 </div>
-                                <div class="col">
-                                    <a href="solution-ai.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v3-2.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">銷售</div>
-                                        <p class="desc">數位化製銷整合</p>
-                                    </a>
+                                <h3 class="text h3">數位辦公</h3>
+                                <p class="desc">數位辦公與彈性協作</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-3.png" alt="研發設計" class="icon">
                                 </div>
-                                <div class="col">
-                                    <a href="solution-ai.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v3-3.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">人力資源</div>
-                                        <p class="desc">紡織雲端應用</p>
-                                    </a>
+                                <h3 class="text h3">研發設計</h3>
+                                <p class="desc">研發設計與專案管理</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-4.png" alt="人力資源" class="icon">
                                 </div>
-                                <div class="col">
-                                    <a href="solution-ai.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v3-4.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">研發</div>
-                                        <p class="desc">化工流程優化</p>
-                                    </a>
+                                <h3 class="text h3">人力資源</h3>
+                                <p class="desc">人資系統與人才發展</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-5.png" alt="生財工具" class="icon">
                                 </div>
-                                <div class="col">
-                                    <a href="solution-ai.html" class="isc-cloud-service-card-btn">
-                                        <i class="icon icon-arrowUpRight"></i>
-                                        <div class="wrap">
-                                            <img src="images/IScloud360/icon/v3-5.png" alt="" class="icon">
-                                        </div>
-                                        <div class="text">財務</div>
-                                        <p class="desc">零售數位轉型</p>
-                                    </a>
+                                <h3 class="text h3">生財工具</h3>
+                                <p class="desc">營運管理與雲端服務</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-6.png" alt="行銷推廣" class="icon">
                                 </div>
-                                <div class="col">
-                                    <a href="industry-solutions.html" class="isc-cloud-service-card-btn isc-cloud-service-card-btn-all">
-                                        <div class="wrap">
-                                            <!-- <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon"> -->
-                                            <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M21.35 21.0004L17 16.6504" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+                                <h3 class="text h3">行銷推廣</h3>
+                                <p class="desc">精準行銷與市場拓展</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-7.png" alt="銷售管理" class="icon">
+                                </div>
+                                <h3 class="text h3">銷售管理</h3>
+                                <p class="desc">銷售管理與客戶經營</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-8.png" alt="客戶服務" class="icon">
+                                </div>
+                                <h3 class="text h3">客戶服務</h3>
+                                <p class="desc">客服系統與客戶關懷</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-9.png" alt="資訊安全" class="icon">
+                                </div>
+                                <h3 class="text h3">資訊安全</h3>
+                                <p class="desc">企業資安與防護管理</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="solution.html" class="isc-cloud-service-card-btn">
+                                <i class="icon icon-arrowUpRight"></i>
+                                <div class="wrap">
+                                    <img src="images/IScloud360/icon/v1-10.png" alt="備份備援" class="icon">
+                                </div>
+                                <h3 class="text h3">備份備援</h3>
+                                <p class="desc">雲端備援與資料保全</p>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="industry-solutions.html" class="isc-cloud-service-card-btn isc-cloud-service-card-btn-all" aria-label="查看所有雲端工具">
+                                <div class="wrap">
+                                    <!-- <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon"> -->
+                                    <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M21.35 21.0004L17 16.6504" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text h3">總覽</h3>
+                                <p class="desc">查看所有雲端工具</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- /熱銷排行 -->
+            
+            <!-- 找產業 -->
+            <section class="flat-spacing isc-home-industry-select">
+                <div class="container">
+                    <div class="row align-items-center align-items-xl-end g-4">
+                        <div class="col-lg-7">
+                            <div class="isc-home-industry-select-content">
+                                <!-- <h3 class="title wow fadeInUp">Modave – Offering rare and beautiful items worldwide</h3> -->
+                                <div class="heading-section-2 wow fadeInUp">
+                                    <!-- <div class="nie-text-title">
+                                        <div class="text-btn-uppercase nie-text-title--sub">Industry Transformation</div>
+                                        <h3>產業轉型館</h3>
+                                        <p class="nie-text-intro">精選產業工具</p>
+                                    </div> -->
+                                    <div class="nie-text-title">
+                                        <div class="text-btn-uppercase nie-text-title--sub">
+                                            <span lang="en">Industry Transformation</span>
                                         </div>
-                                        <div class="text">了解更多</div>
-                                        <p class="desc">查看所有雲端工具</p>
-                                    </a>
+                                        <h2 class="heading wow fadeInUp h2">產業轉型館</h2>
+                                        <p class="nie-text-intro">精選產業工具</p>
+                                    </div>
+                                    <!-- <a href="shop-left-sidebar.html" class="btn-line">瀏覽所有SaaS雲端工具</a> -->
+                                </div>
+                                <div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 wow fadeInUp g-3 isc-home-industry-select-mobile">
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-1.png" alt="工具機" class="icon">
+                                            </div>
+                                            <h3 class="text h3">工具機</h3>
+                                            <p class="desc">智慧製造升級</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-2.png" alt="自行車" class="icon">
+                                            </div>
+                                            <h3 class="text h3">自行車</h3>
+                                            <p class="desc">數位化製銷整合</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-3.png" alt="紡織" class="icon">
+                                            </div>
+                                            <h3 class="text h3">紡織</h3>
+                                            <p class="desc">紡織雲端應用</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-4.png" alt="化工" class="icon">
+                                            </div>
+                                            <h3 class="text h3">化工</h3>
+                                            <p class="desc">化工流程優化</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-5.png" alt="零售通路" class="icon">
+                                            </div>
+                                            <h3 class="text h3">零售通路</h3>
+                                            <p class="desc">零售數位轉型</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-6.png" alt="金屬加工" class="icon">
+                                            </div>
+                                            <h3 class="text h3">金屬加工</h3>
+                                            <p class="desc">金屬數位管理</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-7.png" alt="扣件" class="icon">
+                                            </div>
+                                            <h3 class="text h3">扣件</h3>
+                                            <p class="desc">扣件供應整合</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-8.png" alt="PCB" class="icon">
+                                            </div>
+                                            <h3 class="text h3">PCB</h3>
+                                            <p class="desc">PCB智慧設計</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-9.png" alt="汽機車零配件" class="icon">
+                                            </div>
+                                            <h3 class="text h3">汽機車零配件</h3>
+                                            <p class="desc">車件雲端管理</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-10.png" alt="工程顧問" class="icon">
+                                            </div>
+                                            <h3 class="text h3">工程顧問</h3>
+                                            <p class="desc">工程專案協作</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-industry.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v2-11.png" alt="旅遊" class="icon">
+                                            </div>
+                                            <h3 class="text h3">旅遊</h3>
+                                            <p class="desc">行程客戶管理</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="industry-solutions.html" class="isc-cloud-service-card-btn isc-cloud-service-card-btn-all" aria-label="查看所有產業工具">
+                                            <div class="wrap">
+                                                <!-- <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon"> -->
+                                                <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M21.35 21.0004L17 16.6504" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <h3 class="text h3">所有產業</h3>
+                                            <p class="desc">查看所有雲端工具</p>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-5 order-2 order-lg-1">
-                        <div class="about-us-features wow fadeInLeft mt-2 mt-sm-0">
-                            <img class="lazyload" data-src="images/IScloud360/banner/isc-home-ai-select-bg.jpg" src="images/IScloud360/banner/isc-home-ai-select-bg.jpg" alt="image-team">
+                        <div class="col-lg-5">
+                            <div class="about-us-features wow fadeInLeft">
+                                <img class="lazyload" data-src="images/IScloud360/banner/isc-home-industry-select-bg.jpg" src="images/IScloud360/banner/isc-home-industry-select-bg.jpg" alt="image-team">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- /找AI -->
+            </section>
+            <!-- /找產業 -->
+            
+            <!-- 找AI -->
+            <section class="flat-spacing isc-home-industry-select isc-home-ai-select">
+                <div class="container">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-7 order-1 order-lg-2">
+                            <div class="isc-home-industry-select-content">
+                                <!-- <h3 class="title wow fadeInUp">Modave – Offering rare and beautiful items worldwide</h3> -->
+                                <div class="heading-section-2 wow fadeInUp">
+                                    <!-- <div class="nie-text-title">
+                                        <div class="text-btn-uppercase nie-text-title--sub">AI Tools for Business</div>
+                                        <h3>AI 應用館</h3>
+                                        <p class="nie-text-intro">精選 AI 工具</p>
+                                    </div> -->
+
+                                    <div class="nie-text-title">
+                                        <div class="text-btn-uppercase nie-text-title--sub">
+                                            <span lang="en">AI Tools for Business</span>
+                                        </div>
+                                        <h2 class="heading wow fadeInUp h2">AI 應用館</h2>
+                                        <p class="nie-text-intro">精選 AI 工具</p>
+                                    </div>
+                                    <!-- <a href="shop-left-sidebar.html" class="btn-line">瀏覽所有SaaS雲端工具</a> -->
+                                </div>
+                                <div class="row row-cols-1 row-cols-md-3 row-cols-xl-3 wow fadeInUp g-3 isc-home-industry-select-mobile">
+                                    <div class="col">
+                                        <a href="solution-ai.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v3-1.png" alt="生產" class="icon">
+                                            </div>
+                                            <h3 class="text h3">生產</h3>
+                                            <p class="desc">智慧製造升級</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-ai.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v3-2.png" alt="銷售" class="icon">
+                                            </div>
+                                            <h3 class="text h3">銷售</h3>
+                                            <p class="desc">數位化製銷整合</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-ai.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v3-3.png" alt="人力資源" class="icon">
+                                            </div>
+                                            <h3 class="text h3">人力資源</h3>
+                                            <p class="desc">紡織雲端應用</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-ai.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v3-4.png" alt="研發" class="icon">
+                                            </div>
+                                            <h3 class="text h3">研發</h3>
+                                            <p class="desc">化工流程優化</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="solution-ai.html" class="isc-cloud-service-card-btn">
+                                            <i class="icon icon-arrowUpRight"></i>
+                                            <div class="wrap">
+                                                <img src="images/IScloud360/icon/v3-5.png" alt="財務" class="icon">
+                                            </div>
+                                            <h3 class="text h3">財務</h3>
+                                            <p class="desc">零售數位轉型</p>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="industry-solutions.html" class="isc-cloud-service-card-btn isc-cloud-service-card-btn-all" aria-label="查看所有AI工具">
+                                            <div class="wrap">
+                                                <!-- <img src="images/IScloud360/icon/v1-10.png" alt="" class="icon"> -->
+                                                <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M21.35 21.0004L17 16.6504" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <h3 class="text h3">了解更多</h3>
+                                            <p class="desc">查看所有雲端工具</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 order-2 order-lg-1">
+                            <div class="about-us-features wow fadeInLeft mt-2 mt-sm-0">
+                                <img class="lazyload" data-src="images/IScloud360/banner/isc-home-ai-select-bg.jpg" src="images/IScloud360/banner/isc-home-ai-select-bg.jpg" alt="AI應用館圖片">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /找AI -->
+        </main>
 
         <!-- /最新消息 -->
         <!-- <section class="flat-spacing">
@@ -1221,7 +1378,7 @@
                                 <div class="footer-infor">
                                     <div class="footer-logo">
                                         <a href="index.html">
-                                            <img src="images/logo/IScloud360-logo.svg" alt="">
+                                            <img src="images/logo/IScloud360-logo.svg" alt="IScloud360 企業雲市集，SaaS 雲端軟體電商平台標誌">
                                         </a>
                                     </div>
                                     <div class="footer-address">
