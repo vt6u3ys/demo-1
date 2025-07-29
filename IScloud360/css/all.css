@@ -19480,6 +19480,14 @@ footer .text-caption-1 {
 .isc h1.logo-header {
   line-height: 30px;
 }
+@media only screen and (max-width: 991px) {
+  .isc footer {
+    padding-bottom: 0;
+  }
+}
+.isc .tf-toolbar-bottom {
+  display: none;
+}
 .isc .heading-section {
   margin-bottom: 32px;
 }
@@ -19559,7 +19567,7 @@ footer .text-caption-1 {
 }
 .isc .h2 {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 38px;
   line-height: 48px;
 }
 @media screen and (max-width: 767px) {
@@ -19673,6 +19681,29 @@ footer .text-caption-1 {
   .isc .isc-home-search input {
     font-size: 14px;
   }
+}
+.isc .isc-home-search-tips {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 12px;
+}
+.isc .isc-home-search-tips .title {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.isc .isc-home-search-tips .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.isc .isc-home-search-tips .content a {
+  background: #000;
+  border-radius: 50px;
+  padding: 0 16px;
+  color: #fff;
+  font-size: 12px;
 }
 .isc .heading-section h3 {
   font-weight: 600;
@@ -20600,4 +20631,7 @@ footer .text-caption-1 {
 }
 .isc .tf-product-info-list .tf-product-info-heading {
   padding-bottom: 0;
+}
+.isc .card-product .card-product-info .title {
+  height: 4rem;
 }

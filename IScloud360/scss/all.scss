@@ -1488,6 +1488,14 @@ footer {
         line-height: 30px;
     }
     /*---------- 通用類 ---------- */
+    @media only screen and (max-width: 991px) {
+        footer {
+            padding-bottom: 0;
+        }
+    }
+    .tf-toolbar-bottom {
+        display: none;
+    }
     .heading-section {
         margin-bottom: 32px;
         @media screen and (max-width: 1024px) {
@@ -1561,7 +1569,7 @@ footer {
     }
     .h2 {
         font-weight: 600;
-        font-size: 40px;
+        font-size: 38px;
         line-height: 48px;
         @media screen and (max-width: 767px) {
             font-size: 1.5rem;
@@ -1689,6 +1697,30 @@ footer {
             @media screen and (max-width: 767px) {
                 font-size: 14px;
                 
+            }
+        }
+    }
+
+    .isc-home-search-tips {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 12px;
+        .title {
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            a {
+                background: #000;
+                border-radius: 50px;
+                padding: 0 16px;
+                color: #fff;
+                font-size: 12px;
             }
         }
     }
@@ -2779,6 +2811,9 @@ footer {
     /*---------- 產品頁-內頁 ---------- */
     .tf-product-info-list .tf-product-info-heading {
         padding-bottom: 0;
+    }
+    .card-product .card-product-info .title {
+        height: 4rem;
     }
     /*---------- /產品頁-內頁 ---------- */
 }
