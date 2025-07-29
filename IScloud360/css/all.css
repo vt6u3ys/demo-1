@@ -19546,6 +19546,33 @@ footer .text-caption-1 {
   color: var(--primary);
   font-weight: 600;
 }
+.isc .h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .isc .h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+.isc .h2 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+}
+@media screen and (max-width: 767px) {
+  .isc .h2 {
+    font-size: 1.5rem;
+    line-height: 30px;
+  }
+}
+.isc .h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
 .isc .tf-slideshow .wrap-pagination {
   margin-top: 0;
 }
@@ -20108,7 +20135,8 @@ footer .text-caption-1 {
   margin-bottom: 4px;
 }
 .isc .isc-title-sec-main {
-  font-size: 32px;
+  font-size: 40px;
+  line-height: 1.2;
   font-weight: 600;
   color: #181818;
   margin-bottom: 8px;
