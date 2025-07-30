@@ -18881,6 +18881,12 @@ ul.breadcrumbs li {
 @media screen and (max-width: 767px) {
   .nie-shopping-cart .tf-table-page-cart .tf-cart-item {
     padding-left: 0;
+    background-color: #f0f0f0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nie-shopping-cart .tf-table-page-cart .tf-cart-item td {
+    padding: 10px;
   }
 }
 .nie-shopping-cart .tf-table-page-cart td:last-child {
@@ -20071,9 +20077,19 @@ footer .text-caption-1 {
 .isc .fl-sidebar-cart {
   top: 30px;
 }
+@media screen and (max-width: 767px) {
+  .isc .fl-sidebar-cart {
+    margin-top: 0;
+  }
+}
 .isc .isc-shopping-cart-ticket-form .tf-btn {
   width: auto;
   margin-top: 0;
+}
+@media screen and (max-width: 767px) {
+  .isc .tf-cart-item_checkbox {
+    display: none !important;
+  }
 }
 .isc .isc-cloud-service-sec {
   padding-bottom: 48px;
