@@ -19688,6 +19688,9 @@ footer .text-caption-1 {
     font-size: 14px;
   }
 }
+.isc .banner-cls-discover .cls-content {
+  gap: 16px;
+}
 .isc .isc-home-search-tips {
   max-width: 600px;
   margin: 0 auto;
