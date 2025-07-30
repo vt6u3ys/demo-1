@@ -274,7 +274,17 @@
                     <div class="col-xl-8 d-none d-xl-block">
                         <nav class="box-navigation text-center">
                             <ul class="box-nav-ul d-flex align-items-center justify-content-start">
-                                <li class="menu-item"><a href="saas-marketplace.html" class="item-link">雲端市集</a></li>
+                                <li class="menu-item position-relative">
+                                    <a href="saas-marketplace.html" class="item-link">雲端市集<i class="icon icon-arrow-down"></i></a>
+                                    <div class="sub-menu submenu-default">
+                                        <ul class="menu-list">
+                                            <li><a href="saas-marketplace.html" class="menu-link-text">快速找工具</a></li>
+                                            <li><a href="solution.html" class="menu-link-text">數位工具館</a></li>
+                                            <li><a href="solution-industry.html" class="menu-link-text">產業轉型館</a></li>
+                                            <li><a href="solution-ai.html" class="menu-link-text">AI應用館</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                                 <li class="menu-item"><a href="https://www.iscloud360.com/Mall/News_list?classify_id=11" class="item-link">科技脈動</a></li>
                                 <li class="menu-item"><a href="https://www.iscloud360.com/TR_SuccessCase/Index" class="item-link">成功案例</a></li>
                                 <li class="menu-item position-relative">
@@ -725,7 +735,7 @@
                         <div class="cls-content">
                             <div class="box-title-top">
                                 <p class="subtitle text-btn-uppercase wow fadeInUp">Find the Right Cloud Tools for You​</p>
-                                <h2 class="title wow fadeInUp fw-6 h2" data-wow-delay="0.1s">雲端工具市集，一站搜尋適合你的 SaaS 軟體​</h2>
+                                <h2 class="title wow fadeInUp fw-6 h2" data-wow-delay="0.1s">快速找到你的雲端工具​</h2>
                                 <!-- <p class="desc wow fadeInUp" data-wow-delay="0.2s">輸入需求，立即推薦最佳方案</p> -->
                             </div>
                             <div class="wow fadeInUp" data-wow-delay="0.1s">
@@ -742,15 +752,15 @@
                                         </button>
 
                                     </form>
-                                    <!-- <div class="isc-home-search-tips">
+                                    <div class="isc-home-search-tips">
                                         <div class="title">熱門關鍵字：</div>
-                                        <div class="content">
+                                        <div class="content isc-home-industry-select-mobile">
                                             <a href="#">數位辦公</a>
                                             <a href="#">AI應用</a>
                                             <a href="#">人力資源</a>
                                             <a href="#">行銷推廣</a>
                                         </div>
-                                    </div> -->
+                                    </div>
                                 </div>
                                 <!-- NOTE[Sheng]: btn-white 按鈕顏色 class -->
                                 <!-- <a href="#qa_select_1" class="tf-btn btn-md rounded-full py-3" data-bs-toggle="modal" title="免費獲得專屬雲端方案"><span class="text">免費獲得雲端專屬方案</span><i class="icon icon-arrRight"></i></a> -->
@@ -1671,17 +1681,31 @@
                             <a href="saas-marketplace.html" class="mb-menu-link">雲端市集</a>
                         </li>
                         <li class="nav-mb-item">
+                            <a href="#dropdown-menu-2" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-2">
+                                <span>雲端市集</span>
+                                <span class="btn-open-sub"></span>
+                            </a>
+                            <div id="dropdown-menu-2" class="collapse">
+                                <ul class="sub-nav-menu">
+                                    <li><a href="saas-marketplace.html" class="sub-nav-link">快速找工具</a></li>
+                                    <li><a href="solution.html" class="sub-nav-link">數位工具館</a></li>
+                                    <li><a href="solution-industry.html" class="sub-nav-link">產業轉型館</a></li>
+                                    <li><a href="solution-ai.html" class="sub-nav-link">AI應用館</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-mb-item">
                             <a href="https://www.iscloud360.com/Mall/News_list?classify_id=11" class="mb-menu-link">科技脈動</a>
                         </li>
                         <li class="nav-mb-item">
                             <a href="https://www.iscloud360.com/TR_SuccessCase/Index" class="mb-menu-link">成功案例</a>
                         </li>
                         <li class="nav-mb-item">
-                            <a href="#dropdown-menu-1" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-1">
+                            <a href="#dropdown-menu-2" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-2">
                                 <span>最新消息</span>
                                 <span class="btn-open-sub"></span>
                             </a>
-                            <div id="dropdown-menu-1" class="collapse">
+                            <div id="dropdown-menu-2" class="collapse">
                                 <ul class="sub-nav-menu">
                                     <li><a href="https://www.iscloud360.com/Mall/News_list?classify_id=9" class="sub-nav-link">最新消息</a></li>
                                     <li><a href="https://www.iscloud360.com/Mall/News_list?classify_id=10" class="sub-nav-link">媒體報導</a></li>
@@ -1691,11 +1715,11 @@
                             </div>
                         </li>
                         <li class="nav-mb-item">
-                            <a href="#dropdown-menu-2" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-2">
+                            <a href="#dropdown-menu-3" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-3">
                                 <span>會員加值</span>
                                 <span class="btn-open-sub"></span>
                             </a>
-                            <div id="dropdown-menu-2" class="collapse">
+                            <div id="dropdown-menu-3" class="collapse">
                                 <ul class="sub-nav-menu">
                                     <li><a href="https://www.iscloud360.com/Mall/About" class="sub-nav-link">關於我們</a></li>
                                     <li><a href="https://www.iscloud360.com/Mall/Diagnosis_sme" class="sub-nav-link">數位健診​</a></li>
