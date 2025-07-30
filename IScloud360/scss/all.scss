@@ -380,6 +380,9 @@
         .tf-product-info-by-btn {
             justify-content: end;
             margin-bottom: 0;
+            @media screen and (max-width: 767px) {
+                flex-wrap: wrap;
+            }
         }
     }
 }

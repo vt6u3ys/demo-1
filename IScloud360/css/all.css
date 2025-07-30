@@ -18450,6 +18450,11 @@ ul.list-text.type-number {
   justify-content: end;
   margin-bottom: 0;
 }
+@media screen and (max-width: 767px) {
+  .nie-product-info-wrap .tf-product-purchase-actions .tf-product-info-by-btn {
+    flex-wrap: wrap;
+  }
+}
 
 .badges-product-content-area {
   border-top: 1px solid var(--line);
