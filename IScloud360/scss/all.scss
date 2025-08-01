@@ -81,6 +81,7 @@
     overflow: hidden;
     // padding-top: 100%; // NOTE[Sheng]: 這個 padding-top: 100% 是為了讓圖片保持 1:1 的比例
     padding-top: 66.7%;
+    border-radius: 8px;
     img {
         position: absolute;
         top: 0;
@@ -1570,25 +1571,35 @@ footer {
     .h1 {
         font-weight: 600;
         font-size: 32px;
-        line-height: 40px;
-        @media screen and (max-width: 1024px) {
-            font-size: 24px;
-            line-height: 30px;
+        line-height: 1.1;
+        @media screen and (max-width: 767px) {
+            font-size: 1.6rem;
         }
     }
     .h2 {
         font-weight: 600;
         font-size: 38px;
-        line-height: 48px;
+        line-height: 1.2;
         @media screen and (max-width: 767px) {
             font-size: 1.5rem;
-            line-height: 30px;
         }
     }
     .h3 {
         font-size: 18px;
         font-weight: 600;
-        margin-bottom: 0;
+        line-height: 1.3;
+        margin-bottom: 8px;
+        @media screen and (max-width: 767px) {
+            font-size: 1.2rem;
+        }
+    }
+    .desc {
+        color: var(--secondary);
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .isc-sec-bg {
+        background-color: #F2F7FC;
     }
     /*---------- /通用類 ---------- */
 
@@ -1638,10 +1649,180 @@ footer {
     }
     .page-title {
         padding: 16px 0;
-        margin-bottom: 32px;
+        // margin-bottom: 32px;
+        margin-bottom: 0;
         background: var(--isc-gradient);
     }
     /*---------- /麵包屑 ---------- */
+
+    /*---------- 首頁-VI ---------- */
+    .isc-sec-vi {
+        &-bg {
+            position: absolute;
+            top: 70%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        &-title {
+            background: linear-gradient(90deg, #38a1f9 0%, #43e97b 80%, #ffb347 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            &-sub {
+                font-size: 28px;
+                @media screen and (max-width: 767px) {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .isc-home-kv {
+        position: relative;
+        &-btn {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            @media screen and (max-width: 1024px) {
+                bottom: 30px;
+            }
+            @media screen and (max-width: 767px) {
+                bottom: 15px;
+            }
+            // @media screen and (max-width: 1360px) {
+            //     bottom: 30px;
+            // }
+            // @media screen and (max-width: 992px) {
+            //     bottom: 0;
+            //     font-size: 12px;
+            // }
+        }
+        &-desktop {
+            display: none;
+            @media screen and (min-width: 1024px) {
+                display: block;
+            }
+        }
+        &-mobile {
+            display: none;
+            width: 100%;
+            height: auto;
+            @media screen and (max-width: 1023px) {
+                display: block;
+            }
+        }
+    }
+    /*---------- /首頁-VI ---------- */
+
+    /*---------- 首頁-免費加入會員 ---------- */
+    .isc-sec-register-cta {
+        background: linear-gradient(87deg, #c8f7dc 0%, #ffe0b2 100%);
+        // &-title {
+        //     background: linear-gradient(90deg, #5f3f2d 0%, #1e5343 100%);
+        //     -webkit-background-clip: text;
+        //     -webkit-text-fill-color: transparent;
+        //     background-clip: text;
+        //     color: transparent;
+        // }
+    }
+    /*---------- /首頁-免費加入會員 ---------- */    
+
+    /*---------- 首頁-雲端市集 ---------- */
+    .isc-sec-marketplace {
+        .collection-position-2 {
+            border-radius: 8px;
+            .cls-btn:hover {
+                background: var(--primary);
+                color: var(--white);
+            }
+        }
+        .cls-btn {
+            .icon {
+                color: var(--white);
+            }
+            .text {
+                margin-bottom: 0;
+            }
+        }
+        .count-item {
+            font-size: 14px;
+        }
+        .isc-gradient-overlay {
+            position: relative;
+            &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            // background: linear-gradient(145deg, #38a1f9 0%, #43e97b 100%);
+            opacity: 0.5;
+            z-index: 1;
+            }
+            &:hover ~ .content .cls-btn {
+                background: var(--primary);
+                color: var(--white);
+                .count-item {
+                    color: var(--white)!important;
+                }
+            }
+        }
+        .isc-gradient-overlay-1 {
+            @extend .isc-gradient-overlay;
+            &:before {
+            // background: linear-gradient(145deg, #38a1f9 0%, #43e97b 100%);
+            }
+        }
+        .isc-gradient-overlay-2 {
+            @extend .isc-gradient-overlay;
+            &:before {
+                // background: linear-gradient(145deg, #ffb347 0%, #ff7c2a 100%);
+            }
+        }
+        .isc-gradient-overlay-3 {
+            @extend .isc-gradient-overlay;
+            &:before {
+                // background: linear-gradient(145deg, #b2f7cc 0%, #43e97b 80%, #5caa42 100%);
+            }
+        }
+
+    }
+    /*---------- /首頁-雲端市集 ---------- */
+
+    /*---------- 首頁-服務優勢 ---------- */
+    .isc-sec-benefit {
+        position: relative;
+        @media screen and (min-width: 1024px) {
+            padding: 80px 0;
+        }
+        .isc-sec-vi-bg {
+            top: 80%;
+        }
+        .wrap {
+            justify-content: center;
+        }
+        .text {
+            text-align: center;
+        }
+        .isc-cloud-service-card-btn {
+            .icon {
+                max-height: 48px;
+            }
+            .desc {
+                text-align: center;
+                font-size: 15px;
+                line-height: 1.6;
+                color: var(--secondary);
+            }
+        }
+    }
+    /*---------- /首頁-服務優勢 ---------- */
 
     /*---------- 熱門專區 ---------- */
     .card-product .card-product-wrapper .on-sale-wrap .on-sale-item {
@@ -1897,6 +2078,7 @@ footer {
         transition: all .3s ease-in-out;
         font-size: 1.25rem;
         margin-top: 16px;
+        margin-bottom: 0;
         // @media screen and (max-width: 1024px) {
         //     font-size: 1.25rem;
         //     margin-top: 8px;
@@ -2167,7 +2349,8 @@ footer {
         box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
         border-radius: 16px;
         background: #fff;
-        margin: -50px 40px 30px 40px;
+        // margin: -50px 40px 30px 40px;
+        margin: 16px 0 24px;
         display: flex;
         flex-direction: column;
         gap: 16px;
@@ -2668,6 +2851,9 @@ footer {
 
     .isc-cloud-service-card-btn:hover {
         color: #131313;
+        .icon-arrowUpRight {
+            display: none;
+        }
     }
 
     .isc-cloud-service-card.style-1 {
@@ -2778,7 +2964,7 @@ footer {
 
         .isc-cloud-service-search-form-wrap {
             padding: 16px;
-            margin: 0;
+            // margin: 0;
         }
 
         .isc-cloud-service-search-input::placeholder {
@@ -2843,9 +3029,28 @@ footer {
     .card-product .card-product-info .title {
         height: 4rem;
     }
+    .isc-sec-solution-bg {
+        .banner-cls-discover .img-style {
+            height: 160px;
+            &::after {
+                background: none;
+            }
+        }
+    }
     /*---------- /產品頁-內頁 ---------- */
 
     .payment-box .payment-choose-card.active {
         background-color: #feebeb;
     }
+
+    /*---------- 雲市集-優惠專區 ---------- */
+    .isc-sec-promo {
+        .banner-cls-discover .img-style {
+            height: 200px;
+            &:after {
+                background: linear-gradient(145deg, #ffb347 0%, #ff7c2a 100%);
+            }
+        }
+    }
+    /*---------- /雲市集-優惠專區 ---------- */
 }
