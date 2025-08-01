@@ -19688,6 +19688,7 @@ footer .text-caption-1 {
   position: relative;
 }
 .isc .isc-home-kv-btn {
+  display: none;
   position: absolute;
   bottom: 70px;
   left: 50%;
