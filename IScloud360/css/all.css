@@ -20832,8 +20832,9 @@ footer .text-caption-1 {
   background-color: #feebeb;
 }
 .isc .isc-sec-promo .banner-cls-discover .img-style {
-  height: 200px;
+  height: 120px;
 }
 .isc .isc-sec-promo .banner-cls-discover .img-style:after {
-  background: linear-gradient(145deg, #ffb347 0%, #ff7c2a 100%);
+  background: linear-gradient(87deg, #c8f7dc 0%, #ffe0b2 100%);
+  opacity: 1;
 }

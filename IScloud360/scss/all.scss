@@ -3047,9 +3047,11 @@ footer {
     /*---------- 雲市集-優惠專區 ---------- */
     .isc-sec-promo {
         .banner-cls-discover .img-style {
-            height: 200px;
+            height: 120px;
             &:after {
-                background: linear-gradient(145deg, #ffb347 0%, #ff7c2a 100%);
+                // background: linear-gradient(145deg, #ffb347 0%, #ff7c2a 100%);
+                background: linear-gradient(87deg, #c8f7dc 0%, #ffe0b2 100%);
+                opacity: 1;
             }
         }
     }
