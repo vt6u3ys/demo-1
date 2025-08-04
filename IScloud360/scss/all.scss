@@ -1682,6 +1682,29 @@ footer {
 
     .isc-home-kv {
         position: relative;
+        background: url(../images/IScloud360/home/iscloud360-kv-bg.jpg) no-repeat top center / cover;
+        text-align: center;
+        padding: 100px 0;
+        .logo {
+            min-width: 240px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .h2 {
+            font-size: 56px;
+        }
+        .h3 {
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        .desc {
+            margin: 0 auto;
+            max-width: 700px;
+            line-height: 1.8;
+            font-weight: 600;
+        }
         &-btn {
             display: none;
             position: absolute;
@@ -1716,6 +1739,19 @@ footer {
             @media screen and (max-width: 1023px) {
                 display: block;
             }
+        }
+        @media screen and (max-width: 767px) {
+            padding: 60px 0;
+            .logo {
+                min-width: 180px;
+            }
+            .h2 {
+                font-size: 32px;
+            }
+            .h3 {
+                font-size: 24px;
+            }
+            
         }
     }
     /*---------- /首頁-VI ---------- */

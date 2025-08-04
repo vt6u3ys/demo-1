@@ -19686,6 +19686,29 @@ footer .text-caption-1 {
 }
 .isc .isc-home-kv {
   position: relative;
+  background: url(../images/IScloud360/home/iscloud360-kv-bg.jpg) no-repeat top center/cover;
+  text-align: center;
+  padding: 100px 0;
+}
+.isc .isc-home-kv .logo {
+  min-width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.isc .isc-home-kv .h2 {
+  font-size: 56px;
+}
+.isc .isc-home-kv .h3 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.isc .isc-home-kv .desc {
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 600;
 }
 .isc .isc-home-kv-btn {
   display: none;
@@ -19721,6 +19744,20 @@ footer .text-caption-1 {
 @media screen and (max-width: 1023px) {
   .isc .isc-home-kv-mobile {
     display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .isc .isc-home-kv {
+    padding: 60px 0;
+  }
+  .isc .isc-home-kv .logo {
+    min-width: 180px;
+  }
+  .isc .isc-home-kv .h2 {
+    font-size: 32px;
+  }
+  .isc .isc-home-kv .h3 {
+    font-size: 24px;
   }
 }
 .isc .isc-sec-register-cta {
