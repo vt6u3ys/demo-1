@@ -213,7 +213,7 @@
                 <div class="tf-topbar_wrap d-flex align-items-center justify-content-between">
                     <ul class="topbar-left">
                         <li class="d-none d-xl-block"><a class="text-caption-1 text-white" href="tel:0800-676868"><span class="d-flex align-items-center gap-4"><i class="icon icon-phone"></i> <span>0800-676868</span></span></a></li>
-                        <li class="d-none d-xl-block"><a class="text-caption-1 text-white" href="#"><span class="d-flex align-items-center gap-4"><i class="icon icon-mail" ></i> <span>info@iscloud360.com</span></span></a></li>
+                        <li class="d-none d-xl-block"><a class="text-caption-1 text-white" href="mailto:info@iscloud360.com"><span class="d-flex align-items-center gap-4"><i class="icon icon-mail" ></i> <span>info@iscloud360.com</span></span></a></li>
                         <li><a class="text-caption-1 text-white text-decoration-underline" href="contact.html"><i class="icon icon-comment" ></i> 聯絡我們</a></li>
                     </ul>
                     <div class="topbar-right">
@@ -265,6 +265,7 @@
                                             <li><a href="solution.html" class="menu-link-text">數位工具館</a></li>
                                             <li><a href="solution-industry.html" class="menu-link-text">產業轉型館</a></li>
                                             <li><a href="solution-ai.html" class="menu-link-text">AI應用館</a></li>
+                                            <li><a href="solution-esg.html" class="menu-link-text">ESG永續館</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -408,11 +409,11 @@
                                             <!-- TODO[後端]: 這邊是有小類的選單 -->
                                             <div class="facet-categories isc-facet-categories">
                                                 <div class="wd-facet-categories">
-                                                    <div role="dialog" class="facet-title collapsed active" data-bs-target="#collapse-1" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-1">
+                                                    <div role="dialog" class="facet-title active" data-bs-target="#collapse-1" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-1">
                                                         <span class="title">數位工具館</span>
                                                         <span class="icon icon-arrow-down"></span>
                                                     </div>
-                                                    <div id="collapse-1" class="collapse show" style="">
+                                                    <div id="collapse-1" class="collapse show">
                                                         <ul class="facet-body">
                                                             <li>
                                                                 <a href="#" class="item link active"><span class="title-sub">數據應用</span></a>
@@ -518,6 +519,28 @@
                                                         </ul>
                                                     </div>
                                                 </div>
+                                                <div class="wd-facet-categories">
+                                                    <div role="dialog" class="facet-title collapsed" data-bs-target="#collapse-4" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-4">
+                                                        <span class="title">ESG永續館</span>
+                                                        <span class="icon icon-arrow-down"></span>
+                                                    </div>
+                                                    <div id="collapse-4" class="collapse">
+                                                        <ul class="facet-body">
+                                                            <li>
+                                                                <a href="solution-esg.html" class="item link"><span class="title-sub">永續營運行動</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="item link"><span class="title-sub">綠色金融</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="item link"><span class="title-sub">永續營運指標</span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="item link"><span class="title-sub">綠色製造</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -525,7 +548,7 @@
                             </div>
                         </div>
                         <div class="col-xl-10">
-                            <div class="heading-section-2 wow fadeInUp mb-3" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="heading-section-2 wow fadeInUp mb-3">
                                 <div class="nie-text-title">
                                     <!-- <div class="text-btn-uppercase nie-text-title--sub">All Cloud Solutions</div> -->
                                     <h3>數據應用</h3>
@@ -616,6 +639,7 @@
                                                 <select class="form-select isc-cloud-service-search-select" id="UserSource" aria-label="介紹來源">
                                                     <option value="" checked>全部</option>
                                                     <option value="">數據分析工具</option>
+                                                    <option value="">ESG</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -646,7 +670,7 @@
                                         <div class="isc-cloud-service-search-tips">
                                             <div class="title">熱門關鍵字：</div>
                                             <div class="content">
-                                                <a href="#">數位辦公</a>、<a href="#">AI應用</a>、<a href="#">人力資源</a>、<a href="#">行銷推廣</a>、<a href="#">雲端辦公</a>、<a href="#">人資軟體</a>、<a href="#">微軟M365</a>
+                                                <a href="#">Office軟體</a>、<a href="#">表單管理</a>、<a href="#">協同合作</a>
                                             </div>
                                             <!-- <button class="btn isc-cloud-service-search-button bg-transparent text-dark border border-2 border-dark" type="submit" aria-label="搜尋" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                                 更多搜尋條件
@@ -671,10 +695,11 @@
                             <div class="tf-grid-layout wrapper-shop tf-col-3" id="gridLayout">
                                 <!-- card product 1 -->
                                 <div class="card-product card-product-size wow fadeInUp">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">數據分析工具</span></div>
                                     <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/ESG－64雲.jpg" src="images/NiEA/products/ESG－64雲.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/ESG－64雲.jpg" src="images/NiEA/products/ESG－64雲.jpg" alt="image-product">
+                                        <a href="product-detail-c1.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/logo-QuickReport_修改版.png" src="images/IScloud360/products/logo-QuickReport_修改版.png" alt="image-product">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/logo-QuickReport_修改版.png" src="images/IScloud360/products/logo-QuickReport_修改版.png" alt="image-product">
                                         </a>
                                         <!-- <div class="variant-wrap size-list">
                                             <ul class="variant-box">
@@ -686,33 +711,27 @@
                                         </div>  -->
                                     </div>
                                     <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">溫室氣體盤查雲(14064-1)</a>
-                                        <span class="price">$59.99</span>
-                                        <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
+                                        <a href="product-detail-c1.html" class="title link">QuickReport</a>
+                                        <span class="price"><span class="old-price">NT$35,280</span> NT$40,572 起</span>
+                                        <p class="description">專門為一般使用者所設計的智慧報表平台，即使無IT人員協助也可輕鬆上手的大數據分析工具，強調「做的比說的快」的操作體驗，能夠整併多元資料格式，拖拉「快」速產出可互動的「活」圖報表。</p>
                                     </div>
                                     <div class="card-product-tags">
                                         <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
+                                            <span class="icon">#</span>智慧圖表
                                         </span>
                                         <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
+                                            <span class="icon">#</span>快
                                         </span>
                                     </div>
                                 </div>
                                 <!-- card product 2 -->
                                 <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="isc-on-sale-wrap"><span class="on-sale-item">數據分析工具</span></div>
                                     <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/OA360.jpg" src="images/NiEA/products/OA360.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/OA360.jpg" src="images/NiEA/products/OA360.jpg" alt="image-product">
+                                        <a href="product-detail-c1-1.html" class="product-img">
+                                            <img class="lazyload img-product" data-src="images/IScloud360/products/欣時代.jpg" src="images/IScloud360/products/欣時代.jpg" alt="image-product">
+                                            <img class="lazyload img-hover" data-src="images/IScloud360/products/欣時代.jpg" src="images/IScloud360/products/欣時代.jpg" alt="image-product">
                                         </a>
-                                        <div class="on-sale-wrap"><span class="on-sale-item">AI工具</span></div>
                                         <!-- <div class="variant-wrap size-list">
                                             <ul class="variant-box">
                                                 <li class="size-item">采璣資訊股份有限公司</li>
@@ -723,276 +742,19 @@
                                         </div>   -->
                                     </div>
                                     <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">OA360</a>
-                                        <span class="price"><span class="old-price">35,280</span> $17,640 起</span>
-                                    <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
+                                        <a href="product-detail.html" class="title link">平衡計分卡視覺化計分平台</a>
+                                        <span class="price"><span class="old-price">NT$35,280</span> NT$40,572 起</span>
+                                    <p class="description">透過「平衡計分卡PLUS」，進行資料即時蒐集與監測分析，有效檢視企業「財務、顧客、流程、學習、創新」構面績效，輔助評估經營管理的潛在效益與影響，加速決策流程。讓組織各層級都可以使用最新分析，即時獲得分...</p>
                                     </div>
                                     <div class="card-product-tags">
                                         <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
+                                            <span class="icon">#</span>資料整理好幫手
                                         </span>
                                         <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
+                                            <span class="icon">#</span>大數據資料
                                         </span>
                                         <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 3 -->
-                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/產業雲－震旦雲.jpg" src="images/NiEA/products/產業雲－震旦雲.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/產業雲－震旦雲.jpg" src="images/NiEA/products/產業雲－震旦雲.jpg" alt="image-product">
-                                        </a>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">震旦行股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">加入購物車</a>
-                                        </div> -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">震旦雲人資系統(含line打卡)</a>
-                                        <span class="price">價格請洽詢專員</span>
-                                    <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 1 -->
-                                <div class="card-product card-product-size wow fadeInUp">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/ESG－64雲.jpg" src="images/NiEA/products/ESG－64雲.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/ESG－64雲.jpg" src="images/NiEA/products/ESG－64雲.jpg" alt="image-product">
-                                        </a>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">采威國際資訊股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">加入購物車</a>
-                                        </div>  -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">溫室氣體盤查雲(14064-1)</a>
-                                        <span class="price">$59.99</span>
-                                        <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 2 -->
-                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/OA360.jpg" src="images/NiEA/products/OA360.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/OA360.jpg" src="images/NiEA/products/OA360.jpg" alt="image-product">
-                                        </a>
-                                        <div class="on-sale-wrap"><span class="on-sale-item">AI工具</span></div>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">采璣資訊股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">立即選購</a>
-                                        </div>   -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">OA360</a>
-                                        <span class="price"><span class="old-price">35,280</span> $17,640 起</span>
-                                    <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 3 -->
-                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/產業雲－震旦雲.jpg" src="images/NiEA/products/產業雲－震旦雲.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/產業雲－震旦雲.jpg" src="images/NiEA/products/產業雲－震旦雲.jpg" alt="image-product">
-                                        </a>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">震旦行股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">加入購物車</a>
-                                        </div> -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">震旦雲人資系統(含line打卡)</a>
-                                        <span class="price">價格請洽詢專員</span>
-                                    <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 1 -->
-                                <div class="card-product card-product-size wow fadeInUp">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/ESG－64雲.jpg" src="images/NiEA/products/ESG－64雲.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/ESG－64雲.jpg" src="images/NiEA/products/ESG－64雲.jpg" alt="image-product">
-                                        </a>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">采威國際資訊股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">加入購物車</a>
-                                        </div>  -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">溫室氣體盤查雲(14064-1)</a>
-                                        <span class="price">$59.99</span>
-                                        <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 2 -->
-                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.1s">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/OA360.jpg" src="images/NiEA/products/OA360.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/OA360.jpg" src="images/NiEA/products/OA360.jpg" alt="image-product">
-                                        </a>
-                                        <div class="on-sale-wrap"><span class="on-sale-item">AI工具</span></div>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">采璣資訊股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">立即選購</a>
-                                        </div>   -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">OA360</a>
-                                        <span class="price"><span class="old-price">35,280</span> $17,640 起</span>
-                                    <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
-                                        </span>
-                                    </div>
-                                </div>
-                                <!-- card product 3 -->
-                                <div class="card-product card-product-size wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="card-product-wrapper">
-                                        <a href="product-detail.html" class="product-img">
-                                            <img class="lazyload img-product" data-src="images/NiEA/products/產業雲－震旦雲.jpg" src="images/NiEA/products/產業雲－震旦雲.jpg" alt="image-product">
-                                            <img class="lazyload img-hover" data-src="images/NiEA/products/產業雲－震旦雲.jpg" src="images/NiEA/products/產業雲－震旦雲.jpg" alt="image-product">
-                                        </a>
-                                        <!-- <div class="variant-wrap size-list">
-                                            <ul class="variant-box">
-                                                <li class="size-item">震旦行股份有限公司</li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-btn-main">
-                                            <a href="#" class="btn-main-product">加入購物車</a>
-                                        </div> -->
-                                    </div>
-                                    <div class="card-product-info">
-                                        <a href="product-detail.html" class="title link">震旦雲人資系統(含line打卡)</a>
-                                        <span class="price">價格請洽詢專員</span>
-                                    <p class="description">雲端訂閱服務助您快速啟動碳管理行動：內建自主盤查工具，輕鬆完成溫室氣體盤查；結合視覺化儀錶板呈現跨年度數據，搭配SBT減量模組依營收與碳排數據進行AI模擬，API Hub自動整合原始活動資料，全方位提...</p>
-                                    </div>
-                                    <div class="card-product-tags">
-                                        <span class="tag">
-                                            <span class="icon">#</span>AI碳盤查
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>碳管理雲端平台
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>多廠區協作管理
-                                        </span>
-                                        <span class="tag">
-                                            <span class="icon">#</span>永續報告生成
+                                            <span class="icon">#</span>互動式報表
                                         </span>
                                     </div>
                                 </div>
@@ -1034,11 +796,15 @@
                                     <ul class="footer-info">
                                         <li>
                                             <i class="icon-phone"></i>
-                                            <p>0800-676868</p>
+                                            <p>
+                                                <a href="tel:0800-676868" class="link">0800-676868</a>
+                                            </p>
                                         </li>
                                         <li>
                                             <i class="icon-mail"></i>
-                                            <p>info@iscloud360.com​</p>
+                                            <p>
+                                                <a href="mailto:info@iscloud360.com" class="link">info@iscloud360.com​</a>
+                                            </p>
                                         </li>
                                     </ul>
                                     <!-- <ul class="tf-social-icon">
@@ -1062,6 +828,9 @@
                                                 </li>
                                                 <li class="text-caption-1">
                                                     <a href="#" class="footer-menu_item">AI應用館</a>
+                                                </li>
+                                                <li class="text-caption-1">
+                                                    <a href="#" class="footer-menu_item">ESG永續館</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1298,16 +1067,17 @@
                 <div class="mb-content-top">
                     <ul class="nav-ul-mb" id="wrapper-menu-navigation">
                         <li class="nav-mb-item">
-                            <a href="#dropdown-menu-2" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-2">
+                            <a href="#dropdown-menu-1" class="collapsed mb-menu-link" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-1">
                                 <span>雲端市集</span>
                                 <span class="btn-open-sub"></span>
                             </a>
-                            <div id="dropdown-menu-2" class="collapse">
+                            <div id="dropdown-menu-1" class="collapse">
                                 <ul class="sub-nav-menu">
                                     <li><a href="saas-marketplace.html" class="sub-nav-link">館別總覽</a></li>
                                     <li><a href="solution.html" class="sub-nav-link">數位工具館</a></li>
                                     <li><a href="solution-industry.html" class="sub-nav-link">產業轉型館</a></li>
                                     <li><a href="solution-ai.html" class="sub-nav-link">AI應用館</a></li>
+                                    <li><a href="solution-esg.html" class="sub-nav-link">ESG永續館</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -1354,12 +1124,16 @@
                     </div>
                     <ul class="mb-info">
                         <li>
-                            <i class="icon icon-mail"></i>
-                            <p>info@iscloud360.com​</p>
+                            <i class="icon icon-phone"></i>
+                            <p>
+                                <a href="tel:0800-676868" class="link">0800-676868</a>
+                            </p>
                         </li>
                         <li>
-                            <i class="icon icon-phone"></i>
-                            <p>0800-676868</p>
+                            <i class="icon icon-mail"></i>
+                            <p>
+                                <a href="mailto:info@iscloud360.com" class="link">info@iscloud360.com​</a>
+                            </p>
                         </li>
                     </ul>
                 </div>
@@ -1398,7 +1172,7 @@
             <div class="canvas-body">
                 <div class="wd-facet-categories">
                     <div role="dialog" class="facet-title collapsed" data-bs-target="#collapse-1" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-1">
-                        <img class="avt" src="images/NiEA/collections/collection-circle/cls-circle1.jpg" alt="avt">
+                        <img class="avt" src="images/IScloud360/collections/collection-circle/cls-circle1.jpg" alt="avt">
                         <span class="title">生產管理</span>
                         <span class="icon icon-arrow-down"></span>
                     </div>
@@ -1412,7 +1186,7 @@
                 </div>
                 <div class="wd-facet-categories">
                     <div role="dialog" class="facet-title collapsed" data-bs-target="#collapse-2" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-2">
-                        <img class="avt" src="images/NiEA/collections/collection-circle/cls-circle2.jpg" alt="avt">
+                        <img class="avt" src="images/IScloud360/collections/collection-circle/cls-circle2.jpg" alt="avt">
                         <span class="title">銷售管理</span>
                         <span class="icon icon-arrow-down"></span>
                     </div>
@@ -1426,7 +1200,7 @@
                 </div>
                 <div class="wd-facet-categories">
                     <div role="dialog" class="facet-title collapsed" data-bs-target="#collapse-3" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-3">
-                        <img class="avt" src="images/NiEA/collections/collection-circle/cls-circle3.jpg" alt="avt">
+                        <img class="avt" src="images/IScloud360/collections/collection-circle/cls-circle3.jpg" alt="avt">
                         <span class="title">人力資源</span>
                         <span class="icon icon-arrow-down"></span>
                     </div>
@@ -1440,7 +1214,7 @@
                 </div>
                 <div class="wd-facet-categories">
                     <div role="dialog" class="facet-title collapsed" data-bs-target="#collapse-4" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-4">
-                        <img class="avt" src="images/NiEA/collections/collection-circle/cls-circle4.jpg" alt="avt">
+                        <img class="avt" src="images/IScloud360/collections/collection-circle/cls-circle4.jpg" alt="avt">
                         <span class="title">研發管理</span>
                         <span class="icon icon-arrow-down"></span>
                     </div>
@@ -1454,7 +1228,7 @@
                 </div>     
                 <div class="wd-facet-categories">
                     <div role="dialog" class="facet-title collapsed" data-bs-target="#ollapse-5" data-bs-toggle="collapse" aria-expanded="true" aria-controls="ollapse-5">
-                        <img class="avt" src="images/NiEA/collections/collection-circle/cls-circle5.jpg" alt="avt">
+                        <img class="avt" src="images/IScloud360/collections/collection-circle/cls-circle5.jpg" alt="avt">
                         <span class="title">財務管理</span>
                         <span class="icon icon-arrow-down"></span>
                     </div>

@@ -19566,6 +19566,9 @@ footer .text-caption-1 {
 .isc .isc-facet-categories .wd-facet-categories .facet-title .title {
   font-size: 20px;
 }
+.isc .isc-facet-categories .wd-facet-categories .facet-title:not(.collapsed) .icon-arrow-down {
+  transform: rotate(-180deg);
+}
 .isc .isc-facet-categories .wd-facet-categories .facet-body {
   padding-left: 16px;
 }
@@ -19689,6 +19692,11 @@ footer .text-caption-1 {
   background: url(../images/IScloud360/home/iscloud360-kv-bg.jpg) no-repeat top center/cover;
   text-align: center;
   padding: 100px 0;
+}
+.isc .isc-home-kv-slider .carousel-indicators,
+.isc .isc-home-kv-slider .carousel-control-prev,
+.isc .isc-home-kv-slider .carousel-control-next {
+  display: none;
 }
 .isc .isc-home-kv .logo {
   min-width: 240px;
@@ -20235,7 +20243,7 @@ footer .text-caption-1 {
   color: #f2982b;
 }
 .isc .isc-home-industry-select .isc-cloud-service-card-btn .icon {
-  max-height: 24px;
+  max-height: 32px;
 }
 .isc .isc-home-industry-select .isc-cloud-service-card-btn .text {
   margin-top: 0;
@@ -20874,4 +20882,7 @@ footer .text-caption-1 {
 .isc .isc-sec-promo .banner-cls-discover .img-style:after {
   background: linear-gradient(87deg, #c8f7dc 0%, #ffe0b2 100%);
   opacity: 1;
+}
+.isc .gridLayout-wrapper h3 {
+  font-size: 24px;
 }

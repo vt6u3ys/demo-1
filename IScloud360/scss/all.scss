@@ -1555,6 +1555,16 @@ footer {
             .title {
                 font-size: 20px;
             }
+            // &.collapsed {
+            //     .icon-arrow-down {
+            //         transform: rotate(180deg);
+            //     }
+            // }
+            &:not(.collapsed) {
+                .icon-arrow-down {
+                    transform: rotate(-180deg);
+                }
+            }
         }
         .facet-body {
             padding-left: 16px;
@@ -1685,6 +1695,13 @@ footer {
         background: url(../images/IScloud360/home/iscloud360-kv-bg.jpg) no-repeat top center / cover;
         text-align: center;
         padding: 100px 0;
+        &-slider {
+            .carousel-indicators,
+            .carousel-control-prev,
+            .carousel-control-next {
+                display: none;
+            }
+        }
         .logo {
             min-width: 240px;
             max-width: 100%;
@@ -2298,7 +2315,7 @@ footer {
                 color: #f2982b;
             }
             .icon {
-                max-height: 24px;
+                max-height: 32px;
             }
             .text {
                 margin-top: 0;
@@ -3092,4 +3109,9 @@ footer {
         }
     }
     /*---------- /雲市集-優惠專區 ---------- */
+    
+    // 產品列表
+    .gridLayout-wrapper h3 {
+        font-size: 24px;
+    }
 }
