@@ -8785,7 +8785,7 @@ input.style-line-bottom::placeholder {
   font-weight: 500;
 }
 .card-product:not(.list-st-3, .list-st-2, .style-list) .card-product-wrapper {
-  aspect-ratio: 5/3;
+  aspect-ratio: 4/3;
   padding-top: 16px;
 }
 
@@ -19192,6 +19192,11 @@ ul.breadcrumbs li {
 .footer-logo img {
   height: 64px;
 }
+@media screen and (max-width: 991px) {
+  .footer-logo img {
+    height: 48px;
+  }
+}
 
 .tf-btn-default {
   font-size: 16px;
@@ -19429,6 +19434,7 @@ footer .text-caption-1 {
   position: relative;
   color: var(--white);
   border-radius: 144px;
+  z-index: 2;
 }
 
 .isc-tf-btn {
@@ -19460,6 +19466,8 @@ footer .text-caption-1 {
   --bs-btn-hover-color: #fff;
   /*---------- 通用類 ---------- */
   /*---------- /通用類 ---------- */
+  /*---------- 輪播 ---------- */
+  /*---------- /輪播 ---------- */
   /*---------- 內頁banner ---------- */
   /*---------- /內頁banner ---------- */
   /*---------- 麵包屑 ---------- */
@@ -19617,6 +19625,31 @@ footer .text-caption-1 {
 }
 .isc .isc-sec-bg {
   background-color: #F2F7FC;
+}
+.isc .isc-slider--has-arrow {
+  position: relative;
+}
+.isc .isc-slider--has-arrow .nav-sw {
+  position: absolute;
+  z-index: 20;
+  top: 36%;
+  z-index: 12;
+}
+.isc .isc-slider--has-arrow .nav-sw-right {
+  right: -22px;
+}
+@media screen and (max-width: 1024px) {
+  .isc .isc-slider--has-arrow .nav-sw-right {
+    right: -10px;
+  }
+}
+.isc .isc-slider--has-arrow .nav-sw-left {
+  left: -22px;
+}
+@media screen and (max-width: 1024px) {
+  .isc .isc-slider--has-arrow .nav-sw-left {
+    left: -10px;
+  }
 }
 .isc .tf-slideshow .wrap-pagination {
   margin-top: 0;
@@ -20883,6 +20916,21 @@ footer .text-caption-1 {
   background: linear-gradient(87deg, #c8f7dc 0%, #ffe0b2 100%);
   opacity: 1;
 }
+.isc .isc-sec-promo .card-product {
+  border: none;
+  display: block;
+}
+.isc .isc-sec-promo .card-product:hover {
+  box-shadow: none;
+  transform: scale(1.05);
+}
+.isc .isc-sec-promo .card-product-wrapper {
+  border: 1px solid #dadce0;
+  padding: 16px;
+}
 .isc .gridLayout-wrapper h3 {
   font-size: 24px;
+}
+.isc .gridLayout-wrapper .nie-text-intro {
+  margin-top: 0;
 }

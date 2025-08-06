@@ -1200,6 +1200,10 @@ ul.breadcrumbs li {
 // 頁尾
 .footer-logo img {
     height: 64px;
+    @media screen and (max-width: 991px) {
+        height: 48px;
+        
+    }
 }
 .tf-btn-default {
     font-size: 16px;
@@ -1465,6 +1469,7 @@ footer {
     position: relative;
     color: var(--white);
     border-radius: 144px;
+    z-index: 2;
 }
 
 .isc-tf-btn {
@@ -1612,6 +1617,30 @@ footer {
         background-color: #F2F7FC;
     }
     /*---------- /通用類 ---------- */
+    
+    /*---------- 輪播 ---------- */
+    .isc-slider--has-arrow {
+        position: relative;
+        .nav-sw {
+            position: absolute;
+            z-index: 20;
+            top: 36%;
+            z-index: 12;
+        }
+        .nav-sw-right {
+            right: -22px;
+            @media screen and (max-width: 1024px) {
+                right: -10px;
+            }
+        }
+        .nav-sw-left {
+            left: -22px;
+            @media screen and (max-width: 1024px) {
+                left: -10px;
+            }
+        }
+    }
+    /*---------- /輪播 ---------- */
 
     /*---------- 內頁banner ---------- */
     .tf-slideshow .wrap-pagination {
@@ -3099,6 +3128,9 @@ footer {
 
     /*---------- 雲市集-優惠專區 ---------- */
     .isc-sec-promo {
+        &-slider {
+            // padding: 16px;
+        }
         .banner-cls-discover .img-style {
             height: 120px;
             &:after {
@@ -3107,11 +3139,28 @@ footer {
                 opacity: 1;
             }
         }
+        .card-product {
+            border: none;
+            display: block;
+            &:hover {
+                box-shadow: none;
+                transform: scale(1.05);
+            }
+        }
+        .card-product-wrapper {
+            border: 1px solid #dadce0;
+            padding: 16px;
+        }
     }
     /*---------- /雲市集-優惠專區 ---------- */
     
     // 產品列表
-    .gridLayout-wrapper h3 {
-        font-size: 24px;
+    .gridLayout-wrapper {
+        h3 {
+            font-size: 24px;
+        }
+        .nie-text-intro {
+            margin-top: 0;
+        }
     }
 }
