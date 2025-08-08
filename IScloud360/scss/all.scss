@@ -1981,6 +1981,10 @@ footer {
 
     .isc-home-ranking {
         margin-bottom: 28px;
+        .stock-item {
+            flex-wrap: wrap;
+        }
+        .stock-label {}
         .card-product .card-product-info .title {
             height: 3.5rem;
         }
@@ -2362,7 +2366,7 @@ footer {
 
     /*---------- 跑馬燈 ---------- */
     .tf-marquee {
-        margin-top: -4px;
+        // margin-top: -4px;
         .text-btn-uppercase {
             font-size: 16px;
         }
@@ -3198,6 +3202,14 @@ footer {
 
     /*---------- 雲市集-優惠專區 ---------- */
     .isc-sec-promo {
+        .tf-marquee {
+            
+            .icon-lightning {
+                font-size: 14px;
+                color: var(--primary);
+                animation: tf-ani-flash 2s infinite;
+            }
+        }
         &-slider {
             // padding: 16px;
         }

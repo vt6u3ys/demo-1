@@ -19930,6 +19930,9 @@ footer .text-caption-1 {
 .isc .isc-home-ranking {
   margin-bottom: 28px;
 }
+.isc .isc-home-ranking .stock-item {
+  flex-wrap: wrap;
+}
 .isc .isc-home-ranking .card-product .card-product-info .title {
   height: 3.5rem;
 }
@@ -20292,9 +20295,6 @@ footer .text-caption-1 {
   .isc .isc-cloud-service-card-btn {
     padding: 16px;
   }
-}
-.isc .tf-marquee {
-  margin-top: -4px;
 }
 .isc .tf-marquee .text-btn-uppercase {
   font-size: 16px;
@@ -20970,6 +20970,11 @@ footer .text-caption-1 {
 }
 .isc .payment-box .payment-choose-card.active {
   background-color: #feebeb;
+}
+.isc .isc-sec-promo .tf-marquee .icon-lightning {
+  font-size: 14px;
+  color: var(--primary);
+  animation: tf-ani-flash 2s infinite;
 }
 .isc .isc-sec-promo .banner-cls-discover .img-style {
   height: 120px;
