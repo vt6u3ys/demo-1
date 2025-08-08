@@ -19883,12 +19883,25 @@ footer .text-caption-1 {
   min-height: 230px;
 }
 .isc .card-product:hover {
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.06), 0 4px 10px 0 rgba(0, 0, 0, 0.06), 0 18px 18px 0 rgba(0, 0, 0, 0.05), 0 40px 24px 0 rgba(0, 0, 0, 0.03), 0 71px 28px 0 rgba(0, 0, 0, 0.01), 0 111px 31px 0 transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 18px 18px rgba(0, 0, 0, 0.05), 0 10px 24px rgba(0, 0, 0, 0.03);
 }
 @media screen and (max-width: 767px) {
   .isc .card-product:hover {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.08);
   }
+}
+.isc .isc-home-hot-saas .h3 {
+  font-size: 16px;
+}
+@media screen and (max-width: 1024px) {
+  .isc .isc-home-hot-saas .h3 {
+    font-size: 14px;
+  }
+}
+.isc .isc-home-hot-saas .isc-tf-btn {
+  background: var(--white);
+  color: var(--main);
+  font-size: 14px;
 }
 .isc .isc-home-hot-saas .card-product-wrapper .on-sale-wrap .on-sale-item {
   background: var(--primary);
@@ -19900,6 +19913,57 @@ footer .text-caption-1 {
 }
 .isc .isc-home-hot-saas .card-product .card-product-info .price {
   flex-wrap: wrap;
+}
+.isc .isc-home-hot-saas .banner-cls-discover .img-style {
+  height: auto;
+}
+.isc .isc-home-hot-saas .card-product .box-rating {
+  justify-content: center;
+}
+.isc .isc-home-hot-saas .card-product:hover {
+  transform: scale(0.95);
+}
+.isc .isc-home-hot-saas .card-product:hover .isc-tf-btn {
+  background-color: var(--main);
+  color: var(--white);
+}
+.isc .isc-home-ranking {
+  margin-bottom: 28px;
+}
+.isc .isc-home-ranking .card-product .card-product-info .title {
+  height: 3.5rem;
+}
+.isc .isc-home-ranking .list-product-btn .btn-main-product {
+  max-width: 100% !important;
+}
+.isc .isc-home-ranking .card-product {
+  padding: 20px 15px 20px;
+}
+.isc .isc-home-ranking .card-product:hover {
+  transform: scale(0.95);
+}
+.isc .isc-home-ranking .card-product:hover .btn-main-product {
+  background-color: var(--main);
+  color: var(--white);
+}
+.isc .isc-home-ranking .card-product .card-product-info .price {
+  flex-wrap: wrap;
+}
+.isc .isc-home-ranking-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 160px;
+}
+@media screen and (max-width: 991px) {
+  .isc .isc-home-ranking-tag {
+    max-width: 140px;
+  }
+}
+.isc .isc-home-ranking-flash {
+  font-size: 14px;
+  color: var(--primary);
+  animation: tf-ani-flash 2s infinite;
 }
 @media screen and (max-width: 767px) {
   .isc .banner-cls-discover .title {
@@ -20063,7 +20127,7 @@ footer .text-caption-1 {
 }
 .isc .isc-cloud-service-card-btn .icon-arrowUpRight {
   position: absolute;
-  top: 16px;
+  top: 24px;
   right: 16px;
   color: var(--Isc360-light-blue);
   font-size: 24px;
@@ -20267,7 +20331,7 @@ footer .text-caption-1 {
 .isc .isc-home-industry-select .isc-cloud-service-card-btn {
   flex-direction: row;
   align-items: center;
-  padding: 20px 16px;
+  padding: 14px 16px;
   margin: 4px 0;
   gap: 12px;
   height: calc(100% - 8px);
@@ -20276,7 +20340,7 @@ footer .text-caption-1 {
   color: #f2982b;
 }
 .isc .isc-home-industry-select .isc-cloud-service-card-btn .icon {
-  max-height: 32px;
+  max-height: 40px;
 }
 .isc .isc-home-industry-select .isc-cloud-service-card-btn .text {
   margin-top: 0;
@@ -20732,6 +20796,7 @@ footer .text-caption-1 {
   flex-direction: column;
   gap: 8px;
   height: calc(100% - 16px);
+  align-items: center;
 }
 .isc .isc-cloud-service-card-btn .wrap {
   display: flex;
@@ -20739,7 +20804,7 @@ footer .text-caption-1 {
   gap: 8px;
 }
 .isc .isc-cloud-service-card-btn .icon {
-  max-height: 32px;
+  max-height: 80px;
 }
 .isc .isc-cloud-service-card-btn .text {
   display: -webkit-box;
@@ -20765,9 +20830,6 @@ footer .text-caption-1 {
 }
 .isc .isc-cloud-service-card-btn:hover {
   color: #131313;
-}
-.isc .isc-cloud-service-card-btn:hover .icon-arrowUpRight {
-  display: none;
 }
 .isc .isc-cloud-service-card.style-1 {
   padding: 0 0 0 8px;

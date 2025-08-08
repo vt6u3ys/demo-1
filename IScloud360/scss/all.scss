@@ -1925,13 +1925,25 @@ footer {
             // min-height: 304px;
         }
         &:hover {
-            box-shadow: 0 0 0 0 rgba(0,0,0,.06),0 4px 10px 0 rgba(0,0,0,.06),0 18px 18px 0 rgba(0,0,0,.05),0 40px 24px 0 rgba(0,0,0,.03),0 71px 28px 0 rgba(0,0,0,.01),0 111px 31px 0 transparent;
+            // box-shadow: 0 0 0 0 rgba(0,0,0,.06),0 4px 10px 0 rgba(0,0,0,.06),0 18px 18px 0 rgba(0,0,0,.05),0 40px 24px 0 rgba(0,0,0,.03),0 71px 28px 0 rgba(0,0,0,.01),0 111px 31px 0 transparent;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 18px 18px rgba(0, 0, 0, 0.05), 0 10px 24px rgba(0, 0, 0, 0.03);
             @media screen and (max-width: 767px) {
                 box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.08);
             }
         }
     }
     .isc-home-hot-saas {
+        .h3 {
+            font-size: 16px;
+            @media screen and (max-width: 1024px) {
+                font-size: 14px;
+            }
+        }
+        .isc-tf-btn {
+            background: var(--white);
+            color: var(--main);
+            font-size: 14px;
+        }
         .card-product-wrapper .on-sale-wrap .on-sale-item {
             background: var(--primary);
         }
@@ -1949,6 +1961,63 @@ footer {
             .card-product-wrapper .on-sale-wrap .on-sale-item {
                 // background: var(--primary);
             }
+        }
+        .banner-cls-discover .img-style {
+            height: auto;
+        }
+        .card-product .box-rating {
+            justify-content: center;
+        }
+        .card-product {
+            &:hover {
+                transform: scale(0.95);
+                .isc-tf-btn {
+                    background-color: var(--main);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+    .isc-home-ranking {
+        margin-bottom: 28px;
+        .card-product .card-product-info .title {
+            height: 3.5rem;
+        }
+        .list-product-btn {
+            .btn-main-product {
+                max-width: 100% !important;
+            }
+        }
+        .card-product {
+            padding: 20px 15px 20px;
+            &:hover {
+                transform: scale(0.95);
+                .btn-main-product{
+                    background-color: var(--main);
+                    color: var(--white);
+                }
+            }
+            .card-product-info .price {
+                flex-wrap: wrap;
+            }
+        }
+        &-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 160px;
+            @media screen and (max-width: 991px) {
+                max-width: 140px;
+            }
+        }
+        &-small {
+            // transform: scale(0.9);
+        }
+        &-flash {
+            font-size: 14px;
+            color: var(--primary);
+            animation: tf-ani-flash 2s infinite;
         }
     }
     /*---------- /熱門專區 ---------- */
@@ -2115,7 +2184,7 @@ footer {
         position: relative;
         .icon-arrowUpRight {
             position: absolute;
-            top: 16px;
+            top: 24px;
             right: 16px;
             color: var(--Isc360-light-blue);
             font-size: 24px;
@@ -2336,7 +2405,7 @@ footer {
         .isc-cloud-service-card-btn {
             flex-direction: row;
             align-items: center;
-            padding: 20px 16px;
+            padding: 14px 16px;
             margin: 4px 0;
             gap: 12px;
             height: calc(100% - 8px);
@@ -2344,7 +2413,7 @@ footer {
                 color: #f2982b;
             }
             .icon {
-                max-height: 32px;
+                max-height: 40px;
             }
             .text {
                 margin-top: 0;
@@ -2896,6 +2965,7 @@ footer {
         flex-direction: column;
         gap: 8px;
         height: calc(100% - 16px);
+        align-items: center;
     }
 
     .isc-cloud-service-card-btn .wrap {
@@ -2905,7 +2975,7 @@ footer {
     }
 
     .isc-cloud-service-card-btn .icon {
-        max-height: 32px;
+        max-height: 80px;
     }
 
     .isc-cloud-service-card-btn .text {
@@ -2935,7 +3005,7 @@ footer {
     .isc-cloud-service-card-btn:hover {
         color: #131313;
         .icon-arrowUpRight {
-            display: none;
+            // display: none;
         }
     }
 
