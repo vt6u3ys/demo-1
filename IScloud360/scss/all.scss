@@ -1983,6 +1983,9 @@ footer {
         margin-bottom: 28px;
         .stock-item {
             flex-wrap: wrap;
+            @media screen and (max-width: 767px) {
+                font-size: 12px;
+            }
         }
         .stock-label {}
         .card-product .card-product-info .title {
