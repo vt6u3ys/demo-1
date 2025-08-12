@@ -365,43 +365,158 @@
         <section class="flat-spacing nie-register">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-7 col-12">
+                    <div class="col-md-9 col-12">
                         <div class="nie-contact-form">
                             <div class="heading-section-2 wow fadeInUp">
                                 <div class="nie-text-title">
-                                    <div class="text-btn-uppercase nie-text-title--sub">Step <span class="fs-3">3</span></div>
-                                    <h3>註冊成功</h3>
-                                    <p class="nie-text-intro">設置密碼成功</p>
+                                    <h3>會員註冊 <span class="text-btn-uppercase nie-text-title--sub">Step <span class="fs-3">1</span></span></h3>
+                                    <p class="nie-text-intro">請填寫以下資料，開始您的註冊流程。完成註冊後，即可享有專屬優惠、快速結帳與會員專屬服務。</p>
                                 </div>
-                                <div class="d-flex align-items-center gap-8 flex-wrap">
-                                    <p><span class="nie-text-countdown">2</p>秒後將自動跳轉</p>
-                                    <a href="login.html" class="text-primary">登入頁</i></a>
+                                <div class="d-flex align-items-center gap-8 flex-wrap text-align-center">
+                                    <a href="login.html" class="text-primary">已有會員？登入</a>
                                 </div>
                                 <!-- <a href="#" class="btn-line">瀏覽所有SaaS雲端工具</a> -->
                             </div>
                             <div class="tf-cart-sold">
                                 <div class="notification-progress">
                                     <div class="nie-register-progress row">
-                                        <div class="nie-register-progress-step col success">
+                                        <div class="nie-register-progress-step col active">
                                             <span class="num">01</span>
                                             <div class="text">填寫資料</div>
                                         </div>
-                                        <div class="nie-register-progress-step col success">
+                                        <div class="nie-register-progress-step col">
                                             <span class="num">02</span>
                                             <div class="text">信箱驗證並設置密碼</div>
                                         </div>
-                                        <div class="nie-register-progress-step col success">
+                                        <div class="nie-register-progress-step col">
                                             <span class="num">03</span>
                                             <div class="text">註冊成功</div>
                                         </div>
                                     </div>
                                     <div class="progress-cart">
-                                        <div class="value" style="width: 0%;" data-progress="83.33">
+                                        <div class="value" style="width: 0%;" data-progress="14">
                                             <span class="round"></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <form class="nie-contact-form-wrap">
+                                <div class="nie-contact-form-inner">
+                                    <div class="row g-2">
+                                        <div class="nie-contact-form-title">
+                                            <div class="text">
+                                                公司資料
+                                            </div>
+                                        </div>
+                                        <div class="check-save my-3">
+                                            <div class="check-save-col">
+                                                <input type="checkbox" name="availability" class="tf-check" id="check1">
+                                                <label class="check-text" for="check1">
+                                                    個人用戶註冊 
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="Ba_number">公司統編 <span class="text-critical">*</span></label>
+                                            <input id="Ba_number" class="nie-contact-form-input" type="text" placeholder="公司統編" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="Company">公司名稱 <span class="text-critical">*</span></label>
+                                            <input id="Company" class="nie-contact-form-input" type="text" placeholder="公司名稱" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="nie-contact-form-title">
+                                            <div class="text">
+                                                基本資料
+                                            </div>
+                                        </div>
+                                        <fieldset class="nie-contact-form-col col-md-2">
+                                            <label for="LastName">姓氏 <span class="text-critical">*</span></label>
+                                            <input id="LastName" class="nie-contact-form-input" type="text" placeholder="姓氏" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                        <fieldset class="nie-contact-form-col col-md-4">
+                                            <label for="FirstName">名字 <span class="text-critical">*</span></label>
+                                            <input id="FirstName" class="nie-contact-form-input" type="text" placeholder="名字" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="Email">E-mail <span class="text-critical">*</span></label>
+                                            <input id="Email" class="nie-contact-form-input" type="text" placeholder="請輸入有效E-mail，以作為帳號開通與忘記密碼之認證。" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                    </div>
+                                    <div class="row g-2">
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="Phone">行動電話 <span class="text-critical">*</span></label>
+                                            <input id="Phone" class="nie-contact-form-input" type="text" placeholder="" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                            <div id="tips" class="form-text">格式範例：+886-221234567 / +886-912345678</div>
+                                        </fieldset>
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="UserSource" class="nie-contact-form-label">從哪裡認識IScloud360 <span class="text-critical">*</span></label>
+                                            <div class="tf-select">
+                                                <select class="" id="UserSource" name="UserSource">
+                                                    <option value="">請選擇</option>
+                                                    <option value="7">N世代學苑</option>
+                                                    <option value="6">新創總會</option>
+                                                    <option value="5">報名活動</option>
+                                                    <option value="4">EDM</option>
+                                                    <option value="3">研討會</option>
+                                                    <option value="2">FB</option>
+                                                    <option value="1">官網</option>
+                                                </select>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <!-- <div class="row g-2">
+                                        <div class="nie-contact-form-title">
+                                            <div class="text">
+                                                會員動態欄位
+                                            </div>
+                                        </div>
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="name">縣市 <span class="text-critical">*</span></label>
+                                            <input id="name" class="nie-contact-form-input" type="text" placeholder="縣市" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                        <fieldset class="nie-contact-form-col col-md-6">
+                                            <label for="DF_1">鄉鎮(市)區 <span class="text-critical">*</span></label>
+                                            <input id="DF_1" class="nie-contact-form-input" type="text" placeholder="鄉鎮(市)區" name="text" tabindex="2" value="" aria-required="true" required="" aria-describedby="tips">
+                                        </fieldset>
+                                    </div> -->
+                                    <!-- <div class="check-save">
+                                        <div class="check-save-col">
+                                            <input type="checkbox" name="availability" class="tf-check" id="check1">
+                                            <label class="check-text" for="check1">
+                                                我同意註冊成為會員 
+                                            </label>
+                                        </div>
+                                        <a href="#delivery_return" class="check-save-link" data-bs-toggle="modal" title="服務條款與隱私權條款">服務條款 &amp; 隱私權條款</a>
+                                    </div> -->
+                                    <div class="row">
+                                        <div class="check-save">
+                                            <div class="check-save-col">
+                                                <input type="checkbox" name="availability" class="tf-check" id="check2">
+                                                <label class="check-text" for="check2">
+                                                    我同意註冊成為會員
+                                                </label>
+                                            </div>
+                                            <a href="terms.html" class="check-save-link" title="服務條款">服務條款</a>
+                                            |
+                                            <a href="privacy.html" class="check-save-link" title="隱私權條款">隱私權條款</a>
+                                        </div>
+                                        <div class="check-save">
+                                            <div class="check-save-col">
+                                                <input type="checkbox" name="availability" class="tf-check" id="check3">
+                                                <label class="check-text" for="check3">
+                                                    我同意接收 IScloud360 的
+                                                </label>
+                                            </div>
+                                            <a href="MarketingNotice.html" class="check-save-link" title="行銷通知與優惠資訊">行銷通知與優惠資訊</a>
+                                        </div>
+                                    </div>
+                                    <div class="button-submit">
+                                        <button class="text-btn-uppercase" type="button" onclick="location.href='register-1.html'">下一步</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
