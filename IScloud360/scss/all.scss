@@ -1951,7 +1951,7 @@ footer {
     }
 
     .isc-home-ranking {
-        margin-bottom: 28px;
+        margin-bottom: 40px;
         .card-product.list-st-3 {
             flex-direction: column;
             @media screen and (min-width: 992px) {
@@ -2073,6 +2073,8 @@ footer {
             justify-content: center;
         }
         .card-product {
+            background: var(--white);
+            // border-color: transparent;
             &:hover {
                 transform: scale(0.95);
                 .isc-tf-btn {
@@ -2080,6 +2082,33 @@ footer {
                     color: var(--white);
                 }
             }
+        }
+        // 廣告區塊
+        &-banner {
+            .heading-section-2 {
+                margin-bottom: 16px;
+            }
+            .wg-blog {
+                display: block;
+                &.style-1 .image {
+                    padding-top: 40%;
+                }
+            }
+        }
+        .nav-sw {
+            top: 50%;
+        }
+    }
+    .isc-collection-position-2 {
+        height: 330px;
+        .cls-content {
+            flex-wrap: nowrap;
+        }
+        .text-title {
+            font-weight: 700;
+        }
+        .cls-btn {
+            font-size: 16px;
         }
     }
     /*---------- /熱門專區 ---------- */
@@ -2431,6 +2460,173 @@ footer {
     }
     /*---------- /跑馬燈 ---------- */
 
+    /*---------- 數位工具館 ---------- */
+    .isc-home-saastools-select {
+        &-bg {
+            // background: url(../images/IScloud360/banner/生產-bg.jpg) no-repeat center center / cover;
+            transition: filter 0.3s, -webkit-backdrop-filter 0.3s, backdrop-filter 0.3s;
+            position: absolute;
+            left: 0; top: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+            transition: all .3s ease-in-out;
+            opacity: .9;
+        }
+        .isc-cloud-service-card-btn {
+            overflow: hidden;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                background: linear-gradient(120deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.8) 100%);
+                z-index: 0;
+                border-radius: 8px;
+            }
+            .icon-arrowUpRight {
+                color: var(--white);
+            }
+            .text {
+                font-size: 32px;
+                font-weight: 700;
+                // position: absolute;
+                // left: -10px;
+                // top: 0;
+                line-height: 1;
+                // transform: translateY(-50%);
+                opacity: 0.9; // 降低不透明度，增加輕透感
+                color: var(--white);
+                // color: transparent;
+                // background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.3) 100%);
+                // -webkit-background-clip: text;
+                // -webkit-text-fill-color: transparent;
+                // background-clip: text;
+                // overflow: inherit;
+                z-index: 1;
+                // text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+                margin-bottom: 8px;
+            }
+            .wrap {
+                z-index: 1;
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .desc {
+                color: #fff;
+                font-weight: 400;
+                z-index: 1;
+            }
+        }
+        .isc-cloud-service-card-btn:hover .isc-home-saastools-select-bg,
+        .isc-cloud-service-card-btn:focus .isc-home-saastools-select-bg {
+            filter: blur(8px) brightness(0.9);
+            /* For Safari */
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            transform: scale(1.3);
+        }
+        .isc-cloud-service-card-btn:hover,
+        .isc-cloud-service-card-btn:focus {
+            &::after {
+                background: none;
+            }
+        }
+
+    }
+    .isc-home-industry-select-v2 {
+        .isc-cloud-service-card-btn {
+            padding: 24px 28px;
+            gap: 40px;
+            align-items: start;
+            &:hover {
+                transform: translateY(-8px);
+                .icon-arrowUpRight {
+                    opacity: 0;
+                }
+            }
+            .text {
+                font-size: 32px;
+                color: #202124;
+                font-weight: 500;
+                &-wrap {
+                    width: 100%;
+                    display: flex;
+                    align-items: start;
+                    justify-content: space-between;
+                }
+            }
+            .desc {
+                font-size: 13px;
+            }
+            .iconset {
+                font-size: 14px;
+                color: var(--Isc360-light-blue);
+            }
+        }
+    }
+    .isc-home-saastools-select-v1 {
+        &-content-wrap {
+            display: flex;
+            gap: 8px;
+        }
+        .isc-cloud-service-card-btn {
+            padding: 8px;
+            // align-items: start;
+            .text {
+                color: var(--blue);
+            }
+            .desc {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+        &-tag {
+            // color: var(--blue);
+            // color: var(--white);
+            font-size: 14px;
+            padding: 0 8px;
+            line-height: 1.8;
+            // display: inline-block;
+            // position: absolute;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            z-index: 1;
+            &-wrap {
+                width: 100%;
+                display: flex;
+                align-items: start;
+                flex-direction: column;
+                // justify-content: space-between;
+            }
+        }
+        &-pic {
+            &-wrap {
+                position: relative;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    // 攝影暗角效果
+                    // background: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.85) 100%);
+                    background: linear-gradient(120deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.8) 100%);
+                    z-index: 0;
+                }
+            }
+        }
+    }
+    /*---------- 產業選擇-首頁-手機版 ---------- */
     .isc-home-industry-select-mobile {
         @media screen and (max-width: 767px) {
             overflow-x: auto;
@@ -2450,6 +2646,7 @@ footer {
         }
         
     }
+    
 
     /*---------- 產業選擇-首頁 ---------- */
     .isc-home-industry-select {
@@ -3260,8 +3457,10 @@ footer {
 
     /*---------- 雲市集-優惠專區 ---------- */
     .isc-sec-promo {
+        .heading-section-2 {
+            margin-bottom: 16px;
+        }
         .tf-marquee {
-            
             .icon-lightning {
                 font-size: 14px;
                 color: var(--primary);
@@ -3270,6 +3469,33 @@ footer {
         }
         &-slider {
             // padding: 16px;
+            margin-top: 16px;
+            .isc-on-sale-wrap {
+                position: absolute;
+            }
+            .badges-product-content-area {
+                font-size: 13px;
+                margin-top: 10px;
+            }
+            .card-product {
+                &.list-st-3 {
+                    .card-product-wrapper {
+                        height: 120px;
+                        margin-bottom: 8px;
+                    }
+                    .card-product-info {
+                        max-width: 100%;
+                        @media screen and (min-width: 1200px) {
+                            gap: 4px;
+                        }
+                    }
+                }
+                .card-product-info .title {
+                    font-size: 19px;
+                    height: 1.4em;
+                    -webkit-line-clamp: 1;
+                }
+            }
         }
         .banner-cls-discover .img-style {
             height: 120px;
@@ -3293,6 +3519,20 @@ footer {
         }
     }
     /*---------- /雲市集-優惠專區 ---------- */
+
+    /*---------- 雲市集-加入會員 ---------- */
+    .isc-sec-register {
+        // background: url('../images/IScloud360/icon/isc-sec-register.png') no-repeat left bottom;
+        // background-size: auto 500px;
+        &-icon {
+            height: 400px;
+            @media screen and (max-width: 1024px) {
+                height: 150px;
+                
+            }
+        }
+    }
+    /*---------- /雲市集-加入會員 ---------- */
     
     // 產品列表
     .gridLayout-wrapper {

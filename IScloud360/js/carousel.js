@@ -399,8 +399,8 @@ if ($(".tf-sw-saas").length > 0) {
     speed: 1000,
     navigation: {
       clickable: true,
-      nextEl: ".nav-prev-recent",
-      prevEl: ".nav-next-recent",
+      nextEl: ".nav-prev-saas",
+      prevEl: ".nav-next-saas",
     },
     breakpoints: {
       768: {
