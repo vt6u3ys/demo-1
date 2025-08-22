@@ -21253,6 +21253,19 @@ footer .text-caption-1 {
 .isc .isc-sec-promo-slider {
   margin-top: 16px;
 }
+.isc .isc-sec-promo-slider .card-product-info {
+  width: 100%;
+}
+.isc .isc-sec-promo-slider-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.isc .isc-sec-promo-slider-tag img {
+  max-width: 120px;
+}
 .isc .isc-sec-promo-slider .isc-on-sale-wrap {
   position: absolute;
 }
