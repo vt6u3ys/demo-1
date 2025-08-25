@@ -95,20 +95,23 @@
                                         <a href="register.html" class="tf-btn btn-white has-border">
                                             <span class="text">註冊</span>
                                         </a>
+                                        <a href="#" class="tf-btn btn-white has-border" data-bs-toggle="offcanvas" data-bs-target="#mbAccount">
+                                            <span class="text">會員中心</span>
+                                        </a>
                                     </div>
                                 </div>
                             </li>
                             <!-- TODO[後端]: 這邊是登入後的區塊 
                              多了 data-bs-toggle="offcanvas" data-bs-target="#mbAccount" 和移除 dropdown-account
                              -->
-                            <li class="nav-account">
+                            <!-- <li class="nav-account">
                                 <a href="#" class="nav-icon-item" data-bs-toggle="offcanvas" data-bs-target="#mbAccount">
                                     <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav-cart"><a href="shopping-cart.html" class="nav-icon-item">
                                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M16.5078 10.8734V6.36686C16.5078 5.17166 16.033 4.02541 15.1879 3.18028C14.3428 2.33514 13.1965 1.86035 12.0013 1.86035C10.8061 1.86035 9.65985 2.33514 8.81472 3.18028C7.96958 4.02541 7.49479 5.17166 7.49479 6.36686V10.8734M4.11491 8.62012H19.8877L21.0143 22.1396H2.98828L4.11491 8.62012Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -534,12 +537,65 @@
                                         <div class="tf-collapse-content">
                                             <ul class="footer-menu-list">
                                                 <li class="text-caption-1">
-                                                    <a href="#" class="footer-menu_item">生產管理</a>
+                                                    <a href="#" class="footer-menu_item" data-bs-toggle="collapse" data-bs-target="#footer-submenu-1" aria-expanded="false" aria-controls="footer-submenu-1">
+                                                        管理角色
+                                                        <span class="icon icon-arrow-down"></span>
+                                                    </a>
+                                                    <ul class="footer-submenu collapse" id="footer-submenu-1">
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">消費型服務業</a>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">專業技術型服務業</a>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">製造業</a>
+                                                        </li>
+                                                    </ul>
                                                 </li>
                                                 <li class="text-caption-1">
-                                                    <a href="#" class="footer-menu_item">銷售管理</a>
+                                                    <a href="#" class="footer-menu_item" data-bs-toggle="collapse" data-bs-target="#footer-submenu-2" aria-expanded="false" aria-controls="footer-submenu-2">
+                                                        數位工具需求
+                                                        <span class="icon icon-arrow-down"></span>
+                                                    </a>
+                                                    <ul class="footer-submenu collapse" id="footer-submenu-2">
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">業務與顧客互動</a>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">營運與管理</a>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">智能與策略工具</a>
+                                                        </li>
+                                                    </ul>
                                                 </li>
                                                 <li class="text-caption-1">
+                                                    <a href="#" class="footer-menu_item" data-bs-toggle="collapse" data-bs-target="#footer-submenu-3" aria-expanded="false" aria-controls="footer-submenu-3">
+                                                        管理五要素
+                                                        <span class="icon icon-arrow-down"></span>
+                                                    </a>
+                                                    <ul class="footer-submenu collapse" id="footer-submenu-3">
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">生產管理</a>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">銷售管理</a>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">人力資源</a>
+                                                        </li>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">研發管理</a>
+                                                        </li>
+                                                        </li>
+                                                        <li class="text-caption-1">
+                                                            <a href="#" class="footer-menu_item">財務管理</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!-- <li class="text-caption-1">
                                                     <a href="#" class="footer-menu_item">人力資源</a>
                                                 </li>
                                                 <li class="text-caption-1">
@@ -547,7 +603,7 @@
                                                 </li>
                                                 <li class="text-caption-1">
                                                     <a href="#" class="footer-menu_item">財務管理</a>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -665,7 +721,7 @@
     <div class="offcanvas offcanvas-start canvas-sidebar" id="mbAccount">
         <div class="canvas-wrapper">
             <header class="canvas-header">
-                <span class="text-btn-uppercase">SIDEBAR ACCOUNT</span>
+                <span class="text-btn-uppercase">帳戶</span>
                 <span class="icon-close icon-close-popup" data-bs-dismiss="offcanvas" aria-label="Close"></span>
             </header>
             <div class="canvas-body sidebar-mobile-append"></div>
@@ -675,28 +731,28 @@
     <div class="wrap-sidebar-account wrap-sidebar-account-mobile d-none">
         <div class="sidebar-account">
             <div class="account-avatar">
-                <h6 class="mb_4">Tony Nguyen</h6>
-                <div class="body-text-1">themesflat@gmail.com</div>
+                <h6 class="mb_4">米蘭達</h6>
+                <div class="body-text-1">mirandatsai0612@gmail.com</div>
             </div>
             <ul class="my-account-nav">
                 <li>
-                    <span class="my-account-nav-item active">
+                    <a href="my-account.html" class="my-account-nav-item active">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Account Details
-                    </span>
-                </li>
-                <li>
-                    <a href="my-account-orders.html" class="my-account-nav-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.5078 10.8734V6.36686C16.5078 5.17166 16.033 4.02541 15.1879 3.18028C14.3428 2.33514 13.1965 1.86035 12.0013 1.86035C10.8061 1.86035 9.65985 2.33514 8.81472 3.18028C7.96958 4.02541 7.49479 5.17166 7.49479 6.36686V10.8734M4.11491 8.62012H19.8877L21.0143 22.1396H2.98828L4.11491 8.62012Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Your Orders
+                        會員中心
                     </a>
                 </li>
                 <li>
+                    <a href="my-account-check.html" class="my-account-nav-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.5078 10.8734V6.36686C16.5078 5.17166 16.033 4.02541 15.1879 3.18028C14.3428 2.33514 13.1965 1.86035 12.0013 1.86035C10.8061 1.86035 9.65985 2.33514 8.81472 3.18028C7.96958 4.02541 7.49479 5.17166 7.49479 6.36686V10.8734M4.11491 8.62012H19.8877L21.0143 22.1396H2.98828L4.11491 8.62012Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        訂單查詢
+                    </a>
+                </li>
+                <!-- <li>
                     <a href="my-account-address.html" class="my-account-nav-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -704,7 +760,7 @@
                         </svg>
                         My Address
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="login.html" class="my-account-nav-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -712,7 +768,7 @@
                             <path d="M16 17L21 12L16 7" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M21 12H9" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        Logout
+                        登出
                     </a>
                 </li>
             </ul>
