@@ -338,7 +338,7 @@
       <div class="d-flex align-items-center gap-2 flex-wrap">
         <h5 class="fw-bold mb-0"><i class="fa-solid fa-list-check me-2 text-primary"></i>每月收支明細</h5>
         <input type="month" id="selectedMonth" class="form-control form-control-sm w-auto fw-bold" onchange="changeMonth()">
-        <!-- 新增返回當前年月按鈕 -->
+        <!-- 返回當前年月按鈕 -->
         <button class="btn btn-ios btn-ios-secondary btn-sm" onclick="resetToCurrentMonth()" title="返回當前月份">
           <i class="fa-solid fa-rotate-left me-1"></i>回到本月
         </button>
@@ -353,10 +353,10 @@
       <table class="table align-middle">
         <thead>
           <tr class="text-muted">
-            <th>預定/發生日期</th>
-            <th>類型 / 來源</th>
-            <th>項目說明</th>
-            <th>提醒狀態</th>
+            <th>日期</th>
+            <th>來源</th>
+            <th>說明</th>
+            <th>狀態</th>
             <th class="text-end">金額</th>
             <th class="text-center" width="80">操作</th>
           </tr>
@@ -748,7 +748,7 @@
         const itemData = {
           id: autoId, date: `${monthStr}-${formattedDay}`,
           type: isIncome ? 'income' : 'expense',
-          title: `[固定${isIncome ? '收入' : '支出'}] ${fx.title}`,
+          title: fx.title, // 已移除 [固定收入] / [固定支出] 文字
           amount: fx.amount, category: isIncome ? '固定收入' : '固定支出',
           refType: 'fixed', refId: fx.id, dueDate: `${monthStr}-${formattedDay}`
         };
