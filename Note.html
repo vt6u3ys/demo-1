@@ -47,7 +47,6 @@
       transition: all 0.3s ease;
     }
 
-    /* iOS 磨砂卡片通用樣式 */
     .glass-card {
       background: var(--glass-bg);
       backdrop-filter: blur(20px);
@@ -70,7 +69,6 @@
       transform: translateY(-4px);
     }
 
-    /* iOS 按鈕風格 */
     .btn-ios {
       border-radius: 14px;
       padding: 6px 14px;
@@ -88,7 +86,6 @@
     .btn-ios-purple { background-color: var(--ios-purple); color: #fff; }
     .btn-ios-secondary { background: rgba(120, 120, 128, 0.2); color: var(--text-main); }
 
-    /* iOS 輸入框風格 */
     .form-control, .form-select {
       background: rgba(255, 255, 255, 0.5);
       border: 1px solid rgba(0, 0, 0, 0.08);
@@ -107,7 +104,6 @@
       box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.25);
     }
 
-    /* 摺疊面板風格 */
     .accordion-button {
       background: transparent !important;
       color: var(--text-main) !important;
@@ -120,7 +116,6 @@
       border: none;
     }
 
-    /* Badge 風格 */
     .badge-ios {
       border-radius: 8px;
       padding: 4px 8px;
@@ -132,7 +127,6 @@
     .badge-due-warning { background-color: var(--ios-red); color: #fff; }
     .badge-due-info { background-color: var(--ios-blue); color: #fff; }
 
-    /* 表格透明化 */
     .table {
       --bs-table-bg: transparent;
       color: var(--text-main);
@@ -141,7 +135,6 @@
       border-color: rgba(150, 150, 150, 0.15);
     }
 
-    /* Modal 磨砂 */
     .modal-content {
       background: var(--glass-bg);
       backdrop-filter: blur(25px);
@@ -149,6 +142,14 @@
       border: 1px solid var(--glass-border);
       border-radius: 24px;
       box-shadow: var(--glass-shadow);
+    }
+
+    .cc-card-item {
+      border: 1px solid rgba(175, 82, 222, 0.2);
+      border-radius: 12px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
@@ -158,7 +159,7 @@
   <!-- 頂部標題與工具按鈕 -->
   <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
     <h3 class="fw-bold mb-0" style="letter-spacing: -0.5px;">
-      <i class="fa-solid fa-wallet me-2 text-primary"></i>財務記帳
+      <i class="fa-solid fa-wallet me-2 text-primary"></i>財務記帳系統
     </h3>
     <div class="d-flex gap-2 flex-wrap align-items-center">
       <button class="btn btn-ios btn-ios-secondary btn-sm" id="themeToggleBtn" onclick="toggleTheme()">
@@ -177,23 +178,23 @@
   <div class="row g-3 mb-4">
     <div class="col-md-3">
       <div class="glass-card card-summary p-3">
-        <div class="small text-secondary">截至 <span class="current-month-label"></span> 累積總資產</div>
+        <div class="small text-secondary">截至 <span class="current-month-label"></span> 動態總資產</div>
         <div class="fs-3 fw-bold mt-1 text-primary" id="stat-total-assets">$0</div>
-        <div class="small text-muted mt-1" id="stat-assets-count">基準帳戶 + 截至該月歷史收支</div>
+        <div class="small text-muted mt-1" id="stat-assets-count">初始基準 + 截至該月動態收支</div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="glass-card card-summary p-3">
         <div class="small text-secondary">本月總支出 (<span class="current-month-label"></span>)</div>
         <div class="fs-3 fw-bold mt-1 text-danger" id="stat-month-expense">$0</div>
-        <div class="small text-muted mt-1">日常 + 信用卡 + 固定支出</div>
+        <div class="small text-muted mt-1">含一般刷卡 + 分期 + 固定支出</div>
       </div>
     </div>
     <div class="col-md-3">
       <div class="glass-card card-summary p-3">
-        <div class="small text-secondary">信用卡分期未繳總額</div>
+        <div class="small text-secondary">信用卡未繳總額</div>
         <div class="fs-3 fw-bold mt-1" style="color: var(--ios-purple);" id="stat-credit-unpaid">$0</div>
-        <div class="small text-muted mt-1" id="stat-credit-count">0 筆進行中</div>
+        <div class="small text-muted mt-1" id="stat-credit-count">當月未結卡費 + 未來分期剩餘</div>
       </div>
     </div>
     <div class="col-md-3">
@@ -223,12 +224,13 @@
             <!-- 資產帳戶管理 -->
             <div class="col-md-4">
               <div class="glass-card-sub p-3">
-                <h6 class="fw-bold text-primary mb-3"><i class="fa-solid fa-building-columns me-1"></i>初始基準帳戶</h6>
+                <h6 class="fw-bold text-primary mb-3"><i class="fa-solid fa-building-columns me-1"></i>資產帳戶管理 (動態金額)</h6>
                 <div class="input-group input-group-sm mb-2">
                   <input type="text" id="acc-name" class="form-control" placeholder="帳戶名稱 (如: 台新)">
-                  <input type="number" id="acc-bal" class="form-control" placeholder="初始餘額">
+                  <input type="number" id="acc-bal" class="form-control" placeholder="初始開局餘額">
                   <button class="btn btn-ios btn-ios-primary" onclick="addAccount()"><i class="fa-solid fa-plus"></i></button>
                 </div>
+                <div class="text-muted extra-small mb-2" style="font-size:0.75rem;">* 帳戶餘額會根據每月明細動態自動加減</div>
                 <ul class="list-group list-group-flush small" id="list-accounts"></ul>
               </div>
             </div>
@@ -237,20 +239,30 @@
             <div class="col-md-4">
               <div class="glass-card-sub p-3">
                 <h6 class="fw-bold mb-3" style="color: var(--ios-purple);"><i class="fa-solid fa-credit-card me-1"></i>信用卡分期設定</h6>
-                <div class="mb-2">
-                  <input type="text" id="cc-bank" class="form-control form-control-sm mb-1" placeholder="銀行/卡別 (如: 玉山)">
-                  <input type="text" id="cc-title" class="form-control form-control-sm mb-1" placeholder="消費項目 (如: iPhone)">
-                  <div class="row g-1 mb-1">
-                    <div class="col-6"><input type="number" id="cc-amount" class="form-control form-control-sm" placeholder="總金額"></div>
-                    <div class="col-6"><input type="number" id="cc-periods" class="form-control form-control-sm" placeholder="分幾期"></div>
-                  </div>
-                  <div class="input-group input-group-sm">
-                    <span class="input-group-text bg-transparent border-0">起始</span>
-                    <input type="month" id="cc-start-month" class="form-control">
-                    <button class="btn btn-ios btn-ios-purple ms-1" onclick="addCreditCard()"><i class="fa-solid fa-plus"></i></button>
-                  </div>
+                
+                <!-- 新增信用卡 -->
+                <div class="input-group input-group-sm mb-2">
+                  <input type="text" id="cc-card-name" class="form-control" placeholder="信用卡名稱 (如: 玉山 Bear 卡)">
+                  <button class="btn btn-ios btn-ios-purple" onclick="addCard()"><i class="fa-solid fa-plus"></i> 新增卡片</button>
                 </div>
-                <ul class="list-group list-group-flush small" id="list-creditcards"></ul>
+
+                <!-- 新增分期項目 -->
+                <div class="p-2 border rounded mb-2 bg-body-tertiary">
+                  <div class="small fw-bold mb-1 text-secondary">新增分期項目至信用卡：</div>
+                  <select id="cc-select-card" class="form-select form-select-sm mb-1"></select>
+                  <input type="text" id="cc-item-title" class="form-control form-control-sm mb-1" placeholder="消費項目 (如: iPhone 16)">
+                  <div class="row g-1 mb-1">
+                    <div class="col-6"><input type="number" id="cc-item-amount" class="form-control form-control-sm" placeholder="總金額"></div>
+                    <div class="col-6"><input type="number" id="cc-item-periods" class="form-control form-control-sm" placeholder="分幾期"></div>
+                  </div>
+                  <div class="input-group input-group-sm mb-1">
+                    <span class="input-group-text bg-transparent border-0 ps-0">首期年月</span>
+                    <input type="month" id="cc-item-start-month" class="form-control">
+                  </div>
+                  <button class="btn btn-ios btn-ios-purple w-100 btn-sm mt-1" onclick="addInstallmentItem()"><i class="fa-solid fa-plus me-1"></i>新增分期項目</button>
+                </div>
+
+                <div id="list-creditcards" class="small mt-2"></div>
               </div>
             </div>
 
@@ -312,6 +324,10 @@
                       <span class="input-group-text bg-transparent border-0">起始年月</span>
                       <input type="month" id="fx-start-month" class="form-control">
                     </div>
+                    <div class="input-group input-group-sm mb-1">
+                      <span class="input-group-text bg-transparent border-0">結束年月</span>
+                      <input type="month" id="fx-end-month" class="form-control" placeholder="選填">
+                    </div>
                   </div>
 
                   <!-- 精準指定年月日 -->
@@ -338,7 +354,6 @@
       <div class="d-flex align-items-center gap-2 flex-wrap">
         <h5 class="fw-bold mb-0"><i class="fa-solid fa-list-check me-2 text-primary"></i>每月收支明細</h5>
         <input type="month" id="selectedMonth" class="form-control form-control-sm w-auto fw-bold" onchange="changeMonth()">
-        <!-- 返回當前年月按鈕 -->
         <button class="btn btn-ios btn-ios-secondary btn-sm" onclick="resetToCurrentMonth()" title="返回當前月份">
           <i class="fa-solid fa-rotate-left me-1"></i>回到本月
         </button>
@@ -354,9 +369,9 @@
         <thead>
           <tr class="text-muted">
             <th>日期</th>
-            <th>來源</th>
+            <th>分類/管道</th>
             <th>說明</th>
-            <th>狀態</th>
+            <th>狀態/提醒</th>
             <th class="text-end">金額</th>
             <th class="text-center" width="80">操作</th>
           </tr>
@@ -382,7 +397,7 @@
           <input type="text" id="edit-acc-name" class="form-control">
         </div>
         <div class="mb-3">
-          <label class="form-label small text-secondary">初始餘額</label>
+          <label class="form-label small text-secondary">初始開局金額</label>
           <input type="number" id="edit-acc-bal" class="form-control">
         </div>
       </div>
@@ -398,15 +413,12 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header border-0">
-        <h5 class="modal-title fw-bold">編輯信用卡分期</h5>
+        <h5 class="modal-title fw-bold">編輯信用卡分期項目</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="hidden" id="edit-cc-id">
-        <div class="mb-3">
-          <label class="form-label small text-secondary">銀行/卡別</label>
-          <input type="text" id="edit-cc-bank" class="form-control">
-        </div>
+        <input type="hidden" id="edit-cc-card-id">
+        <input type="hidden" id="edit-cc-item-id">
         <div class="mb-3">
           <label class="form-label small text-secondary">消費項目</label>
           <input type="text" id="edit-cc-title" class="form-control">
@@ -422,7 +434,7 @@
           </div>
         </div>
         <div class="mb-3">
-          <label class="form-label small text-secondary">起始年月</label>
+          <label class="form-label small text-secondary">首期年月</label>
           <input type="month" id="edit-cc-start-month" class="form-control">
         </div>
       </div>
@@ -497,9 +509,13 @@
             <input type="number" id="edit-fx-interval-day" class="form-control" min="1" max="31">
             <span class="input-group-text bg-transparent border-0">日</span>
           </div>
-          <div class="input-group mb-3">
+          <div class="input-group mb-2">
             <span class="input-group-text bg-transparent border-0">起始年月</span>
             <input type="month" id="edit-fx-start-month" class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text bg-transparent border-0">結束年月</span>
+            <input type="month" id="edit-fx-end-month" class="form-control" placeholder="選填">
           </div>
         </div>
 
@@ -534,14 +550,14 @@
           </div>
           <div class="mb-3">
             <label class="form-label small text-secondary">項目說明</label>
-            <input type="text" id="tx-title" class="form-control" placeholder="例如: 晚餐、外包" required>
+            <input type="text" id="tx-title" class="form-control" placeholder="例如: 晚餐、刷卡加油" required>
           </div>
           <div class="mb-3">
             <label class="form-label small text-secondary">金額</label>
             <input type="number" id="tx-amount" class="form-control" min="1" required>
           </div>
           <div class="mb-3">
-            <label class="form-label small text-secondary">分類/帳戶</label>
+            <label class="form-label small text-secondary">帳戶 / 支付信用卡</label>
             <select id="tx-account" class="form-select"></select>
           </div>
         </form>
@@ -556,7 +572,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const STORAGE_KEY = "FINANCE_SYSTEM_DATA_V9";
+  const STORAGE_KEY = "FINANCE_SYSTEM_DATA_V11";
   const THEME_KEY = "FINANCE_SYSTEM_THEME";
   
   function getCurrentYearMonth() {
@@ -571,12 +587,20 @@
   let appData = {
     accounts: [
       { id: 'acc-1', name: '中國信託', balance: 30000 },
-      { id: 'acc-2', name: '現金', balance: 0 }
+      { id: 'acc-2', name: '現金', balance: 5000 }
     ],
-    creditCards: [],
+    creditCards: [
+      {
+        id: 'card-1',
+        name: '玉山 Bear 卡',
+        items: [
+          { id: 'item-1', title: 'iPhone 16 Pro', totalAmount: 36000, periods: 12, startMonth: currentMonth }
+        ]
+      }
+    ],
     fixedExpenses: [
       { id: 'fx-1', flowType: 'income', title: '每月固定薪資', amount: 30000, cycleType: 'monthly', day: 5 },
-      { id: 'fx-2', flowType: 'expense', title: '管理費(每2個月)', amount: 2000, cycleType: 'interval', intervalVal: 2, intervalUnit: 'month', day: 10, startMonth: currentMonth }
+      { id: 'fx-2', flowType: 'expense', title: '管理費(每2個月)', amount: 2000, cycleType: 'interval', intervalVal: 2, intervalUnit: 'month', day: 10, startMonth: currentMonth, endMonth: '' }
     ],
     monthlyRecords: {}
   };
@@ -616,7 +640,7 @@
     editFixedModalInstance = new bootstrap.Modal(document.getElementById('editFixedModal'));
 
     document.getElementById('selectedMonth').value = currentMonth;
-    document.getElementById('cc-start-month').value = currentMonth;
+    document.getElementById('cc-item-start-month').value = currentMonth;
     document.getElementById('fx-start-month').value = currentMonth;
     
     loadData();
@@ -626,7 +650,9 @@
   function loadData() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
-      try { appData = JSON.parse(saved); } catch (e) { console.error("Data load error", e); }
+      try { 
+        appData = JSON.parse(saved); 
+      } catch (e) { console.error("Data load error", e); }
     }
   }
 
@@ -640,7 +666,6 @@
     renderAll();
   }
 
-  /* 返回當前年月的函式 */
   function resetToCurrentMonth() {
     currentMonth = getCurrentYearMonth();
     document.getElementById('selectedMonth').value = currentMonth;
@@ -694,31 +719,35 @@
     let records = appData.monthlyRecords[monthStr];
     const [cYear, cMonth] = monthStr.split('-').map(Number);
 
+    // 自動產生分期扣款項目
     appData.creditCards.forEach(card => {
-      if (!card.startMonth) return;
-      const [sYear, sMonth] = card.startMonth.split('-').map(Number);
-      const monthDiff = (cYear - sYear) * 12 + (cMonth - sMonth);
+      (card.items || []).forEach(item => {
+        if (!item.startMonth) return;
+        const [sYear, sMonth] = item.startMonth.split('-').map(Number);
+        const monthDiff = (cYear - sYear) * 12 + (cMonth - sMonth);
 
-      if (monthDiff >= 0 && monthDiff < card.periods) {
-        const periodNum = monthDiff + 1;
-        const autoId = `auto-cc-${card.id}-${monthStr}`;
+        if (monthDiff >= 0 && monthDiff < item.periods) {
+          const periodNum = monthDiff + 1;
+          const autoId = `auto-cc-${item.id}-${monthStr}`;
 
-        const baseAmount = Math.floor(card.totalAmount / card.periods);
-        const remainder = card.totalAmount - (baseAmount * card.periods);
-        const currentPeriodAmount = (periodNum === 1) ? (baseAmount + remainder) : baseAmount;
+          const baseAmount = Math.floor(item.totalAmount / item.periods);
+          const remainder = item.totalAmount - (baseAmount * item.periods);
+          const currentPeriodAmount = (periodNum === 1) ? (baseAmount + remainder) : baseAmount;
 
-        const existingIndex = records.findIndex(r => r.id === autoId || (r.refType === 'credit' && r.refId === card.id));
-        const itemData = {
-          id: autoId, date: `${monthStr}-01`, type: 'expense',
-          title: `${card.bank} - ${card.title} [${periodNum}/${card.periods}期]`,
-          amount: currentPeriodAmount, category: '信用卡分期', refType: 'credit', refId: card.id
-        };
+          const existingIndex = records.findIndex(r => r.id === autoId || (r.refType === 'credit' && r.refId === item.id));
+          const itemData = {
+            id: autoId, date: `${monthStr}-01`, type: 'expense',
+            title: `[${card.name}] ${item.title} (${periodNum}/${item.periods}期)`,
+            amount: currentPeriodAmount, category: `💳 ${card.name} (分期)`, refType: 'credit', refId: item.id
+          };
 
-        if (existingIndex >= 0) records[existingIndex] = itemData;
-        else records.push(itemData);
-      }
+          if (existingIndex >= 0) records[existingIndex] = itemData;
+          else records.push(itemData);
+        }
+      });
     });
 
+    // 自動產生固定收支
     appData.fixedExpenses.forEach(fx => {
       let isMatchMonth = false;
       let targetDay = fx.day || 1;
@@ -729,7 +758,15 @@
       } else if (fx.cycleType === 'interval' && fx.startMonth) {
         const [sYear, sMonth] = fx.startMonth.split('-').map(Number);
         const monthDiff = (cYear - sYear) * 12 + (cMonth - sMonth);
-        if (monthDiff >= 0) {
+        
+        let isWithinEnd = true;
+        if (fx.endMonth) {
+          const [eYear, eMonth] = fx.endMonth.split('-').map(Number);
+          const endDiff = (eYear - cYear) * 12 + (eMonth - cMonth);
+          if (endDiff < 0) isWithinEnd = false;
+        }
+
+        if (monthDiff >= 0 && isWithinEnd) {
           const val = parseInt(fx.intervalVal) || 1;
           if (fx.intervalUnit === 'month' && monthDiff % val === 0) isMatchMonth = true;
           else if (fx.intervalUnit === 'year' && cMonth === sMonth && (cYear - sYear) % val === 0) isMatchMonth = true;
@@ -748,7 +785,7 @@
         const itemData = {
           id: autoId, date: `${monthStr}-${formattedDay}`,
           type: isIncome ? 'income' : 'expense',
-          title: fx.title, // 已移除 [固定收入] / [固定支出] 文字
+          title: fx.title,
           amount: fx.amount, category: isIncome ? '固定收入' : '固定支出',
           refType: 'fixed', refId: fx.id, dueDate: `${monthStr}-${formattedDay}`
         };
@@ -759,32 +796,58 @@
     });
   }
 
+  // 計算動態帳戶金額與統計數據
   function calculateTopStatistics() {
-    const baseAssets = appData.accounts.reduce((sum, a) => sum + (parseFloat(a.balance) || 0), 0);
+    // 依據歷史至當月的交易，動態計算各帳戶餘額
+    let accountBalances = {};
+    appData.accounts.forEach(a => accountBalances[a.name] = parseFloat(a.balance) || 0);
+
     let totalHistoricalNetFlow = 0;
     
-    Object.keys(appData.monthlyRecords).forEach(mStr => {
+    Object.keys(appData.monthlyRecords).sort().forEach(mStr => {
       if (mStr <= currentMonth) {
         (appData.monthlyRecords[mStr] || []).forEach(item => {
           const amt = parseFloat(item.amount) || 0;
+          // 若屬性指定為某資產帳戶，則動態計算
+          if (accountBalances[item.category] !== undefined) {
+            if (item.type === 'income') accountBalances[item.category] += amt;
+            else if (item.type === 'expense') accountBalances[item.category] -= amt;
+          }
+
+          // 淨資產統計
           if (item.type === 'income') totalHistoricalNetFlow += amt;
-          else if (item.type === 'expense') totalHistoricalNetFlow -= amt;
+          else if (item.type === 'expense') {
+            // 注意：信用卡消費若尚未用實體帳戶繳費，不重複扣實體資產，只扣算總淨資產
+            totalHistoricalNetFlow -= amt;
+          }
         });
       }
     });
 
+    const baseAssets = appData.accounts.reduce((sum, a) => sum + (parseFloat(a.balance) || 0), 0);
     const calculatedTotalAssets = baseAssets + totalHistoricalNetFlow;
+    
     let monthExpense = (appData.monthlyRecords[currentMonth] || []).reduce((sum, item) => 
       item.type === 'expense' ? sum + (parseFloat(item.amount) || 0) : sum, 0);
 
     document.getElementById('stat-total-assets').innerText = `$${calculatedTotalAssets.toLocaleString()}`;
-    document.getElementById('stat-assets-count').innerText = `基底帳戶 $${baseAssets.toLocaleString()} + 歷年淨流轉`;
+    document.getElementById('stat-assets-count').innerText = `初始基準 $${baseAssets.toLocaleString()} + 歷史動態流動`;
     document.getElementById('stat-month-expense').innerText = `$${monthExpense.toLocaleString()}`;
 
-    let totalUnpaid = appData.creditCards.reduce((sum, c) => sum + (parseFloat(c.totalAmount) || 0), 0);
-    document.getElementById('stat-credit-unpaid').innerText = `$${totalUnpaid.toLocaleString()}`;
-    document.getElementById('stat-credit-count').innerText = `${appData.creditCards.length} 筆進行中分期`;
+    // 計算信用卡未繳總額
+    let totalUnpaid = 0;
+    let totalItemCount = 0;
+    appData.creditCards.forEach(card => {
+      (card.items || []).forEach(item => {
+        totalUnpaid += (parseFloat(item.totalAmount) || 0);
+        totalItemCount++;
+      });
+    });
 
+    document.getElementById('stat-credit-unpaid').innerText = `$${totalUnpaid.toLocaleString()}`;
+    document.getElementById('stat-credit-count').innerText = `${appData.creditCards.length} 張信用卡 / ${totalItemCount} 筆分期中`;
+
+    // 計算固定收支
     let fixedMonthlyExp = 0, fixedMonthlyInc = 0;
     appData.fixedExpenses.forEach(fx => {
       const amt = parseFloat(fx.amount) || 0;
@@ -803,13 +866,35 @@
     document.getElementById('stat-fixed-monthly-inc').innerText = `+$${Math.round(fixedMonthlyInc).toLocaleString()}`;
   }
 
+  // 渲染動態金額資產帳戶列表
   function renderAccountsList() {
     const list = document.getElementById('list-accounts');
+    
+    // 計算截至當月的動態金額
+    let dynamicBalances = {};
+    appData.accounts.forEach(a => dynamicBalances[a.id] = parseFloat(a.balance) || 0);
+
+    Object.keys(appData.monthlyRecords).sort().forEach(mStr => {
+      if (mStr <= currentMonth) {
+        (appData.monthlyRecords[mStr] || []).forEach(item => {
+          const amt = parseFloat(item.amount) || 0;
+          const acc = appData.accounts.find(a => a.name === item.category);
+          if (acc) {
+            if (item.type === 'income') dynamicBalances[acc.id] += amt;
+            else if (item.type === 'expense') dynamicBalances[acc.id] -= amt;
+          }
+        });
+      }
+    });
+
     list.innerHTML = appData.accounts.map(acc => `
       <li class="list-group-item d-flex justify-content-between align-items-center px-0 bg-transparent border-bottom">
-        <span>${acc.name}</span>
         <div>
-          <span class="fw-bold text-success me-2">$${Number(acc.balance).toLocaleString()}</span>
+          <span>${acc.name}</span>
+          <div class="text-muted extra-small" style="font-size:0.75rem;">(開局基底: $${Number(acc.balance).toLocaleString()})</div>
+        </div>
+        <div>
+          <span class="fw-bold text-success me-2">$${Number(dynamicBalances[acc.id]).toLocaleString()}</span>
           <button class="btn btn-link text-primary p-0 me-2" onclick="openEditAccountModal('${acc.id}')"><i class="fa-solid fa-pen"></i></button>
           <button class="btn btn-link text-danger p-0" onclick="deleteAccount('${acc.id}')"><i class="fa-solid fa-trash-can"></i></button>
         </div>
@@ -852,82 +937,145 @@
     }
   }
 
+  /* ------------------- 信用卡與分期管理邏輯 ------------------- */
   function renderCreditCardsList() {
-    const list = document.getElementById('list-creditcards');
-    list.innerHTML = appData.creditCards.map(cc => `
-      <li class="list-group-item px-0 bg-transparent border-bottom">
-        <div class="d-flex justify-content-between align-items-center">
-          <strong style="color: var(--ios-purple);">[${cc.bank}] ${cc.title}</strong>
+    const selectCard = document.getElementById('cc-select-card');
+    selectCard.innerHTML = appData.creditCards.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+
+    const container = document.getElementById('list-creditcards');
+    if (appData.creditCards.length === 0) {
+      container.innerHTML = `<div class="text-muted text-center py-2">尚未新增信用卡</div>`;
+      return;
+    }
+
+    container.innerHTML = appData.creditCards.map(card => {
+      const cardTotal = (card.items || []).reduce((sum, item) => sum + (parseFloat(item.totalAmount) || 0), 0);
+      
+      const itemsHtml = (card.items || []).map(item => `
+        <div class="d-flex justify-content-between align-items-center bg-transparent border-top pt-1 mt-1">
           <div>
-            <button class="btn btn-link text-primary p-0 me-2" onclick="openEditCreditModal('${cc.id}')"><i class="fa-solid fa-pen"></i></button>
-            <button class="btn btn-link text-danger p-0" onclick="deleteCreditCard('${cc.id}')"><i class="fa-solid fa-trash-can"></i></button>
+            <div><strong>${item.title}</strong></div>
+            <div class="text-muted extra-small" style="font-size:0.75rem;">$${Number(item.totalAmount).toLocaleString()} (${item.periods}期) | 首期: ${item.startMonth}</div>
+          </div>
+          <div>
+            <button class="btn btn-link text-primary p-0 me-1" onclick="openEditCreditModal('${card.id}', '${item.id}')"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-link text-danger p-0" onclick="deleteInstallmentItem('${card.id}', '${item.id}')"><i class="fa-solid fa-trash-can"></i></button>
           </div>
         </div>
-        <div class="d-flex justify-content-between text-muted small mt-1">
-          <span>總計: $${Number(cc.totalAmount).toLocaleString()} (${cc.periods}期)</span>
-          <span>起始: ${cc.startMonth}</span>
+      `).join('');
+
+      return `
+        <div class="cc-card-item mb-2">
+          <div class="d-flex justify-content-between align-items-center">
+            <strong style="color: var(--ios-purple);"><i class="fa-solid fa-credit-card me-1"></i>${card.name}</strong>
+            <div>
+              <span class="badge badge-ios bg-secondary me-1">分期未繳 $${cardTotal.toLocaleString()}</span>
+              <button class="btn btn-link text-danger p-0" onclick="deleteCard('${card.id}')" title="刪除卡片"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+          </div>
+          ${itemsHtml.length > 0 ? itemsHtml : '<div class="text-muted extra-small mt-1" style="font-size:0.75rem;">(無分期項目)</div>'}
         </div>
-      </li>
-    `).join('');
+      `;
+    }).join('');
   }
 
-  function addCreditCard() {
-    const bank = document.getElementById('cc-bank').value.trim();
-    const title = document.getElementById('cc-title').value.trim();
-    const totalAmount = parseFloat(document.getElementById('cc-amount').value) || 0;
-    const periods = parseInt(document.getElementById('cc-periods').value) || 1;
-    const startMonth = document.getElementById('cc-start-month').value;
-
-    if (!bank || !title || totalAmount <= 0 || !startMonth) return alert('請完整填寫信用卡分期資訊！');
-    appData.creditCards.push({ id: 'cc-' + Date.now(), bank, title, totalAmount, periods, startMonth });
-    document.getElementById('cc-bank').value = '';
-    document.getElementById('cc-title').value = '';
-    document.getElementById('cc-amount').value = '';
-    document.getElementById('cc-periods').value = '';
+  function addCard() {
+    const cardName = document.getElementById('cc-card-name').value.trim();
+    if (!cardName) return alert('請輸入信用卡名稱');
+    appData.creditCards.push({ id: 'card-' + Date.now(), name: cardName, items: [] });
+    document.getElementById('cc-card-name').value = '';
     saveData();
   }
 
-  function openEditCreditModal(id) {
-    const cc = appData.creditCards.find(c => c.id === id);
-    if (!cc) return;
-    document.getElementById('edit-cc-id').value = cc.id;
-    document.getElementById('edit-cc-bank').value = cc.bank;
-    document.getElementById('edit-cc-title').value = cc.title;
-    document.getElementById('edit-cc-amount').value = cc.totalAmount;
-    document.getElementById('edit-cc-periods').value = cc.periods;
-    document.getElementById('edit-cc-start-month').value = cc.startMonth;
+  function deleteCard(cardId) {
+    if (confirm('確定刪除此信用卡及底下所有的分期項目？')) {
+      const card = appData.creditCards.find(c => c.id === cardId);
+      if (card && card.items) {
+        card.items.forEach(item => {
+          removeLinkedCreditRecords(item.id);
+        });
+      }
+      appData.creditCards = appData.creditCards.filter(c => c.id !== cardId);
+      saveData();
+    }
+  }
+
+  function addInstallmentItem() {
+    const cardId = document.getElementById('cc-select-card').value;
+    const title = document.getElementById('cc-item-title').value.trim();
+    const totalAmount = parseFloat(document.getElementById('cc-item-amount').value) || 0;
+    const periods = parseInt(document.getElementById('cc-item-periods').value) || 1;
+    const startMonth = document.getElementById('cc-item-start-month').value;
+
+    if (!cardId) return alert('請先新增並選擇信用卡！');
+    if (!title || totalAmount <= 0 || !startMonth) return alert('請完整填寫分期資訊！');
+
+    const card = appData.creditCards.find(c => c.id === cardId);
+    if (card) {
+      if (!card.items) card.items = [];
+      card.items.push({ id: 'item-' + Date.now(), title, totalAmount, periods, startMonth });
+      document.getElementById('cc-item-title').value = '';
+      document.getElementById('cc-item-amount').value = '';
+      document.getElementById('cc-item-periods').value = '';
+      saveData();
+    }
+  }
+
+  function openEditCreditModal(cardId, itemId) {
+    const card = appData.creditCards.find(c => c.id === cardId);
+    if (!card) return;
+    const item = (card.items || []).find(i => i.id === itemId);
+    if (!item) return;
+
+    document.getElementById('edit-cc-card-id').value = cardId;
+    document.getElementById('edit-cc-item-id').value = itemId;
+    document.getElementById('edit-cc-title').value = item.title;
+    document.getElementById('edit-cc-amount').value = item.totalAmount;
+    document.getElementById('edit-cc-periods').value = item.periods;
+    document.getElementById('edit-cc-start-month').value = item.startMonth;
     editCreditModalInstance.show();
   }
 
   function saveCreditCardEdit() {
-    const id = document.getElementById('edit-cc-id').value;
-    const bank = document.getElementById('edit-cc-bank').value.trim();
+    const cardId = document.getElementById('edit-cc-card-id').value;
+    const itemId = document.getElementById('edit-cc-item-id').value;
     const title = document.getElementById('edit-cc-title').value.trim();
     const totalAmount = parseFloat(document.getElementById('edit-cc-amount').value) || 0;
     const periods = parseInt(document.getElementById('edit-cc-periods').value) || 1;
     const startMonth = document.getElementById('edit-cc-start-month').value;
 
-    if (!bank || !title || totalAmount <= 0 || !startMonth) return alert('請完整填寫資訊！');
-    const cc = appData.creditCards.find(c => c.id === id);
-    if (cc) {
-      cc.bank = bank; cc.title = title; cc.totalAmount = totalAmount; cc.periods = periods; cc.startMonth = startMonth;
-      Object.keys(appData.monthlyRecords).forEach(m => {
-        appData.monthlyRecords[m] = appData.monthlyRecords[m].filter(item => !(item.refType === 'credit' && item.refId === id));
-      });
-      saveData(); editCreditModalInstance.hide();
+    if (!title || totalAmount <= 0 || !startMonth) return alert('請完整填寫資訊！');
+
+    const card = appData.creditCards.find(c => c.id === cardId);
+    if (card) {
+      const item = (card.items || []).find(i => i.id === itemId);
+      if (item) {
+        item.title = title; item.totalAmount = totalAmount; item.periods = periods; item.startMonth = startMonth;
+        removeLinkedCreditRecords(itemId);
+        saveData(); 
+        editCreditModalInstance.hide();
+      }
     }
   }
 
-  function deleteCreditCard(cardId) {
-    if (confirm('確定刪除此信用卡分期？')) {
-      appData.creditCards = appData.creditCards.filter(c => c.id !== cardId);
-      Object.keys(appData.monthlyRecords).forEach(m => {
-        appData.monthlyRecords[m] = appData.monthlyRecords[m].filter(item => !(item.refType === 'credit' && item.refId === cardId));
-      });
-      saveData();
+  function deleteInstallmentItem(cardId, itemId) {
+    if (confirm('確定刪除此分期項目？')) {
+      const card = appData.creditCards.find(c => c.id === cardId);
+      if (card) {
+        card.items = card.items.filter(i => i.id !== itemId);
+        removeLinkedCreditRecords(itemId);
+        saveData();
+      }
     }
   }
 
+  function removeLinkedCreditRecords(itemId) {
+    Object.keys(appData.monthlyRecords).forEach(m => {
+      appData.monthlyRecords[m] = appData.monthlyRecords[m].filter(item => !(item.refType === 'credit' && item.refId === itemId));
+    });
+  }
+
+  /* ------------------- 固定收支管理與明細渲染 ------------------- */
   function renderFixedList() {
     const list = document.getElementById('list-fixed');
     list.innerHTML = appData.fixedExpenses.map(fx => {
@@ -935,7 +1083,10 @@
       let cycleDesc = '';
       if (fx.cycleType === 'monthly') cycleDesc = `每月 ${fx.day} 日`;
       else if (fx.cycleType === 'yearly') cycleDesc = `每年 ${fx.monthNum}/${fx.day} 日`;
-      else if (fx.cycleType === 'interval') cycleDesc = `每 ${fx.intervalVal} ${fx.intervalUnit === 'month' ? '個月' : '年'} (第${fx.day}日)`;
+      else if (fx.cycleType === 'interval') {
+        cycleDesc = `每 ${fx.intervalVal} ${fx.intervalUnit === 'month' ? '個月' : '年'} (第${fx.day}日)`;
+        if (fx.startMonth) cycleDesc += ` [${fx.startMonth}${fx.endMonth ? ' ~ ' + fx.endMonth : ' 起'}]`;
+      }
       else if (fx.cycleType === 'specific') cycleDesc = `指定日期: ${fx.specificDate}`;
 
       return `
@@ -975,6 +1126,7 @@
       fxItem.intervalUnit = document.getElementById('fx-interval-unit').value;
       fxItem.day = parseInt(document.getElementById('fx-interval-day').value);
       fxItem.startMonth = document.getElementById('fx-start-month').value;
+      fxItem.endMonth = document.getElementById('fx-end-month').value;
     } else if (cycleType === 'specific') {
       fxItem.specificDate = document.getElementById('fx-specific-date').value;
     }
@@ -982,6 +1134,11 @@
     appData.fixedExpenses.push(fxItem);
     document.getElementById('fx-title').value = '';
     document.getElementById('fx-amount').value = '';
+    document.getElementById('fx-end-month').value = '';
+    
+    Object.keys(appData.monthlyRecords).forEach(m => {
+      appData.monthlyRecords[m] = appData.monthlyRecords[m].filter(item => !(item.refType === 'fixed' && item.refId === fxItem.id));
+    });
     saveData();
   }
 
@@ -1003,6 +1160,7 @@
       document.getElementById('edit-fx-interval-unit').value = fx.intervalUnit || 'month';
       document.getElementById('edit-fx-interval-day').value = fx.day || 1;
       document.getElementById('edit-fx-start-month').value = fx.startMonth || currentMonth;
+      document.getElementById('edit-fx-end-month').value = fx.endMonth || '';
     } else if (fx.cycleType === 'specific') {
       document.getElementById('edit-fx-specific-date').value = fx.specificDate || `${currentMonth}-01`;
     }
@@ -1030,6 +1188,7 @@
       updatedFx.intervalUnit = document.getElementById('edit-fx-interval-unit').value;
       updatedFx.day = parseInt(document.getElementById('edit-fx-interval-day').value);
       updatedFx.startMonth = document.getElementById('edit-fx-start-month').value;
+      updatedFx.endMonth = document.getElementById('edit-fx-end-month').value;
     } else if (cycleType === 'specific') {
       updatedFx.specificDate = document.getElementById('edit-fx-specific-date').value;
     }
@@ -1082,7 +1241,7 @@
         else if (diffDays > 0) reminderBadge = `<span class="badge badge-ios badge-due-info">剩 ${diffDays} 天</span>`;
         else reminderBadge = `<span class="text-muted small">日期: ${item.dueDate.slice(5)}</span>`;
       } else {
-        reminderBadge = `<span class="text-muted small">${item.refType ? '自動連動' : '手動輸入'}</span>`;
+        reminderBadge = `<span class="text-muted small">${item.refType ? '系統自動拋轉' : '手動一般記帳'}</span>`;
       }
 
       return `
@@ -1106,8 +1265,16 @@
   }
 
   function deleteLinkedItem(refType, refId) {
-    if (refType === 'credit') deleteCreditCard(refId);
-    else if (refType === 'fixed') deleteFixedExpense(refId);
+    if (refType === 'credit') {
+      for (let card of appData.creditCards) {
+        if (card.items && card.items.some(i => i.id === refId)) {
+          deleteInstallmentItem(card.id, refId);
+          break;
+        }
+      }
+    } else if (refType === 'fixed') {
+      deleteFixedExpense(refId);
+    }
   }
 
   function deleteTransaction(txId) {
@@ -1125,8 +1292,17 @@
     document.getElementById('txModalTitle').innerText = type === 'income' ? '新增收入' : '新增支出';
 
     const accSelect = document.getElementById('tx-account');
-    accSelect.innerHTML = appData.accounts.map(a => `<option value="${a.name}">${a.name}</option>`).join('') + '<option value="其他">其他</option>';
+    let optionsHtml = '<optgroup label="🏦 資產存款帳戶">';
+    appData.accounts.forEach(a => {
+      optionsHtml += `<option value="${a.name}">${a.name}</option>`;
+    });
+    optionsHtml += '</optgroup><optgroup label="💳 信用卡 (一次付清消費)">';
+    appData.creditCards.forEach(c => {
+      optionsHtml += `<option value="💳 ${c.name}">${c.name}</option>`;
+    });
+    optionsHtml += '</optgroup><option value="其他">其他</option>';
 
+    accSelect.innerHTML = optionsHtml;
     txModalInstance.show();
   }
 
